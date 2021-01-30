@@ -1,7 +1,7 @@
 <template>
     <section class="hello">
         <template v-for="s,index in scale">
-            <input type="checkbox" v-on:click="select(s)" name="v" :value="s" :checked="(selectedScale == s ? true : false)" :key="s.value">{{ s.name }}
+            <input type="radio" v-on:click="select(s)" :value="s" :checked="(selectedScale == s ? true : false)" :key="s.value">{{ s.name }}
         </template>
         <p>{{ selectedScale }}</p>
     </section>
@@ -25,6 +25,10 @@ export default {
     data() {
         return  {
         }
+    },
+    mounted () {
+        console.log(this.scale);
+        this.selectedScale = this.scale[1];
     },
     methods: {
         select(s) {

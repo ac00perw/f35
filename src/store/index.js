@@ -11,7 +11,7 @@ export default new Vuex.Store({
             'month': {name: 'Month', value: 720},
             'year': {name: 'Year', value: 8640}
         },
-        selectedScale: {name: 'Day', value: 24 },
+        selectedScale: null,
         //just vermont
         f35: 44000,
         aircraftHours: {
