@@ -2,7 +2,7 @@
     <div id="app" class="bg-gray-100">
         <div id="nav">
             <router-link to="/">Home</router-link> |
-            <a href="#food">Food</a> |
+            <router-link to="/snap">Food</router-link> |
             <a href="#housing">Housing</a> |
             <a href="#student-loans">Student Loans</a> |
             <a href="#hi">Maybe Health Insurance</a> |
