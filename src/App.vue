@@ -10,13 +10,24 @@
             </ul>
         </div>
         <Scale />
-        <router-view />
+        <div class="flex flex-wrap">
+            <div class="w-1/4">
+                <flight-log></flight-log>
+                <snap-log></snap-log>
+            </div>
+            <div class="w-3/4 p-2">
+                <router-view />
+            </div>
+        </div>
     </div>
 </template>
 <script>
 import Scale from '@/components/Scale.vue'
+import FlightLog from '@/components/FlightLog.vue'
+import SnapLog from '@/components/SnapLog.vue'
+
 export default {
-    components: { Scale }
+    components: { Scale, FlightLog, SnapLog }
 }
 </script>
 <style lang="scss">
