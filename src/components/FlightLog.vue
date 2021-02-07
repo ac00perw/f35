@@ -21,6 +21,7 @@ export default {
     },
     data() {
         return  {
+             
         }
     },
     mounted () {
@@ -34,6 +35,9 @@ export default {
 <style scoped lang="scss">
 .flight-log {
     min-height: 40vh;
+    top: 100px;
+    width: 25vw;
+    position: fixed;
 }
 h3 {
     margin: 40px 0 0;
