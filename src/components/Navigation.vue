@@ -1,16 +1,26 @@
 <template>
-    <span>
-        <template v-for="s,index in scale">
-            <span class="pr-2">
-            <input type="radio" v-on:click="select(s)" :value="s" :checked="(selectedScale == s ? true : false)" :key="s.value">&nbsp;{{ s.name }}
-            </span>
-        </template>
-        <p>{{ selectedScale }}</p>
-    </span>
+    <section class="hello">
+        <div id="nav">
+            <router-link to="/">Home</router-link> |
+            <router-link to="/snap">Food</router-link> |
+            <a href="#housing">Housing</a> |
+            <a href="#student-loans">Student Loans</a> |
+            <a href="#hi">Maybe Health Insurance</a> |
+            <router-link to="/about">About</router-link>
+            <us-states />
+            <scale />
+        </div>
+        
+        
+    </section>
 </template>
 <script>
+import Scale from '@/components/Scale.vue'
+import usStates from '@/components/usStates.vue'
+
 export default {
     name: 'Nav',
+    components: { Scale, usStates },
     computed: {
         scale() {
             return this.$store.getters.scale;
@@ -43,21 +53,16 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-    margin: 40px 0 0;
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+#nav {
 
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
+    a {
+        font-weight: bold;
+        color: #2c3e50;
 
-a {
-    color: #42b983;
+        &.router-link-exact-active {
+            color: #42b983;
+        }
+    }
 }
 </style>

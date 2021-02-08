@@ -1,33 +1,29 @@
 <template>
     <div id="app" class="bg-gray-100">
-        <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/snap">Food</router-link> |
-            <a href="#housing">Housing</a> |
-            <a href="#student-loans">Student Loans</a> |
-            <a href="#hi">Maybe Health Insurance</a> |
-            <router-link to="/about">About</router-link>
-            </ul>
-        </div>
-        <Scale />
+        
         <div class="flex flex-wrap">
-            <div class="w-1/4">
-                <flight-log></flight-log>
-                <snap-log></snap-log>
+            <div class="w-1/4 stats-wrap">
+                <div class="stats">
+                    <flight-log></flight-log>
+                </div>
+                <div class="stats">
+                    <snap-log></snap-log>
+                </div>
             </div>
-            <div class="w-3/4 p-2">
+            <div class="w-3/4">
+                <navigation />
                 <router-view />
             </div>
         </div>
     </div>
 </template>
 <script>
-import Scale from '@/components/Scale.vue'
+import Navigation from '@/components/Navigation.vue'
 import FlightLog from '@/components/FlightLog.vue'
 import SnapLog from '@/components/SnapLog.vue'
 
 export default {
-    components: { Scale, FlightLog, SnapLog }
+    components: { Navigation, FlightLog, SnapLog }
 }
 </script>
 <style lang="scss">
@@ -39,16 +35,14 @@ export default {
     color: #2c3e50;
 }
 
-#nav {
-    padding: 30px;
-
-    a {
-        font-weight: bold;
-        color: #2c3e50;
-
-        &.router-link-exact-active {
-            color: #42b983;
-        }
+.stats-wrap {
+    height: 100vh;
+    .stats {
+        height: 50vh;
+        width: 100%;
+        background-color: #efefef;
+        margin: 4px;
     }
 }
+
 </style>

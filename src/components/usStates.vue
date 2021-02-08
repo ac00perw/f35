@@ -1,26 +1,25 @@
 <template>
     <span>
-        <template v-for="s,index in scale">
-            <span class="pr-2">
-            <input type="radio" v-on:click="select(s)" :value="s" :checked="(selectedScale == s ? true : false)" :key="s.value">&nbsp;{{ s.name }}
-            </span>
+        <select v-model="selectedState" class="p-2 my-3">
+        <template v-for="s,index in usStates">
+            <option v-on:click="select(s)" :value="s" :key="s.value">{{ s.name }}</option>
         </template>
-        <p>{{ selectedScale }}</p>
+        </select>
     </span>
 </template>
 <script>
 export default {
     name: 'Nav',
     computed: {
-        scale() {
-            return this.$store.getters.scale;
+        usStates() {
+            return this.$store.getters.usStates;
         },
-        selectedScale: {
+        selectedState: {
             get() {
-                return this.$store.getters.selectedScale;
+                return this.$store.getters.selectedState;
             },
             set(v) {
-                this.$store.commit('mutate', {property: 'selectedScale', with: v});
+                this.$store.commit('mutate', {property: 'selectedState', with: v});
             }
         }
     },
@@ -30,11 +29,11 @@ export default {
     },
     mounted () {
         console.log(this.scale);
-        this.selectedScale = this.scale[1];
+        this.selectedState = this.usStates[49];
     },
     methods: {
         select(s) {
-            this.selectedScale = s;
+            this.selectedState = s;
             this.$vueUpdate = true;
             console.log(`sec ${s.name}`);
         }

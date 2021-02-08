@@ -1,5 +1,5 @@
 <template>
-    <section class="flight-log bg-gray-200 p-2">
+    <section class="flight-log p-2">
         Flight log
     </section>
 </template>
@@ -34,10 +34,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .flight-log {
-    min-height: 40vh;
-    top: 100px;
-    width: 25vw;
-    position: fixed;
+    width: 100%;
 }
 h3 {
     margin: 40px 0 0;

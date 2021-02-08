@@ -1,5 +1,5 @@
 <template>
-    <section class="snap-log bg-gray-300 p-2">
+    <section class="snap-log p-2">
         Snap log
     </section>
 </template>
