@@ -1,6 +1,5 @@
 <template>
-    <section class="hello">
-        <div id="nav">
+    <nav class="hello sticky top-0 m-1" id="nav">
             <router-link to="/">Home</router-link> |
             <router-link to="/snap">Food</router-link> |
             <a href="#housing">Housing</a> |
@@ -8,19 +7,15 @@
             <a href="#hi">Maybe Health Insurance</a> |
             <router-link to="/about">About</router-link>
             <us-states />
-            <scale />
-        </div>
-        
-        
-    </section>
+            
+    </nav>
 </template>
 <script>
-import Scale from '@/components/Scale.vue'
 import usStates from '@/components/usStates.vue'
 
 export default {
     name: 'Nav',
-    components: { Scale, usStates },
+    components: { usStates },
     computed: {
         scale() {
             return this.$store.getters.scale;
@@ -55,7 +50,7 @@ export default {
 <style scoped lang="scss">
 
 #nav {
-
+background: white;
     a {
         font-weight: bold;
         color: #2c3e50;

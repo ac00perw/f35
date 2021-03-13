@@ -2,7 +2,7 @@
     <span>
         <select v-model="selectedState" class="p-2 my-3">
         <template v-for="s,index in usStates">
-            <option v-on:click="select(s)" :value="s" :key="s.value">{{ s.name }}</option>
+            <option v-on:click="select(s)" :value="s.id" :key="s.value">{{ s.name }}</option>
         </template>
         </select>
     </span>
@@ -29,7 +29,7 @@ export default {
     },
     mounted () {
         console.log(this.scale);
-        this.selectedState = this.usStates[49];
+        this.selectedState = (this.usStates ? this.usStates.findIndex(s => s.id == 49) : null);
     },
     methods: {
         select(s) {

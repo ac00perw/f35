@@ -523,7 +523,17 @@
 			"file": "src/store/index.js",
 			"settings":
 			{
-				"buffer_size": 810,
+				"buffer_size": 1240,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/store/states.js",
+			"settings":
+			{
+				"buffer_size": 74,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +541,7 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 786,
+				"buffer_size": 810,
 				"line_ending": "Unix"
 			}
 		},
@@ -557,7 +567,35 @@
 			"file": "src/main.js",
 			"settings":
 			{
-				"buffer_size": 246,
+				"buffer_size": 276,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/API.js",
+			"settings":
+			{
+				"buffer_size": 294,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/usStates.vue",
+			"settings":
+			{
+				"buffer_size": 1320,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/DataService.js",
+			"settings":
+			{
+				"buffer_size": 437,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -573,7 +611,7 @@
 			"file": "src/components/FlightLog.vue",
 			"settings":
 			{
-				"buffer_size": 977,
+				"buffer_size": 1004,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -582,7 +620,35 @@
 			"file": "src/views/Home.vue",
 			"settings":
 			{
-				"buffer_size": 251,
+				"buffer_size": 2794,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/Bar.vue",
+			"settings":
+			{
+				"buffer_size": 800,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/LineChart.js",
+			"settings":
+			{
+				"buffer_size": 361,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/BarChart.js",
+			"settings":
+			{
+				"buffer_size": 359,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -596,10 +662,10 @@
 			}
 		},
 		{
-			"contents": "Searching 26 files for \"maybe health\"\n\n/Users/a/Sites/f35/src/App.vue:\n    6              <a href=\"#housing\">Housing</a> |\n    7              <a href=\"#student-loans\">Student Loans</a> |\n    8:             <a href=\"#hi\">Maybe Health Insurance</a> |\n    9              <router-link to=\"/about\">About</router-link>\n   10              </ul>\n\n1 match in 1 file\n",
+			"contents": "Searching 26 files for \"maybe health\"\n\n/Users/a/Sites/f35/src/App.vue:\n    6              <a href=\"#housing\">Housing</a> |\n    7              <a href=\"#student-loans\">Student Loans</a> |\n    8:             <a href=\"#hi\">Maybe Health Insurance</a> |\n    9              <router-link to=\"/about\">About</router-link>\n   10              </ul>\n\n1 match in 1 file\n\n\nSearching 35 files for \"hungry people\"\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n    1  <template>\n    2    <div class=\"people\">\n    3:     <h1 class=\"w-full text-2xl \">Hungry people (one dot = 100)</h1>\n    4      <div class=\"peoplewrap m-2 p-2 flex flex-wrap\">\n    5      <template class=\"\" v-for=\"i in people\">\n\n1 match in 1 file\n\n\nSearching 35 files for \"dataservice\"\n\n/Users/a/Sites/f35/src/components/Bar.vue:\n    1  <script>\n    2  import { Bar } from 'vue-chartjs'\n    3: import DataService from '../DataService';\n    4  \n    5  export default {\n    .\n   20          buildStates() {\n   21            var vm = this;\n   22:           DataService.data('states')\n   23            .then(function(response) {\n   24                vm.statesObj = response;\n\n/Users/a/Sites/f35/src/views/Home.vue:\n   22  // import { Bar } from 'vue-chartjs'\n   23  import BarChart from '../BarChart';\n   24: import DataService from '../DataService';\n   25  \n   26  export default {\n   ..\n   48              var vm = this;\n   49              //vm.data = {datasets: [{data: null, label: 'foobar'}]};\n   50:             DataService.data('student-loan-debt')\n   51                  .then(function(response) {\n   52                      // handle success\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n   15  </template>\n   16  <script>\n   17: import DataService from '../DataService';\n   18  \n   19  export default {\n\n8 matches across 3 files\n\n\nSearching 35 files for \"usstates\"\n\n/Users/a/Sites/f35/src/components/Navigation.vue:\n   12  </template>\n   13  <script>\n   14: import usStates from '@/components/usStates.vue'\n   15  \n   16  export default {\n   17      name: 'Nav',\n   18:     components: { usStates },\n   19      computed: {\n   20          scale() {\n\n/Users/a/Sites/f35/src/components/usStates.vue:\n    2      <span>\n    3          <select v-model=\"selectedState\" class=\"p-2 my-3\">\n    4:         <template v-for=\"s,index in usStates\">\n    5              <option v-on:click=\"select(s)\" :value=\"s\" :key=\"s.value\">{{ s.name }}</option>\n    6          </template>\n    .\n   12      name: 'Nav',\n   13      computed: {\n   14:         usStates() {\n   15:             return this.$store.getters.usStates;\n   16          },\n   17          selectedState: {\n   ..\n   30      mounted () {\n   31          console.log(this.scale);\n   32:         this.selectedState = this.usStates[49];\n   33      },\n   34      methods: {\n\n/Users/a/Sites/f35/src/store/index.js:\n    1  import Vue from 'vue'\n    2  import Vuex from 'vuex'\n    3: import { usStates } from './states.js'\n    4  \n    5  Vue.use(Vuex)\n    .\n    7  export default new Vuex.Store({\n    8      state: {\n    9:         usStates: usStates(),\n   10          selectedState: null,\n   11          scale: {\n   ..\n   37          scale: state => state.scale,\n   38          selectedScale: state => state.selectedScale,\n   39:         usStates: state => state.usStates,\n   40          selectedState: state => state.selectedState,\n   41      }\n\n/Users/a/Sites/f35/src/store/states.js:\n    1: export function usStates() {\n    2      return [\n    3      {\n\n13 matches across 4 files\n\n\nSearching 35 files for \"59\"\n\n/Users/a/Sites/f35/_source/29SNAPcurrPP-1.csv:\n    6  ,,Preliminary,Initial,,\n    7  Alabama,\"719,827\",\"751,129\",\"756,314\",0.7%,5.1%\n    8: Alaska,\"85,147\",\"88,597\",\"86,007\",-2.9%,1.0%\n    9  American Samoa,--,--,--,--,--\n   10  Arizona,\"798,130\",\"915,512\",\"860,912\",-6.0%,7.9%\n   ..\n   57  Virgin Islands,\"21,623\",\"24,957\",\"25,235\",1.1%,16.7%\n   58  Washington,\"804,663\",\"956,647\",\"951,090\",-0.6%,18.2%\n   59: West Virginia,\"307,638\",\"301,459\",\"305,262\",1.3%,-0.8%\n   60  Wisconsin,\"607,844\",\"704,821\",\"710,412\",0.8%,16.9%\n   61  Wyoming,\"24,928\",\"28,572\",\"28,072\",-1.7%,12.6%\n\n/Users/a/Sites/f35/package-lock.json:\n  131        \"version\": \"7.12.11\",\n  132        \"resolved\": \"https://registry.npmjs.org/@babel/helper-function-name/-/helper-function-name-7.12.11.tgz\",\n  133:       \"integrity\": \"sha512-AtQKjtYNolKNi6nNNVLQ27CP6D9oFR6bq/HPYSizlzbp7uC1M59XJe8L+0uXjbIaZaUJF99ruHqVGiKXU/7ybA==\",\n  134        \"dev\": true,\n  135        \"requires\": {\n  ...\n  784        \"version\": \"7.12.1\",\n  785        \"resolved\": \"https://registry.npmjs.org/@babel/plugin-transform-object-super/-/plugin-transform-object-super-7.12.1.tgz\",\n  786:       \"integrity\": \"sha512-AvypiGJH9hsquNUn+RXVcBdeE3KHPZexWRdimhuV59cSoOt5kFBmqlByorAeUlGG2CJWd0U+4ZtNKga/TB0cAw==\",\n  787        \"dev\": true,\n  788        \"requires\": {\n  ...\n 1002        \"version\": \"7.12.7\",\n 1003        \"resolved\": \"https://registry.npmjs.org/@babel/template/-/template-7.12.7.tgz\",\n 1004:       \"integrity\": \"sha512-GkDzmHS6GV7ZeXfJZ0tLRBhZcMcY0/Lnb+eEbXDBfCAcZCjrZKe6p3J4we/D24O9Y8enxWAg1cWwof59yLh2ow==\",\n 1005        \"dev\": true,\n 1006        \"requires\": {\n ....\n 1013        \"version\": \"7.12.12\",\n 1014        \"resolved\": \"https://registry.npmjs.org/@babel/traverse/-/traverse-7.12.12.tgz\",\n 1015:       \"integrity\": \"sha512-s88i0X0lPy45RrLM8b9mz8RPH5FqO9G9p7ti59cToE44xFm1Q+Pjh5Gq4SXBbtb88X7Uy7pexeqRIQDDMNkL0w==\",\n 1016        \"dev\": true,\n 1017        \"requires\": {\n ....\n 1314        \"version\": \"4.17.11\",\n 1315        \"resolved\": \"https://registry.npmjs.org/@types/express/-/express-4.17.11.tgz\",\n 1316:       \"integrity\": \"sha512-no+R6rW60JEc59977wIxreQVsIEOAYwgCqldrA/vkpCnbD7MqTefO97lmoBe4WE0F156bC4uLSP1XHDOySnChg==\",\n 1317        \"dev\": true,\n 1318        \"requires\": {\n ....\n 2076        \"version\": \"1.9.0\",\n 2077        \"resolved\": \"https://registry.npmjs.org/@webassemblyjs/ieee754/-/ieee754-1.9.0.tgz\",\n 2078:       \"integrity\": \"sha512-dcX8JuYU/gvymzIHc9DgxTzUUTLexWwt8uCTWP3otys596io0L5aW02Gb1RjYpx2+0Jus1h4ZFqjla7umFniTg==\",\n 2079        \"dev\": true,\n 2080        \"requires\": {\n ....\n 2231        \"version\": \"7.2.0\",\n 2232        \"resolved\": \"https://registry.npmjs.org/acorn-walk/-/acorn-walk-7.2.0.tgz\",\n 2233:       \"integrity\": \"sha512-OPdCF6GsMIP+Az+aWfAAOEt2/+iVDKE7oy6lJ098aoe59oAmK76qV6Gw60SbZ8jHuG2wH058GF4pLFbYamYrVA==\"\n 2234      },\n 2235      \"address\": {\n ....\n 3893            \"version\": \"7.0.0\",\n 3894            \"resolved\": \"https://registry.npmjs.org/semver/-/semver-7.0.0.tgz\",\n 3895:           \"integrity\": \"sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==\",\n 3896            \"dev\": true\n 3897          }\n ....\n 4335            \"version\": \"1.1.2\",\n 4336            \"resolved\": \"https://registry.npmjs.org/css-tree/-/css-tree-1.1.2.tgz\",\n 4337:           \"integrity\": \"sha512-wCoWush5Aeo48GLhfHPbmvZs59Z+M7k5+B1xDnXbdWNcEF423DoFdqSWE0PM5aNk5nI5cp1q7ms36zGApY/sKQ==\",\n 4338            \"dev\": true,\n 4339            \"requires\": {\n ....\n 4637                \"version\": \"2.3.0\",\n 4638                \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 4639:               \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 4640                \"dev\": true\n 4641              }\n ....\n 5260        \"version\": \"3.0.2\",\n 5261        \"resolved\": \"https://registry.npmjs.org/extend/-/extend-3.0.2.tgz\",\n 5262:       \"integrity\": \"sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==\",\n 5263        \"dev\": true\n 5264      },\n ....\n 6119            \"version\": \"3.2.0\",\n 6120            \"resolved\": \"https://registry.npmjs.org/big.js/-/big.js-3.2.0.tgz\",\n 6121:           \"integrity\": \"sha512-+hN/Zh2D08Mx65pZ/4g5bsmNiZUuChDiQfTUQ7qJr4/kuopCr88xZsAXv6mBoZEsUI4OuGHlX59qE94K2mMW8Q==\",\n 6122            \"dev\": true\n 6123          },\n ....\n 7043            \"version\": \"2.3.0\",\n 7044            \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 7045:           \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 7046            \"dev\": true\n 7047          }\n ....\n 7529        \"version\": \"2.29.1\",\n 7530        \"resolved\": \"https://registry.npmjs.org/moment/-/moment-2.29.1.tgz\",\n 7531:       \"integrity\": \"sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==\"\n 7532      },\n 7533      \"move-concurrently\": {\n ....\n 8598        \"version\": \"4.0.2\",\n 8599        \"resolved\": \"https://registry.npmjs.org/postcss-discard-comments/-/postcss-discard-comments-4.0.2.tgz\",\n 8600:       \"integrity\": \"sha512-RJutN259iuRf3IW7GZyLM5Sw4GLTOH8FmsXBnv8Ab/Tc2k4SR4qbV4DNbyyY4+Sjo362SyDmW2DQ7lBSChrpkg==\",\n 8601        \"dev\": true,\n 8602        \"requires\": {\n ....\n 8779        \"version\": \"2.0.3\",\n 8780        \"resolved\": \"https://registry.npmjs.org/postcss-js/-/postcss-js-2.0.3.tgz\",\n 8781:       \"integrity\": \"sha512-zS59pAk3deu6dVHyrGqmC3oDXBdNdajk4k1RyxeVXCrcEDBUBHoIhE4QTsmhxgzXxsaqFDAkUZfmMa5f/N/79w==\",\n 8782        \"requires\": {\n 8783          \"camelcase-css\": \"^2.0.1\",\n ....\n 10227            \"version\": \"2.3.0\",\n 10228            \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 10229:           \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 10230            \"dev\": true\n 10231          },\n .....\n 10387            \"version\": \"0.5.0\",\n 10388            \"resolved\": \"https://registry.npmjs.org/jsesc/-/jsesc-0.5.0.tgz\",\n 10389:           \"integrity\": \"sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=\",\n 10390            \"dev\": true\n 10391          }\n .....\n 10617        \"version\": \"2.2.5\",\n 10618        \"resolved\": \"https://registry.npmjs.org/sass-graph/-/sass-graph-2.2.5.tgz\",\n 10619:       \"integrity\": \"sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==\",\n 10620        \"dev\": true,\n 10621        \"requires\": {\n .....\n 11312        \"version\": \"4.0.2\",\n 11313        \"resolved\": \"https://registry.npmjs.org/spdy/-/spdy-4.0.2.tgz\",\n 11314:       \"integrity\": \"sha512-r46gZQZQV+Kl9oItvl1JZZqJKGr+oEkB08A6BzkiR7593/7IbtuncXHd2YoYeTsG4157ZssMu9KYvUHLcjcDoA==\",\n 11315        \"dev\": true,\n 11316        \"requires\": {\n .....\n 11486        \"version\": \"2.1.1\",\n 11487        \"resolved\": \"https://registry.npmjs.org/string-width/-/string-width-2.1.1.tgz\",\n 11488:       \"integrity\": \"sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==\",\n 11489        \"dev\": true,\n 11490        \"requires\": {\n .....\n 12105        \"version\": \"1.6.18\",\n 12106        \"resolved\": \"https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz\",\n 12107:       \"integrity\": \"sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==\",\n 12108        \"dev\": true,\n 12109        \"requires\": {\n .....\n 12167        \"version\": \"1.1.0\",\n 12168        \"resolved\": \"https://registry.npmjs.org/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz\",\n 12169:       \"integrity\": \"sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==\",\n 12170        \"dev\": true\n 12171      },\n .....\n 13213        \"version\": \"2.0.0\",\n 13214        \"resolved\": \"https://registry.npmjs.org/webpack-log/-/webpack-log-2.0.0.tgz\",\n 13215:       \"integrity\": \"sha512-cX8G2vR/85UYG59FgkoMamwHUIkSSlV3bBMRsbxVXVUk2j6NleCKjQ/WE9eYg9WY4w25O9w8wKP4rzNZFmUcUg==\",\n 13216        \"dev\": true,\n 13217        \"requires\": {\n .....\n 13379        \"version\": \"3.1.1\",\n 13380        \"resolved\": \"https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz\",\n 13381:       \"integrity\": \"sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==\",\n 13382        \"dev\": true\n 13383      },\n .....\n 13400            \"version\": \"7.0.4\",\n 13401            \"resolved\": \"https://registry.npmjs.org/cliui/-/cliui-7.0.4.tgz\",\n 13402:           \"integrity\": \"sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==\",\n 13403            \"dev\": true,\n 13404            \"requires\": {\n\n29 matches across 2 files\n\n\nSearching 35 files for \"49\\\"\n\n0 matches\n\nSearching 35 files for \"49\"\n\n/Users/a/Sites/f35/_source/29SNAPcurrPP-1.csv:\n   38  New Hampshire,\"73,506\",\"69,573\",\"69,787\",0.3%,-5.1%\n   39  New Jersey,\"682,918\",\"741,832\",\"761,384\",2.6%,11.5%\n   40: New Mexico,\"450,410\",\"493,689\",\"491,512\",-0.4%,9.1%\n   41  New York,\"2,586,186\",\"2,756,187\",\"2,789,533\",1.2%,7.9%\n   42  North Carolina,\"1,262,554\",\"1,456,891\",\"1,452,360\",-0.3%,15.0%\n   ..\n   49  Rhode Island,\"147,857\",\"142,035\",\"137,892\",-2.9%,-6.7%\n   50  South Carolina,\"586,163\",\"617,334\",\"614,905\",-0.4%,4.9%\n   51: South Dakota,\"79,186\",\"78,149\",\"78,491\",0.4%,-0.9%\n   52  Tennessee,\"876,772\",\"855,072\",\"865,381\",1.2%,-1.3%\n   53  Texas,\"3,346,851\",\"3,900,408\",\"3,962,503\",1.6%,18.4%\n\n/Users/a/Sites/f35/package-lock.json:\n  195        \"version\": \"7.12.10\",\n  196        \"resolved\": \"https://registry.npmjs.org/@babel/helper-optimise-call-expression/-/helper-optimise-call-expression-7.12.10.tgz\",\n  197:       \"integrity\": \"sha512-4tpbU0SrSTjjt65UMWSrUOPZTsgvPgGG4S8QSTNHacKzpS51IVWGDj0yCwyeZND/i+LSN2g/O63jEXEWm49sYQ==\",\n  198        \"dev\": true,\n  199        \"requires\": {\n  ...\n  510        \"version\": \"7.12.1\",\n  511        \"resolved\": \"https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.12.1.tgz\",\n  512:       \"integrity\": \"sha512-1yRi7yAtB0ETgxdY9ti/p2TivUxJkTdhu/ZbF9MshVGqOx1TdB3b7xCXs49Fupgg50N45KcAsRP/ZqWjs9SRjg==\",\n  513        \"dev\": true,\n  514        \"requires\": {\n  ...\n 1385        \"version\": \"1.2.1\",\n 1386        \"resolved\": \"https://registry.npmjs.org/@types/minimist/-/minimist-1.2.1.tgz\",\n 1387:       \"integrity\": \"sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==\",\n 1388        \"dev\": true\n 1389      },\n ....\n 1421        \"version\": \"1.13.9\",\n 1422        \"resolved\": \"https://registry.npmjs.org/@types/serve-static/-/serve-static-1.13.9.tgz\",\n 1423:       \"integrity\": \"sha512-ZFqF6qa48XsPdjXV5Gsz0Zqmux2PerNd3a/ktL45mHpa19cuMi/cL8tcxdAx497yRh+QtYPuofjT9oWw9P7nkA==\",\n 1424        \"dev\": true,\n 1425        \"requires\": {\n ....\n 4941        \"version\": \"4.5.0\",\n 4942        \"resolved\": \"https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-4.5.0.tgz\",\n 4943:       \"integrity\": \"sha512-Nv9m36S/vxpsI+Hc4/ZGRs0n9mXqSWGGq49zxb/cJfPAQMbUtttJAlNPS4AQzaBdw/pKskw5bMbekT/Y7W/Wlg==\",\n 4944        \"dev\": true,\n 4945        \"requires\": {\n ....\n 4997        \"version\": \"1.18.0-next.2\",\n 4998        \"resolved\": \"https://registry.npmjs.org/es-abstract/-/es-abstract-1.18.0-next.2.tgz\",\n 4999:       \"integrity\": \"sha512-Ih4ZMFHEtZupnUh6497zEL4y2+w8+1ljnCyaTa+adcoafI1GOvMwFlDjBLfWR7y9VLfrjRJe9ocuHY1PSR9jjw==\",\n 5000        \"dev\": true,\n 5001        \"requires\": {\n ....\n 5646        \"version\": \"1.1.1\",\n 5647        \"resolved\": \"https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz\",\n 5648:       \"integrity\": \"sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==\"\n 5649      },\n 5650      \"gauge\": {\n ....\n 5857        \"version\": \"2.0.1\",\n 5858        \"resolved\": \"https://registry.npmjs.org/handle-thing/-/handle-thing-2.0.1.tgz\",\n 5859:       \"integrity\": \"sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==\",\n 5860        \"dev\": true\n 5861      },\n ....\n 6161        \"version\": \"3.10.1\",\n 6162        \"resolved\": \"https://registry.npmjs.org/htmlparser2/-/htmlparser2-3.10.1.tgz\",\n 6163:       \"integrity\": \"sha512-IgieNijUMbkDovyoKObU1DUhm1iwNYE/fuifEoEHfd1oZKZDaONBSkal7Y01shxsM49R4XaMdGez3WnF9UfiCQ==\",\n 6164        \"dev\": true,\n 6165        \"requires\": {\n ....\n 6331        \"version\": \"3.3.10\",\n 6332        \"resolved\": \"https://registry.npmjs.org/ignore/-/ignore-3.3.10.tgz\",\n 6333:       \"integrity\": \"sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==\",\n 6334        \"dev\": true\n 6335      },\n ....\n 6657        \"version\": \"1.1.0\",\n 6658        \"resolved\": \"https://registry.npmjs.org/is-finite/-/is-finite-1.1.0.tgz\",\n 6659:       \"integrity\": \"sha512-cdyMtqX/BOqqNBBiKlIVkytNHm49MtMlYyn1zxzvJKWmFMlGzm+ry5BBfYyeY9YmNKbRSo/o7OX9w9ale0wg3w==\",\n 6660        \"dev\": true\n 6661      },\n ....\n 6663        \"version\": \"2.0.0\",\n 6664        \"resolved\": \"https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz\",\n 6665:       \"integrity\": \"sha1-o7MKXE8ZkYMWeqq5O+764937ZU8=\",\n 6666        \"dev\": true\n 6667      },\n ....\n 7785            \"version\": \"3.0.1\",\n 7786            \"resolved\": \"https://registry.npmjs.org/cross-spawn/-/cross-spawn-3.0.1.tgz\",\n 7787:           \"integrity\": \"sha1-ElYDfsufDF9549bvE14wdwGEuYI=\",\n 7788            \"dev\": true,\n 7789            \"requires\": {\n ....\n 8531            \"version\": \"3.3.1\",\n 8532            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8533:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8534            \"dev\": true\n 8535          },\n ....\n 8575            \"version\": \"3.3.1\",\n 8576            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8577:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8578            \"dev\": true\n 8579          },\n ....\n 8767            \"version\": \"3.3.1\",\n 8768            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8769:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\"\n 8770          },\n 8771          \"source-map\": {\n ....\n 8872            \"version\": \"3.3.1\",\n 8873            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8874:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8875            \"dev\": true\n 8876          },\n ....\n 8969            \"version\": \"3.3.1\",\n 8970            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8971:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8972            \"dev\": true\n 8973          },\n ....\n 9015            \"version\": \"3.3.1\",\n 9016            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9017:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9018            \"dev\": true\n 9019          },\n ....\n 9063            \"version\": \"3.3.1\",\n 9064            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9065:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9066            \"dev\": true\n 9067          },\n ....\n 9358            \"version\": \"3.3.1\",\n 9359            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9360:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9361            \"dev\": true\n 9362          },\n ....\n 9404            \"version\": \"3.3.1\",\n 9405            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9406:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9407            \"dev\": true\n 9408          },\n ....\n 9450            \"version\": \"3.3.1\",\n 9451            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9452:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9453            \"dev\": true\n 9454          },\n ....\n 9473        \"version\": \"4.0.2\",\n 9474        \"resolved\": \"https://registry.npmjs.org/postcss-normalize-string/-/postcss-normalize-string-4.0.2.tgz\",\n 9475:       \"integrity\": \"sha512-RrERod97Dnwqq49WNz8qo66ps0swYZDSb6rM57kN2J+aoyEAJfZ6bMx0sx/F9TIEX0xthPGCmeyiam/jXif0eA==\",\n 9476        \"dev\": true,\n 9477        \"requires\": {\n ....\n 9495            \"version\": \"3.3.1\",\n 9496            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9497:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9498            \"dev\": true\n 9499          },\n ....\n 9540            \"version\": \"3.3.1\",\n 9541            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9542:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9543            \"dev\": true\n 9544          },\n ....\n 9585            \"version\": \"3.3.1\",\n 9586            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9587:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9588            \"dev\": true\n 9589          },\n ....\n 9631            \"version\": \"3.3.1\",\n 9632            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9633:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9634            \"dev\": true\n 9635          },\n ....\n 9675            \"version\": \"3.3.1\",\n 9676            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9677:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9678            \"dev\": true\n 9679          },\n ....\n 9720            \"version\": \"3.3.1\",\n 9721            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9722:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9723            \"dev\": true\n 9724          },\n ....\n 9806            \"version\": \"3.3.1\",\n 9807            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9808:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9809            \"dev\": true\n 9810          },\n ....\n 9863            \"version\": \"3.3.1\",\n 9864            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9865:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9866            \"dev\": true\n 9867          },\n ....\n 10026        \"version\": \"3.0.0\",\n 10027        \"resolved\": \"https://registry.npmjs.org/pump/-/pump-3.0.0.tgz\",\n 10028:       \"integrity\": \"sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==\",\n 10029        \"dev\": true,\n 10030        \"requires\": {\n .....\n 10301            \"version\": \"3.3.1\",\n 10302            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 10303:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\"\n 10304          }\n 10305        }\n .....\n 11037        \"version\": \"3.0.3\",\n 11038        \"resolved\": \"https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.3.tgz\",\n 11039:       \"integrity\": \"sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==\",\n 11040        \"dev\": true\n 11041      },\n .....\n 11280        \"version\": \"3.1.1\",\n 11281        \"resolved\": \"https://registry.npmjs.org/spdx-correct/-/spdx-correct-3.1.1.tgz\",\n 11282:       \"integrity\": \"sha512-cOYcUWwhCuHCXi49RhFRCyJEK3iPj1Ziz9DpViV3tbZOwXD49QzIN3MpOLJNxh2qwq2lJJZaKMVw9qNi4jTC0w==\",\n 11283        \"dev\": true,\n 11284        \"requires\": {\n .....\n 11809        \"version\": \"1.4.5\",\n 11810        \"resolved\": \"https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.5.tgz\",\n 11811:       \"integrity\": \"sha512-04Rfe496lN8EYruwi6oPQkG0vo8C+HT49X687FZnpPF0qMAIHONI6HEXYPKDOE8e5HjXTyKfqRd/agHtH0kOtw==\",\n 11812        \"dev\": true,\n 11813        \"requires\": {\n .....\n 12264            \"version\": \"0.1.4\",\n 12265            \"resolved\": \"https://registry.npmjs.org/has-values/-/has-values-0.1.4.tgz\",\n 12266:           \"integrity\": \"sha1-bWHeldkd/Km5oCCJrThL/49it3E=\",\n 12267            \"dev\": true\n 12268          }\n .....\n 12378            \"version\": \"1.17.7\",\n 12379            \"resolved\": \"https://registry.npmjs.org/es-abstract/-/es-abstract-1.17.7.tgz\",\n 12380:           \"integrity\": \"sha512-VBl/gnfcJ7OercKA9MVaegWsBHFjV492syMudcnQZvt/Dw8ezpcOHYZXa/J96O8vx+g4x65YKhxOwDUh63aS5g==\",\n 12381            \"dev\": true,\n 12382            \"requires\": {\n .....\n 12814        \"version\": \"3.9.0\",\n 12815        \"resolved\": \"https://registry.npmjs.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-3.9.0.tgz\",\n 12816:       \"integrity\": \"sha512-Ob8amZfCm3rMB1ScjQVlbYYUEJyEjdEtQ92jqiFUYt5VkEeO2v5UMbv49P/gnmCZm3A6yaFQzCBvpZqN4MUsdA==\",\n 12817        \"dev\": true,\n 12818        \"requires\": {\n\n/Users/a/Sites/f35/src/assets/logo.png:\n    <binary>\n\n/Users/a/Sites/f35/src/components/usStates.vue:\n   30      mounted () {\n   31          console.log(this.scale);\n   32:         this.selectedState = this.usStates[49];\n   33      },\n   34      methods: {\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n   10              <div class=\"peoplewrap m-2 p-2 flex flex-wrap\">\n   11                  <template class=\"\" v-for=\"i in people\">\n   12:                     <span :class=\"[`p-2`, pC()]\">&#149;</span>\n   13                  </template>\n   14              </div>\n\n50 matches across 5 files\n",
 			"settings":
 			{
-				"buffer_size": 357,
+				"buffer_size": 26120,
 				"line_ending": "Unix",
 				"name": "Find Results",
 				"scratch": true
@@ -609,7 +675,7 @@
 			"file": "src/App.vue",
 			"settings":
 			{
-				"buffer_size": 1355,
+				"buffer_size": 1203,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -618,25 +684,16 @@
 			"file": "src/views/Snap.vue",
 			"settings":
 			{
-				"buffer_size": 425,
+				"buffer_size": 1357,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/a/.ssh/config",
+			"file": "src/components/Navigation.vue",
 			"settings":
 			{
-				"buffer_size": 3637,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/a/.bash_profile",
-			"settings":
-			{
-				"buffer_size": 7092,
+				"buffer_size": 1514,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -653,7 +710,7 @@
 			"file": "src/components/SnapLog.vue",
 			"settings":
 			{
-				"buffer_size": 901,
+				"buffer_size": 889,
 				"line_ending": "Unix"
 			}
 		}
@@ -748,7 +805,6 @@
 		"/Users/a/Sites/f35/_source",
 		"/Users/a/Sites/f35/public",
 		"/Users/a/Sites/f35/src",
-		"/Users/a/Sites/f35/src/assets",
 		"/Users/a/Sites/f35/src/components",
 		"/Users/a/Sites/f35/src/router",
 		"/Users/a/Sites/f35/src/store",
@@ -756,8 +812,13 @@
 	],
 	"file_history":
 	[
-		"/Users/a/Documents/nvram_config.txt",
+		"/Users/a/.ssh/config",
 		"/Users/a/.bash_profile",
+		"/etc/hosts",
+		"/etc/ssh/ssh_config",
+		"/Users/a/Sites/mwc/wp-content/themes/mwc/package.json",
+		"/Users/a/Sites/mwc/wp-content/themes/mwc/package",
+		"/Users/a/Documents/nvram_config.txt",
 		"/Users/a/Sites/acdubs/resources/assets/js/components/scenes/Castle.vue",
 		"/Users/a/Sites/acdubs/resources/assets/js/components/SoundCloudPlayer.vue",
 		"/Users/a/Sites/acdubs/resources/assets/js/components/ContentSection.vue",
@@ -784,7 +845,6 @@
 		"/Users/a/Sites/acdubs/resources/assets/js/components/Stage.vue",
 		"/Users/a/Sites/acdubs/resources/assets/js/DataService.js",
 		"/Users/a/Sites/acdubs/webpack.mix.js",
-		"/Users/a/.ssh/config",
 		"/Users/a/Sites/acdubs/routes/api.php",
 		"/Users/a/Sites/acdubs/app/Providers/AuthServiceProvider.php",
 		"/Users/a/Sites/acdubs/app/Http/Controllers/AuthController.php",
@@ -845,7 +905,6 @@
 		"/Users/a/Sites/acdubs/resources/assets/js/components/GameScheduled.vue",
 		"/Users/a/Sites/acdubs/resources/assets/js/components/BasketballTeam.vue",
 		"/Users/a/Sites/acdubs/resources/assets/js/components/store.js",
-		"/etc/hosts",
 		"/usr/local/etc/php/7.4/php.ini",
 		"/Users/a/Sites/acdubs/app/Http/Middleware/VerifyCsrfToken.php",
 		"/Users/a/Sites/acdubs/.env",
@@ -880,10 +939,7 @@
 		"/Users/a/Sites/acdubs/database/seeds/DatabaseSeeder.php",
 		"/Users/a/Sites/acdubs/database/migrations/2017_11_19_050026_RecipeTable.php",
 		"/Users/a/Sites/acdubs/config/recaptcha.php",
-		"/Users/a/Sites/acdubs/resources/views/sitemap/recipes.blade.php",
-		"/Users/a/Sites/acdubs/app/Http/Controllers/SitemapController.php",
-		"/Users/a/Sites/acdubs/app/Show.php",
-		"/Users/a/Sites/acdubs/app/Http/Controllers/FileProgress.vue"
+		"/Users/a/Sites/acdubs/resources/views/sitemap/recipes.blade.php"
 	],
 	"find":
 	{
@@ -902,6 +958,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"49",
+			"49\\",
+			"59",
+			"usstates",
+			"dataservice",
+			"hungry people",
+			"datacoll",
 			"endip",
 			"startip",
 			"ssh",
@@ -928,7 +991,7 @@
 	"groups":
 	[
 		{
-			"selected": 13,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -937,15 +1000,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 810,
+						"buffer_size": 1240,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								351,
-								351
+								864,
+								864
 							]
 						],
 						"settings":
@@ -958,8 +1021,8 @@
 								{
 									"1":
 									[
-										537,
-										538
+										1005,
+										1006
 									]
 								},
 								"icon":
@@ -974,8 +1037,8 @@
 								{
 									"1":
 									[
-										105,
-										106
+										843,
+										844
 									]
 								},
 								"unmatched":
@@ -984,56 +1047,176 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 295.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/store/states.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 74,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										73,
+										74
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										70,
+										71
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1048,16 +1231,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 786,
+						"buffer_size": 810,
 						"regions":
 						{
 						},
@@ -1078,8 +1261,8 @@
 								{
 									"1":
 									[
-										784,
-										785
+										808,
+										809
 									]
 								},
 								"icon":
@@ -1109,16 +1292,21 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -1129,36 +1317,31 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 2,
@@ -1172,7 +1355,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "vue.config.js",
 					"semi_transient": false,
 					"settings":
@@ -1273,11 +1456,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "src/assets/sass/tailwind.css",
 					"semi_transient": false,
 					"settings":
@@ -1314,56 +1497,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1377,24 +1560,142 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "src/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 246,
+						"buffer_size": 276,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								142,
-								142
+								203,
+								203
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										203,
+										204
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										192,
+										193
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/API.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
 							]
 						],
 						"settings":
@@ -1418,73 +1719,285 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content"
 							],
+							"is_xml": false,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
+					"file": "src/components/usStates.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								258,
+								258
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/DataService.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"is_xml": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "tailwind.config.js",
 					"semi_transient": false,
 					"settings":
@@ -1592,30 +2105,32 @@
 								"bh_tag_close",
 								"bh_tag_content"
 							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 10,
 					"file": "src/components/FlightLog.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 977,
+						"buffer_size": 1004,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								977,
-								977
+								75,
+								75
 							]
 						],
 						"settings":
@@ -1639,56 +2154,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1703,24 +2218,144 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 11,
 					"file": "src/views/Home.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 251,
+						"buffer_size": 2794,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								43,
-								43
+								1645,
+								1645
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1645,
+										1646
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1619,
+										1620
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1126.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/components/Bar.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 800,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1749,16 +2384,21 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -1769,48 +2409,283 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 13,
+					"file": "src/LineChart.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								168
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										167,
+										168
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										159,
+										160
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"is_xml": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/BarChart.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										358,
+										359
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										90,
+										91
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"is_xml": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
 					"file": "src/router/index.js",
 					"semi_transient": false,
 					"settings":
@@ -1926,15 +2801,15 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 16,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 357,
+						"buffer_size": 26120,
 						"regions":
 						{
 							"match":
@@ -1945,6 +2820,402 @@
 									[
 										220,
 										232
+									],
+									[
+										526,
+										539
+									],
+									[
+										844,
+										855
+									],
+									[
+										865,
+										876
+									],
+									[
+										997,
+										1008
+									],
+									[
+										1255,
+										1266
+									],
+									[
+										1276,
+										1287
+									],
+									[
+										1457,
+										1468
+									],
+									[
+										1679,
+										1690
+									],
+									[
+										1700,
+										1711
+									],
+									[
+										1908,
+										1916
+									],
+									[
+										1936,
+										1944
+									],
+									[
+										2031,
+										2039
+									],
+									[
+										2266,
+										2274
+									],
+									[
+										2470,
+										2478
+									],
+									[
+										2529,
+										2537
+									],
+									[
+										2700,
+										2708
+									],
+									[
+										2866,
+										2874
+									],
+									[
+										3005,
+										3013
+									],
+									[
+										3015,
+										3023
+									],
+									[
+										3212,
+										3220
+									],
+									[
+										3237,
+										3245
+									],
+									[
+										3384,
+										3392
+									],
+									[
+										3648,
+										3650
+									],
+									[
+										3929,
+										3931
+									],
+									[
+										4341,
+										4343
+									],
+									[
+										4685,
+										4687
+									],
+									[
+										5034,
+										5036
+									],
+									[
+										5305,
+										5307
+									],
+									[
+										5592,
+										5594
+									],
+									[
+										5938,
+										5940
+									],
+									[
+										6244,
+										6246
+									],
+									[
+										6549,
+										6551
+									],
+									[
+										6826,
+										6828
+									],
+									[
+										7142,
+										7144
+									],
+									[
+										7370,
+										7372
+									],
+									[
+										7405,
+										7407
+									],
+									[
+										7734,
+										7736
+									],
+									[
+										7975,
+										7977
+									],
+									[
+										8205,
+										8207
+									],
+									[
+										8526,
+										8528
+									],
+									[
+										8828,
+										8830
+									],
+									[
+										9165,
+										9167
+									],
+									[
+										9395,
+										9397
+									],
+									[
+										9715,
+										9717
+									],
+									[
+										9982,
+										9984
+									],
+									[
+										10260,
+										10262
+									],
+									[
+										10608,
+										10610
+									],
+									[
+										10978,
+										10980
+									],
+									[
+										11239,
+										11241
+									],
+									[
+										11541,
+										11543
+									],
+									[
+										11898,
+										11900
+									],
+									[
+										12279,
+										12281
+									],
+									[
+										12289,
+										12291
+									],
+									[
+										12606,
+										12608
+									],
+									[
+										12614,
+										12616
+									],
+									[
+										13077,
+										13079
+									],
+									[
+										13382,
+										13384
+									],
+									[
+										13703,
+										13705
+									],
+									[
+										13999,
+										14001
+									],
+									[
+										14290,
+										14292
+									],
+									[
+										14597,
+										14599
+									],
+									[
+										14901,
+										14903
+									],
+									[
+										15233,
+										15235
+									],
+									[
+										15546,
+										15548
+									],
+									[
+										15858,
+										15860
+									],
+									[
+										16097,
+										16099
+									],
+									[
+										16407,
+										16409
+									],
+									[
+										16643,
+										16645
+									],
+									[
+										16993,
+										16995
+									],
+									[
+										17325,
+										17327
+									],
+									[
+										17657,
+										17659
+									],
+									[
+										17990,
+										17992
+									],
+									[
+										18322,
+										18324
+									],
+									[
+										18654,
+										18656
+									],
+									[
+										18986,
+										18988
+									],
+									[
+										19318,
+										19320
+									],
+									[
+										19650,
+										19652
+									],
+									[
+										19982,
+										19984
+									],
+									[
+										20247,
+										20249
+									],
+									[
+										20648,
+										20650
+									],
+									[
+										20980,
+										20982
+									],
+									[
+										21312,
+										21314
+									],
+									[
+										21644,
+										21646
+									],
+									[
+										21976,
+										21978
+									],
+									[
+										22308,
+										22310
+									],
+									[
+										22640,
+										22642
+									],
+									[
+										22972,
+										22974
+									],
+									[
+										23211,
+										23213
+									],
+									[
+										23607,
+										23609
+									],
+									[
+										23826,
+										23828
+									],
+									[
+										24139,
+										24141
+									],
+									[
+										24172,
+										24174
+									],
+									[
+										24464,
+										24466
+									],
+									[
+										24490,
+										24492
+									],
+									[
+										24802,
+										24804
+									],
+									[
+										25071,
+										25073
+									],
+									[
+										25443,
+										25445
+									],
+									[
+										25751,
+										25753
+									],
+									[
+										26021,
+										26023
 									]
 								],
 								"scope": ""
@@ -1953,8 +3224,8 @@
 						"selection":
 						[
 							[
-								62,
-								62
+								25738,
+								25738
 							]
 						],
 						"settings":
@@ -1964,12 +3235,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										25767,
+										25768
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										25659,
+										25660
+									]
 								},
 								"unmatched":
 								{
@@ -1977,56 +3263,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -2036,7 +3322,7 @@
 							"color_scheme": "Packages/BetterFindBuffer/FindResults.hidden-tmTheme",
 							"detect_indentation": false,
 							"line_numbers": false,
-							"output_tag": 1,
+							"output_tag": 7,
 							"result_base_dir": "",
 							"result_file_regex": "^([^ \t].*):$",
 							"result_line_regex": "^ +([0-9]+):",
@@ -2045,27 +3331,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 17978.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 17,
 					"file": "src/App.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1355,
+						"buffer_size": 1203,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								125,
-								125
+								0,
+								0
 							]
 						],
 						"settings":
@@ -2089,56 +3375,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -2154,24 +3440,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 18,
 					"file": "src/views/Snap.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 425,
+						"buffer_size": 1357,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								80,
-								80
+								1053,
+								1053
 							]
 						],
 						"settings":
@@ -2184,8 +3470,129 @@
 								{
 									"1":
 									[
-										80,
-										81
+										1052,
+										1053
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1006,
+										1007
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"is_xml": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 656.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "src/components/Navigation.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1514,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								49,
+								49
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										49,
+										50
 									]
 								},
 								"icon":
@@ -2200,8 +3607,8 @@
 								{
 									"1":
 									[
-										63,
-										64
+										26,
+										27
 									]
 								},
 								"unmatched":
@@ -2210,26 +3617,31 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -2240,79 +3652,6 @@
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"is_xml": false,
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/Users/a/.ssh/config",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3637,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8,
-								8
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -2323,53 +3662,18 @@
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
+								"bh_tag_content"
 							],
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -2377,130 +3681,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "/Users/a/.bash_profile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7092,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1222,
-								1224
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1233,
-										1234
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1207,
-										1208
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/ShellScript/Bash.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 144.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
+					"buffer": 20,
 					"file": "postcss.config.js",
 					"semi_transient": false,
 					"settings":
@@ -2552,56 +3737,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -2614,24 +3799,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 21,
 					"file": "src/components/SnapLog.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 901,
+						"buffer_size": 889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								55,
-								55
+								0,
+								0
 							]
 						],
 						"settings":
@@ -2642,27 +3827,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										55,
-										56
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										30,
-										31
-									]
 								},
 								"unmatched":
 								{
@@ -2675,16 +3845,21 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -2695,36 +3870,31 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
 							"tab_size": 4,
@@ -2734,7 +3904,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 17,
 					"type": "text"
 				}
 			]
@@ -2802,7 +3972,47 @@
 		[
 			[
 				"",
-				"~/.bash_profile"
+				"src/components/usStates.vue"
+			],
+			[
+				"snap",
+				"src/views/Snap.vue"
+			],
+			[
+				"states",
+				"src/components/usStates.vue"
+			],
+			[
+				"api",
+				"src/API.js"
+			],
+			[
+				"data",
+				"src/DataService.js"
+			],
+			[
+				"store",
+				"src/store/index.js"
+			],
+			[
+				"nav",
+				"src/components/Navigation.vue"
+			],
+			[
+				"fli",
+				"src/components/FlightLog.vue"
+			],
+			[
+				"app",
+				"src/App.vue"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"main",
+				"src/main.js"
 			],
 			[
 				"flig",
@@ -2821,10 +4031,6 @@
 				"postcss.config.js"
 			],
 			[
-				"pack",
-				"package.json"
-			],
-			[
 				"sto",
 				"resources/assets/js/components/store.js"
 			],
@@ -2839,14 +4045,6 @@
 			[
 				"auth",
 				"app/Http/Controllers/AuthController.php"
-			],
-			[
-				"nav",
-				"resources/assets/js/components/Navigation.vue"
-			],
-			[
-				"api",
-				"routes/api.php"
 			],
 			[
 				"config/a",
@@ -2935,10 +4133,6 @@
 			[
 				"video",
 				"resources/assets/js/components/VideoPlayer.vue"
-			],
-			[
-				"store",
-				"resources/assets/js/components/store.js"
 			],
 			[
 				"cont",
@@ -3067,10 +4261,6 @@
 			[
 				"tele",
 				"resources/assets/js/components/TelevisionShows.vue"
-			],
-			[
-				"app",
-				"resources/assets/js/app.js"
 			],
 			[
 				"hoopna",
@@ -3249,10 +4439,6 @@
 				"resources/assets/js/components/SoundCloud.vue"
 			],
 			[
-				"data",
-				"resources/assets/js/DataService.js"
-			],
-			[
 				"prelo",
 				"resources/assets/js/preloader.js"
 			],
@@ -3295,22 +4481,6 @@
 			[
 				".babel",
 				".babelrc"
-			],
-			[
-				"mi",
-				"public/mix-manifest.json"
-			],
-			[
-				"abou",
-				"resources/views/content/about.html"
-			],
-			[
-				"bbpla",
-				"resources/assets/js/components/BBPlayerStats.vue"
-			],
-			[
-				"vari",
-				"resources/assets/sass/_variables.scss"
 			]
 		],
 		"width": 0.0

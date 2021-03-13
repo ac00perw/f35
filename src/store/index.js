@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { usStates } from './states.js'
-
+import DataService from '../DataService'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        usStates: usStates(),
+        usStates: null,
         selectedState: null,
         scale: {
             'realtime': {name: 'Realtime', value: -1},
@@ -31,7 +30,15 @@ export default new Vuex.Store({
             state[payload.property] = payload.with;
         }
     },
-    actions: {},
+    actions: {
+        loadStates() {
+            var vm = this;
+            DataService.data('states')
+            .then(function(d){
+                vm.state.usStates = d;
+            });
+        }
+    },
     modules: {},
     getters: {
         scale: state => state.scale,

@@ -2,7 +2,7 @@
     <div id="app" class="bg-gray-100">
         
         <div class="flex flex-wrap">
-            <div class="w-1/4 stats-wrap">
+            <div class="w-1/4 stats-wrap sticky top-0">
                 <div class="stats">
                     <flight-log></flight-log>
                 </div>
@@ -40,8 +40,10 @@ export default {
     .stats {
         height: 50vh;
         width: 100%;
-        background-color: #efefef;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.2);
         margin: 4px;
+        z-index: 200;
     }
 }
 

@@ -1,11 +1,15 @@
 <template>
     <section class="flight-log p-2">
-        Flight log
+        <h1>Flight log</h1>
+        <scale />
     </section>
 </template>
 <script>
+import Scale from '@/components/Scale.vue'
+
 export default {
     name: 'FlightLog',
+    components: { Scale },
     computed: {
         scale() {
             return this.$store.getters.scale;
