@@ -2,18 +2,17 @@
     <div id="app">
         
         <div class="flex flex-wrap">
-            <div class="w-1/4 stats-wrap sticky top-0">
+            <!-- <div class="w-1/4 stats-wrap sticky top-0">
                 <div class="stats">
                     <flight-log></flight-log>
                 </div>
                 <div class="stats">
                     <stats></stats>
                 </div>
-            </div>
-            <div class="w-3/4">
-                <navigation />
+            </div> -->
+            <div class="w-full">
+                <!-- <navigation /> -->
                 <router-view name="default" />
-                <Scroller></Scroller>
             </div>
         </div>
     </div>
@@ -22,10 +21,9 @@
 import Navigation from '@/components/Navigation.vue'
 import FlightLog from '@/components/FlightLog.vue'
 import Stats from '@/components/Stats.vue'
-import Scroller from '@/components/Scroller.vue'
 
 export default {
-    components: { Navigation, FlightLog, Stats, Scroller },
+    components: { Navigation, FlightLog, Stats },
     createwd() {
         this.$store.dispatch('addCalcs');
     }

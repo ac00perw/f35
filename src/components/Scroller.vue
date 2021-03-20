@@ -1,10 +1,20 @@
 <template>
   <div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">Hello World</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">Hello World 2</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">Screen 3</h1>
+    </div>
     <Scrollama offset="72" @step-enter="stepEnterHandler" id="flexed">
       <div slot="graphic" class="graphic">
-        <p>{{currStepId}}</p>
+        <p>Grphic side{{currStepId}}</p>
       </div>
       <div data-step-id="1" class="step">
+        step side
         <img width="100%" src="https://acdubs.com/api/showimage/poster/278518/53" />
       </div>
             <div data-step-id="2" class="step">
@@ -125,5 +135,12 @@ height: 30vh;
 .breakup {
   margin: 100px 2px;
   padding: 10px;
+}
+.fullscreen {
+  border: 1px solid red;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 100px;
 }
 </style>
