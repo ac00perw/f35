@@ -5,7 +5,8 @@
             <a href="#housing">Housing</a> |
             <a href="#student-loans">Student Loans</a> |
             <a href="#hi">Maybe Health Insurance</a> |
-            <router-link to="/about">About</router-link>
+            <router-link to="/about">About</router-link> | 
+            <router-link to="/sources">Sources</router-link>
             <us-states />
             
     </nav>

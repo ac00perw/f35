@@ -1,12 +1,10 @@
 <template>
-    <span>
+    <div class="flex flex-wrap">
         <template v-for="s,index in scale">
-            <span class="pr-2">
-            <input type="radio" v-on:click="select(s)" :value="s" :checked="(selectedScale == s ? true : false)" :key="s.value">&nbsp;{{ s.name }}
-            </span>
+            <input class="m-1 w-1/2 mx-auto" type="button" v-on:click="select(s)" :value="s.name" :checked="(selectedScale == s ? true : false)" :key="s.value" /> 
         </template>
         <p>{{ selectedScale }}</p>
-    </span>
+    </div>
 </template>
 <script>
 export default {
@@ -36,7 +34,6 @@ export default {
         select(s) {
             this.selectedScale = s;
             this.$vueUpdate = true;
-            console.log(`sec ${s.name}`);
         }
     }
 }

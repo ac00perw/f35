@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="bg-gray-100">
+    <div id="app">
         
         <div class="flex flex-wrap">
             <div class="w-1/4 stats-wrap sticky top-0">
@@ -7,12 +7,13 @@
                     <flight-log></flight-log>
                 </div>
                 <div class="stats">
-                    <snap-log></snap-log>
+                    <stats></stats>
                 </div>
             </div>
             <div class="w-3/4">
                 <navigation />
-                <router-view />
+                <router-view name="default" />
+                <Scroller></Scroller>
             </div>
         </div>
     </div>
@@ -20,10 +21,14 @@
 <script>
 import Navigation from '@/components/Navigation.vue'
 import FlightLog from '@/components/FlightLog.vue'
-import SnapLog from '@/components/SnapLog.vue'
+import Stats from '@/components/Stats.vue'
+import Scroller from '@/components/Scroller.vue'
 
 export default {
-    components: { Navigation, FlightLog, SnapLog }
+    components: { Navigation, FlightLog, Stats, Scroller },
+    createwd() {
+        this.$store.dispatch('addCalcs');
+    }
 }
 </script>
 <style lang="scss">

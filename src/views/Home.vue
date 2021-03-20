@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home m-2">
         <Nav />
         Home Page
         <bar-chart :styles="stylez" :chart-data="data" :options=" { maintainAspectRatio: false,
@@ -14,7 +14,7 @@
                 stacked: true
             }]
         }}"></bar-chart>
-        {{ data }}
+        <!-- {{ data }} -->
     </div>
 </template>
 <script>

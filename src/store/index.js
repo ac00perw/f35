@@ -8,21 +8,28 @@ export default new Vuex.Store({
         usStates: null,
         selectedState: null,
         scale: {
-            'realtime': {name: 'Realtime', value: -1},
+            // 'realtime': {name: 'Realtime', value: -1},
             'hour': {name: 'Hour', value: 1},
             'day': {name: 'Day', value: 24},
             'month': {name: 'Month', value: 720},
-            'year': {name: 'Year', value: 8640}
+            'year': {name: 'Year', value: 8640},
+            '5-year': {name: '5 Years', value: 43200}
+        },
+        acHourScale: {
+            // 'realtime': {name: 'Realtime', value: -1},
+            'hour': {name: 'Hour', value: .57},
+            'day': {name: 'Day', value: 13.7},
+            'month': {name: 'Month', value: 413},
+            'year': {name: 'Year', value: 4956},
+            '5-year': {name: '5 Years', value: 24780}
         },
         selectedScale: null,
         //just vermont
-        f35: 44000,
-        aircraftHours: {
-            'hour': .04,
-            'day': 14.1,
-            'month': 423,
-            'year': 5076
-        }
+        f35CostPerHour: 44000,
+        //just vermont
+        aircraftHoursPerMonth: 413,
+        //hours per month / 30 / 24 
+        aircraftHoursPerHour: .57,
 
     },
     mutations: {
@@ -37,6 +44,9 @@ export default new Vuex.Store({
             .then(function(d){
                 vm.state.usStates = d;
             });
+        },
+        addCalcs() {
+            this.state.scale.hour = {...this.state.scale.hour, ...{calc: this.state.aircraftHoursPerMonth / this.state.scale.hour.value }}
         }
     },
     modules: {},
@@ -45,5 +55,8 @@ export default new Vuex.Store({
         selectedScale: state => state.selectedScale,
         usStates: state => state.usStates,
         selectedState: state => state.selectedState,
+        aircraftHoursPerMonth: state => state.aircraftHoursPerMonth,
+        aircraftHoursPerHour: state => state.aircraftHoursPerHour,
+        f35CostPerHour: state => state.f35CostPerHour,
     }
 })

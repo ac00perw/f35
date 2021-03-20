@@ -1,11 +1,12 @@
 <template>
     <section class="snap-log p-2">
-        Snap log
+        Stats Panel
+        <router-view name="stats" />
     </section>
 </template>
 <script>
 export default {
-    name: 'SnapLog',
+    name: 'Stats',
     computed: {
         scale() {
             return this.$store.getters.scale;
