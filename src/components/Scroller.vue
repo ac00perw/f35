@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="fullscreen justify-center items-center">
-        <h1 class="font-bold text-4xl">Hello World</h1>
+        <h1 class="font-bold text-4xl">Hello World, number one@</h1>
     </div>
     <div class="fullscreen justify-center items-center">
         <h1 class="font-bold text-4xl">Hello World 2</h1>
