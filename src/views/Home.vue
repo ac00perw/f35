@@ -1,15 +1,76 @@
 <template>
   <div>
     <div class="fullscreen justify-center items-center">
-        <h1 class="font-bold text-4xl">Hello World, number one@</h1>
+        <h1 class="w-full font-bold text-4xl">Title Page</h1>
     </div>
     <div class="fullscreen justify-center items-center">
-        <h1 class="font-bold text-4xl">Hello World 2</h1>
+        <h1 class="font-bold text-4xl">F 35 Overview</h1>
     </div>
     <div class="fullscreen justify-center items-center">
-        <h1 class="font-bold text-4xl">Screen 3</h1>
+        <h1 class="font-bold text-4xl">Cost per hour to fly them</h1>
     </div>
-    <Scrollama offset="72" @step-enter="stepEnterHandler" id="flexed">
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">In Vermont, the F35s fly x number of hours per day</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">There are x# of hungry people in Vermont</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">That means that it would take x number of flight hours to feed all the hungry people in Vermont</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">And x # of hours to feed all the hungry people in the US</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">What about homelessness in Vermont</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">There are 1089 homeless people in Vermont</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">It costs $x to provide transitional housing for a homeless individual</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">Which is not only the right thing to do, but also saves taypayer money</h1>
+    </div>
+      <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">In order to provide all the homess in Vermont it would cost $x</h1>
+    </div>
+      <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">x# of F35 flight hours</h1>
+    </div>
+      <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">Also saving $x of taxpayer dollars.</h1>
+    </div>
+      <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">Moving on to student loans</h1>
+    </div>
+      <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">There were 95,000 student loan borrowers in Vermont in 2019</h1>
+    </div>
+      <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">With an average balance of $32,600</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">Total student loan debt in Vermont is $3,097,000,000 in 2019</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">Which could be wiped out with x# F35 flight hours</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">What about homelessness in Vermont</h1>
+    </div>
+    <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">That would mean that in the time that it takes x# F35s to fly x hours</h1>
+    </div>
+       <div class="fullscreen justify-center items-center">
+        <h1 class="font-bold text-4xl">We could wipe out student loan debt, homelessness and hunger in Vermont</h1>
+    </div>
+
+
+
+
+        <Scrollama offset="72" @step-enter="stepEnterHandler" id="flexed">
       <div slot="graphic" class="graphic">
         <p>Grphic side{{currStepId}}</p>
       </div>
@@ -25,7 +86,7 @@
       </div>
     </Scrollama>
     <img class="breakup" src="//live.staticflickr.com/7025/6509335909_d560397040_n.jpg" width="100%"/>
-        <Scrollama offset="72" @step-enter="stepEnterHandler" id="flexed1">
+    <Scrollama offset="72" @step-enter="stepEnterHandler" id="flexed1">
       <div slot="graphic" class="graphic2">
         <p>Hello</p>
       </div>
