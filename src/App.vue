@@ -1,29 +1,20 @@
 <template>
     <div id="app">
-        
         <div class="flex flex-wrap">
-            <!-- <div class="w-1/4 stats-wrap sticky top-0">
-                <div class="stats">
-                    <flight-log></flight-log>
-                </div>
-                <div class="stats">
-                    <stats></stats>
-                </div>
-            </div> -->
             <div class="w-full">
                 <!-- <navigation /> -->
-                <router-view name="default" />
+                <home-scroller />
             </div>
         </div>
     </div>
 </template>
 <script>
-import Navigation from '@/components/Navigation.vue'
-import FlightLog from '@/components/FlightLog.vue'
-import Stats from '@/components/Stats.vue'
+// import Navigation from '@/components/Navigation.vue'
+// import FlightLog from '@/components/FlightLog.vue'
+import HomeScroller from '@/views/Home.vue'
 
 export default {
-    components: { Navigation, FlightLog, Stats },
+    components: {HomeScroller},
     createwd() {
         this.$store.dispatch('addCalcs');
     }

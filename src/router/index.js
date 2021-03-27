@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import(/* webpackChunkName: "scroller" */ '../components/Scroller.vue')
+    component: () => import(/* webpackChunkName: "scroller" */ '../views/Home.vue')
   },
   {
     path: "/snap",
