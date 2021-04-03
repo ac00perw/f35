@@ -30,6 +30,7 @@ export default new Vuex.Store({
         aircraftHoursPerMonth: 413,
         //hours per month / 30 / 24 
         aircraftHoursPerHour: .57,
+        activeSlide: 1
 
     },
     mutations: {
@@ -58,5 +59,6 @@ export default new Vuex.Store({
         aircraftHoursPerMonth: state => state.aircraftHoursPerMonth,
         aircraftHoursPerHour: state => state.aircraftHoursPerHour,
         f35CostPerHour: state => state.f35CostPerHour,
+        activeSlide: state => state.activeSlide
     }
 })
