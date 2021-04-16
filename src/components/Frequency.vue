@@ -20,7 +20,6 @@
     </div>
 </template>
 <script>
-import { gsap, timeline } from "gsap/all";
 
 export default {
     name: 'Stats',
@@ -30,16 +29,22 @@ export default {
         },
         partDuration(){
             return this.$store.getters.partDuration;
+        },
+        tl: {
+            get(){
+                return this.$store.getters.tl
+            },
+            set(v){ 
+                this.$store.commit('mutate', {property: 'tl', with: v})
+            }
         }
     },
     data() {
         return  {
-            currStepId: 1,
-            tl: {}
+            currStepId: 1
         }
     },
     mounted () {
-        this.tl = gsap.timeline();
         let fadeColor="#aaaaaa";
         this.tl.to('.part1', {opacity: 1, duration: this.partDuration });
         this.tl.to('.part2', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part2");

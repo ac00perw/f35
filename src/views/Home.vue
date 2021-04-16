@@ -7,42 +7,41 @@
             <frequency />
         </div>
         <div class="fullscreen flex flex-col justify-center items-center" v-show="activeSlide == 3">
-            <h1 class="font-bold text-9xl w-full fade-in opacity-0">$18,295,200</h1>
-            <h3 class="text-6xl fade-in opacity-0">per month</h3>
+            <div class="p1"><h1 class="font-bold text-9xl w-full">$18,295,200</h1></div>
+            <h3 class="p2 text-6xl">per month</h3>
         </div>
-        <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 4">
-            <h1 class="font-bold text-4xl">In Vermont, the F35s fly x number of hours per day</h1>
+        <div class="fullscreen flex flex-col justify-center items-center" v-show="activeSlide == 4">
+            <p class="font-bold text-2xl">This averages to</p><p class="font-bold text-8xl w-full">14.1</p><p class="font-bold text-2xl">aircraft hours per day</p>
         </div>
         <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 5">
-            <h1 class="font-bold text-4xl">There are x# of hungry people in Vermont</h1>
+            <h1 class="font-bold text-4xl">There are 68,416 hungry people in Vermont</h1>
         </div> 
-        <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 6">
-                <h1 class="font-bold text-4xl">That means that it would take x number of flight hours to feed all the hungry people in Vermont</h1>
+        <div class="fullscreen flex flex-col justify-center items-center" v-show="activeSlide == 6">
+            <!-- 8,346,752 dollars -->
+            <p class="text-4xl">Of the total 423 monthly flight hours, it would take</p><p class="font-bold text-8xl">190 hours </p><p class="text-4xl"> to feed all the hungry people in Vermont</p>
         </div>
-
         <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 7">
-            <h1 class="font-bold text-4xl">And x # of hours to feed all the hungry people in the US</h1>
+            <h1 class="font-bold text-4xl">And 119,973 hours to feed all the hungry people in the United States</h1>
         </div>
         <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 8">
-            <h1 class="font-bold text-4xl">What about homelessness in Vermont</h1>
+            <h1 class="font-bold text-4xl">What about homelessness in Vermont?</h1>
         </div>
         <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 9">
-            <h1 class="font-bold text-4xl">There are 1089 homeless people in Vermont</h1>
+            <h1 class="font-bold text-4xl">There are 1,089 homeless people in Vermont</h1>
         </div>
         <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 10">
-            <h1 class="font-bold text-4xl">It costs $x to provide transitional housing for a homeless individual</h1>
+            <h1 class="font-bold text-4xl">It costs $542 per month to provide affordable housing for a homeless person</h1>
         </div>
         <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 11">
-            <h1 class="font-bold text-4xl">Which is not only the right thing to do, but also saves taypayer money</h1>
+            <h1 class="font-bold text-4xl">In order to house all homeless people in Vermont it would cost $590,238</h1>
         </div>
-        <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 12">
-            <h1 class="font-bold text-4xl">In order to provide all the homess in Vermont it would cost $x</h1>
+        <div class="fullscreen flex flex-col justify-center items-center mb-4" v-show="activeSlide == 12">
+            <h1 class="font-bold text-4xl">or 13.4 F35 flight hours</h1>
+            <h1>per month</h1>
         </div>
-        <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 13">
-            <h1 class="font-bold text-4xl">x# of F35 flight hours</h1>
-        </div>
-        <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 14">
-            <h1 class="font-bold text-4xl">Also saving $x of taxpayer dollars.</h1>
+        <div class="fullscreen flex flex-col justify-center items-center" v-show="activeSlide == 13">
+            <h1 class="font-bold text-6xl">or 32 flight hours</h1>
+            <h1 class="font-bold text-4xl">to provide housing and transitional services to all of them</h1></h1>
         </div>
         <div class="fullscreen flex justify-center items-center" v-show="activeSlide == 15">
             <h1 class="font-bold text-4xl">Moving on to student loans</h1>
@@ -90,6 +89,7 @@ import 'intersection-observer'
 import { gsap } from 'gsap/all'
 import Intro from '../components/Intro.vue'
 import Frequency from '../components/Frequency.vue'
+import Flighthours from '../components/Flighthours.vue'
 
 export default {
     computed: {
@@ -106,11 +106,20 @@ export default {
         },
         partDuration() {
             return this.$store.getters.partDuration;
+        },
+        tl: {
+            get(){
+                return this.$store.getters.tl
+            },
+            set(v){ 
+                this.$store.commit('mutate', {property: 'tl', with: v})
+            }
         }
     },
     components: {
         Intro,
-        Frequency
+        Frequency,
+        Flighthours
     },
     data() {
         return {
@@ -119,23 +128,32 @@ export default {
     },
     mounted() {
         var vm = this;
-        vm.activeSlide=1;
+        vm.activeSlide=13;
+        vm.tl.play(0);
         document.addEventListener('keydown', vm.key);
-        gsap.to('.fade-in', {opacity: 1, delay: this.partDelay, duration: vm.partDuration})
+        vm.tl.to('.p1', {opacity: 1, duration: this.partDuration })
+        vm.tl.to('.p2', {opacity: 1, duration: this.partDuration })
     },
     methods: {
         stepEnterHandler({ element, direction, index }) {
             console.log({ element, direction, index });
             this.currStepId = element.dataset.stepId
         },
+        resetTimeline() {
+            console.log('reset');
+            this.tl.play(0, true);
+        },
         key(e) {
             console.log(e.key);
+            
             switch (e.key) {
                 case 'ArrowRight': 
                     this.activeSlide += 1;
+                    this.resetTimeline();
                 break;
                 case 'ArrowLeft': 
                     this.activeSlide = (this.activeSlide <= 1 ? this.activeSlide = 1 : this.activeSlide -= 1);
+                    this.resetTimeline();
                 break;
             }
         }

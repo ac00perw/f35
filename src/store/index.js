@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import DataService from '../DataService'
+import { gsap, timeline } from "gsap/all"
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -33,7 +34,8 @@ export default new Vuex.Store({
         activeSlide: 1,
         partDelay: 1,
         partDuration: 2,
-        animation: {opacity: 1, y: -20}
+        animation: {opacity: 1, y: -20},
+        tl: gsap.timeline()
     },
     mutations: {
         mutate(state, payload) {
@@ -64,6 +66,7 @@ export default new Vuex.Store({
         activeSlide: state => state.activeSlide,
         partDelay: state => state.partDelay,
         partDuration: state => state.partDuration,
-        animation: state => state.animation
+        animation: state => state.animation,
+        tl: state => state.tl
     }
 })

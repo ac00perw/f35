@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"hour",
+				"hoursPerScale"
+			],
+			[
+				"form",
+				"formatNumber"
+			],
+			[
+				"air",
+				"aircraftHours"
+			],
+			[
 				"curso",
 				"cursor-pointer \tTailwind Class"
 			],
@@ -502,18 +514,6 @@
 			[
 				"orn",
 				"ornament-left"
-			],
-			[
-				"or",
-				"ornament-left"
-			],
-			[
-				"tral",
-				"translateX"
-			],
-			[
-				"fu",
-				"futura-pt"
 			]
 		]
 	},
@@ -523,25 +523,17 @@
 			"file": "src/store/index.js",
 			"settings":
 			{
-				"buffer_size": 1240,
+				"buffer_size": 2006,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/store/states.js",
+			"file": "/Users/a/Desktop/temp.css",
 			"settings":
 			{
-				"buffer_size": 74,
+				"buffer_size": 16,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 810,
 				"line_ending": "Unix"
 			}
 		},
@@ -567,8 +559,16 @@
 			"file": "src/main.js",
 			"settings":
 			{
-				"buffer_size": 276,
+				"buffer_size": 282,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/views/About.vue",
+			"settings":
+			{
+				"buffer_size": 89,
 				"line_ending": "Unix"
 			}
 		},
@@ -603,16 +603,15 @@
 			"file": "tailwind.config.js",
 			"settings":
 			{
-				"buffer_size": 216,
+				"buffer_size": 281,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/components/FlightLog.vue",
+			"file": "public/index.html",
 			"settings":
 			{
-				"buffer_size": 1004,
-				"encoding": "UTF-8",
+				"buffer_size": 683,
 				"line_ending": "Unix"
 			}
 		},
@@ -620,7 +619,7 @@
 			"file": "src/views/Home.vue",
 			"settings":
 			{
-				"buffer_size": 2794,
+				"buffer_size": 6487,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -656,26 +655,44 @@
 			"file": "src/router/index.js",
 			"settings":
 			{
-				"buffer_size": 705,
+				"buffer_size": 967,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 26 files for \"maybe health\"\n\n/Users/a/Sites/f35/src/App.vue:\n    6              <a href=\"#housing\">Housing</a> |\n    7              <a href=\"#student-loans\">Student Loans</a> |\n    8:             <a href=\"#hi\">Maybe Health Insurance</a> |\n    9              <router-link to=\"/about\">About</router-link>\n   10              </ul>\n\n1 match in 1 file\n\n\nSearching 35 files for \"hungry people\"\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n    1  <template>\n    2    <div class=\"people\">\n    3:     <h1 class=\"w-full text-2xl \">Hungry people (one dot = 100)</h1>\n    4      <div class=\"peoplewrap m-2 p-2 flex flex-wrap\">\n    5      <template class=\"\" v-for=\"i in people\">\n\n1 match in 1 file\n\n\nSearching 35 files for \"dataservice\"\n\n/Users/a/Sites/f35/src/components/Bar.vue:\n    1  <script>\n    2  import { Bar } from 'vue-chartjs'\n    3: import DataService from '../DataService';\n    4  \n    5  export default {\n    .\n   20          buildStates() {\n   21            var vm = this;\n   22:           DataService.data('states')\n   23            .then(function(response) {\n   24                vm.statesObj = response;\n\n/Users/a/Sites/f35/src/views/Home.vue:\n   22  // import { Bar } from 'vue-chartjs'\n   23  import BarChart from '../BarChart';\n   24: import DataService from '../DataService';\n   25  \n   26  export default {\n   ..\n   48              var vm = this;\n   49              //vm.data = {datasets: [{data: null, label: 'foobar'}]};\n   50:             DataService.data('student-loan-debt')\n   51                  .then(function(response) {\n   52                      // handle success\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n   15  </template>\n   16  <script>\n   17: import DataService from '../DataService';\n   18  \n   19  export default {\n\n8 matches across 3 files\n\n\nSearching 35 files for \"usstates\"\n\n/Users/a/Sites/f35/src/components/Navigation.vue:\n   12  </template>\n   13  <script>\n   14: import usStates from '@/components/usStates.vue'\n   15  \n   16  export default {\n   17      name: 'Nav',\n   18:     components: { usStates },\n   19      computed: {\n   20          scale() {\n\n/Users/a/Sites/f35/src/components/usStates.vue:\n    2      <span>\n    3          <select v-model=\"selectedState\" class=\"p-2 my-3\">\n    4:         <template v-for=\"s,index in usStates\">\n    5              <option v-on:click=\"select(s)\" :value=\"s\" :key=\"s.value\">{{ s.name }}</option>\n    6          </template>\n    .\n   12      name: 'Nav',\n   13      computed: {\n   14:         usStates() {\n   15:             return this.$store.getters.usStates;\n   16          },\n   17          selectedState: {\n   ..\n   30      mounted () {\n   31          console.log(this.scale);\n   32:         this.selectedState = this.usStates[49];\n   33      },\n   34      methods: {\n\n/Users/a/Sites/f35/src/store/index.js:\n    1  import Vue from 'vue'\n    2  import Vuex from 'vuex'\n    3: import { usStates } from './states.js'\n    4  \n    5  Vue.use(Vuex)\n    .\n    7  export default new Vuex.Store({\n    8      state: {\n    9:         usStates: usStates(),\n   10          selectedState: null,\n   11          scale: {\n   ..\n   37          scale: state => state.scale,\n   38          selectedScale: state => state.selectedScale,\n   39:         usStates: state => state.usStates,\n   40          selectedState: state => state.selectedState,\n   41      }\n\n/Users/a/Sites/f35/src/store/states.js:\n    1: export function usStates() {\n    2      return [\n    3      {\n\n13 matches across 4 files\n\n\nSearching 35 files for \"59\"\n\n/Users/a/Sites/f35/_source/29SNAPcurrPP-1.csv:\n    6  ,,Preliminary,Initial,,\n    7  Alabama,\"719,827\",\"751,129\",\"756,314\",0.7%,5.1%\n    8: Alaska,\"85,147\",\"88,597\",\"86,007\",-2.9%,1.0%\n    9  American Samoa,--,--,--,--,--\n   10  Arizona,\"798,130\",\"915,512\",\"860,912\",-6.0%,7.9%\n   ..\n   57  Virgin Islands,\"21,623\",\"24,957\",\"25,235\",1.1%,16.7%\n   58  Washington,\"804,663\",\"956,647\",\"951,090\",-0.6%,18.2%\n   59: West Virginia,\"307,638\",\"301,459\",\"305,262\",1.3%,-0.8%\n   60  Wisconsin,\"607,844\",\"704,821\",\"710,412\",0.8%,16.9%\n   61  Wyoming,\"24,928\",\"28,572\",\"28,072\",-1.7%,12.6%\n\n/Users/a/Sites/f35/package-lock.json:\n  131        \"version\": \"7.12.11\",\n  132        \"resolved\": \"https://registry.npmjs.org/@babel/helper-function-name/-/helper-function-name-7.12.11.tgz\",\n  133:       \"integrity\": \"sha512-AtQKjtYNolKNi6nNNVLQ27CP6D9oFR6bq/HPYSizlzbp7uC1M59XJe8L+0uXjbIaZaUJF99ruHqVGiKXU/7ybA==\",\n  134        \"dev\": true,\n  135        \"requires\": {\n  ...\n  784        \"version\": \"7.12.1\",\n  785        \"resolved\": \"https://registry.npmjs.org/@babel/plugin-transform-object-super/-/plugin-transform-object-super-7.12.1.tgz\",\n  786:       \"integrity\": \"sha512-AvypiGJH9hsquNUn+RXVcBdeE3KHPZexWRdimhuV59cSoOt5kFBmqlByorAeUlGG2CJWd0U+4ZtNKga/TB0cAw==\",\n  787        \"dev\": true,\n  788        \"requires\": {\n  ...\n 1002        \"version\": \"7.12.7\",\n 1003        \"resolved\": \"https://registry.npmjs.org/@babel/template/-/template-7.12.7.tgz\",\n 1004:       \"integrity\": \"sha512-GkDzmHS6GV7ZeXfJZ0tLRBhZcMcY0/Lnb+eEbXDBfCAcZCjrZKe6p3J4we/D24O9Y8enxWAg1cWwof59yLh2ow==\",\n 1005        \"dev\": true,\n 1006        \"requires\": {\n ....\n 1013        \"version\": \"7.12.12\",\n 1014        \"resolved\": \"https://registry.npmjs.org/@babel/traverse/-/traverse-7.12.12.tgz\",\n 1015:       \"integrity\": \"sha512-s88i0X0lPy45RrLM8b9mz8RPH5FqO9G9p7ti59cToE44xFm1Q+Pjh5Gq4SXBbtb88X7Uy7pexeqRIQDDMNkL0w==\",\n 1016        \"dev\": true,\n 1017        \"requires\": {\n ....\n 1314        \"version\": \"4.17.11\",\n 1315        \"resolved\": \"https://registry.npmjs.org/@types/express/-/express-4.17.11.tgz\",\n 1316:       \"integrity\": \"sha512-no+R6rW60JEc59977wIxreQVsIEOAYwgCqldrA/vkpCnbD7MqTefO97lmoBe4WE0F156bC4uLSP1XHDOySnChg==\",\n 1317        \"dev\": true,\n 1318        \"requires\": {\n ....\n 2076        \"version\": \"1.9.0\",\n 2077        \"resolved\": \"https://registry.npmjs.org/@webassemblyjs/ieee754/-/ieee754-1.9.0.tgz\",\n 2078:       \"integrity\": \"sha512-dcX8JuYU/gvymzIHc9DgxTzUUTLexWwt8uCTWP3otys596io0L5aW02Gb1RjYpx2+0Jus1h4ZFqjla7umFniTg==\",\n 2079        \"dev\": true,\n 2080        \"requires\": {\n ....\n 2231        \"version\": \"7.2.0\",\n 2232        \"resolved\": \"https://registry.npmjs.org/acorn-walk/-/acorn-walk-7.2.0.tgz\",\n 2233:       \"integrity\": \"sha512-OPdCF6GsMIP+Az+aWfAAOEt2/+iVDKE7oy6lJ098aoe59oAmK76qV6Gw60SbZ8jHuG2wH058GF4pLFbYamYrVA==\"\n 2234      },\n 2235      \"address\": {\n ....\n 3893            \"version\": \"7.0.0\",\n 3894            \"resolved\": \"https://registry.npmjs.org/semver/-/semver-7.0.0.tgz\",\n 3895:           \"integrity\": \"sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==\",\n 3896            \"dev\": true\n 3897          }\n ....\n 4335            \"version\": \"1.1.2\",\n 4336            \"resolved\": \"https://registry.npmjs.org/css-tree/-/css-tree-1.1.2.tgz\",\n 4337:           \"integrity\": \"sha512-wCoWush5Aeo48GLhfHPbmvZs59Z+M7k5+B1xDnXbdWNcEF423DoFdqSWE0PM5aNk5nI5cp1q7ms36zGApY/sKQ==\",\n 4338            \"dev\": true,\n 4339            \"requires\": {\n ....\n 4637                \"version\": \"2.3.0\",\n 4638                \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 4639:               \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 4640                \"dev\": true\n 4641              }\n ....\n 5260        \"version\": \"3.0.2\",\n 5261        \"resolved\": \"https://registry.npmjs.org/extend/-/extend-3.0.2.tgz\",\n 5262:       \"integrity\": \"sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==\",\n 5263        \"dev\": true\n 5264      },\n ....\n 6119            \"version\": \"3.2.0\",\n 6120            \"resolved\": \"https://registry.npmjs.org/big.js/-/big.js-3.2.0.tgz\",\n 6121:           \"integrity\": \"sha512-+hN/Zh2D08Mx65pZ/4g5bsmNiZUuChDiQfTUQ7qJr4/kuopCr88xZsAXv6mBoZEsUI4OuGHlX59qE94K2mMW8Q==\",\n 6122            \"dev\": true\n 6123          },\n ....\n 7043            \"version\": \"2.3.0\",\n 7044            \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 7045:           \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 7046            \"dev\": true\n 7047          }\n ....\n 7529        \"version\": \"2.29.1\",\n 7530        \"resolved\": \"https://registry.npmjs.org/moment/-/moment-2.29.1.tgz\",\n 7531:       \"integrity\": \"sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==\"\n 7532      },\n 7533      \"move-concurrently\": {\n ....\n 8598        \"version\": \"4.0.2\",\n 8599        \"resolved\": \"https://registry.npmjs.org/postcss-discard-comments/-/postcss-discard-comments-4.0.2.tgz\",\n 8600:       \"integrity\": \"sha512-RJutN259iuRf3IW7GZyLM5Sw4GLTOH8FmsXBnv8Ab/Tc2k4SR4qbV4DNbyyY4+Sjo362SyDmW2DQ7lBSChrpkg==\",\n 8601        \"dev\": true,\n 8602        \"requires\": {\n ....\n 8779        \"version\": \"2.0.3\",\n 8780        \"resolved\": \"https://registry.npmjs.org/postcss-js/-/postcss-js-2.0.3.tgz\",\n 8781:       \"integrity\": \"sha512-zS59pAk3deu6dVHyrGqmC3oDXBdNdajk4k1RyxeVXCrcEDBUBHoIhE4QTsmhxgzXxsaqFDAkUZfmMa5f/N/79w==\",\n 8782        \"requires\": {\n 8783          \"camelcase-css\": \"^2.0.1\",\n ....\n 10227            \"version\": \"2.3.0\",\n 10228            \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 10229:           \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 10230            \"dev\": true\n 10231          },\n .....\n 10387            \"version\": \"0.5.0\",\n 10388            \"resolved\": \"https://registry.npmjs.org/jsesc/-/jsesc-0.5.0.tgz\",\n 10389:           \"integrity\": \"sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=\",\n 10390            \"dev\": true\n 10391          }\n .....\n 10617        \"version\": \"2.2.5\",\n 10618        \"resolved\": \"https://registry.npmjs.org/sass-graph/-/sass-graph-2.2.5.tgz\",\n 10619:       \"integrity\": \"sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==\",\n 10620        \"dev\": true,\n 10621        \"requires\": {\n .....\n 11312        \"version\": \"4.0.2\",\n 11313        \"resolved\": \"https://registry.npmjs.org/spdy/-/spdy-4.0.2.tgz\",\n 11314:       \"integrity\": \"sha512-r46gZQZQV+Kl9oItvl1JZZqJKGr+oEkB08A6BzkiR7593/7IbtuncXHd2YoYeTsG4157ZssMu9KYvUHLcjcDoA==\",\n 11315        \"dev\": true,\n 11316        \"requires\": {\n .....\n 11486        \"version\": \"2.1.1\",\n 11487        \"resolved\": \"https://registry.npmjs.org/string-width/-/string-width-2.1.1.tgz\",\n 11488:       \"integrity\": \"sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==\",\n 11489        \"dev\": true,\n 11490        \"requires\": {\n .....\n 12105        \"version\": \"1.6.18\",\n 12106        \"resolved\": \"https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz\",\n 12107:       \"integrity\": \"sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==\",\n 12108        \"dev\": true,\n 12109        \"requires\": {\n .....\n 12167        \"version\": \"1.1.0\",\n 12168        \"resolved\": \"https://registry.npmjs.org/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz\",\n 12169:       \"integrity\": \"sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==\",\n 12170        \"dev\": true\n 12171      },\n .....\n 13213        \"version\": \"2.0.0\",\n 13214        \"resolved\": \"https://registry.npmjs.org/webpack-log/-/webpack-log-2.0.0.tgz\",\n 13215:       \"integrity\": \"sha512-cX8G2vR/85UYG59FgkoMamwHUIkSSlV3bBMRsbxVXVUk2j6NleCKjQ/WE9eYg9WY4w25O9w8wKP4rzNZFmUcUg==\",\n 13216        \"dev\": true,\n 13217        \"requires\": {\n .....\n 13379        \"version\": \"3.1.1\",\n 13380        \"resolved\": \"https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz\",\n 13381:       \"integrity\": \"sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==\",\n 13382        \"dev\": true\n 13383      },\n .....\n 13400            \"version\": \"7.0.4\",\n 13401            \"resolved\": \"https://registry.npmjs.org/cliui/-/cliui-7.0.4.tgz\",\n 13402:           \"integrity\": \"sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==\",\n 13403            \"dev\": true,\n 13404            \"requires\": {\n\n29 matches across 2 files\n\n\nSearching 35 files for \"49\\\"\n\n0 matches\n\nSearching 35 files for \"49\"\n\n/Users/a/Sites/f35/_source/29SNAPcurrPP-1.csv:\n   38  New Hampshire,\"73,506\",\"69,573\",\"69,787\",0.3%,-5.1%\n   39  New Jersey,\"682,918\",\"741,832\",\"761,384\",2.6%,11.5%\n   40: New Mexico,\"450,410\",\"493,689\",\"491,512\",-0.4%,9.1%\n   41  New York,\"2,586,186\",\"2,756,187\",\"2,789,533\",1.2%,7.9%\n   42  North Carolina,\"1,262,554\",\"1,456,891\",\"1,452,360\",-0.3%,15.0%\n   ..\n   49  Rhode Island,\"147,857\",\"142,035\",\"137,892\",-2.9%,-6.7%\n   50  South Carolina,\"586,163\",\"617,334\",\"614,905\",-0.4%,4.9%\n   51: South Dakota,\"79,186\",\"78,149\",\"78,491\",0.4%,-0.9%\n   52  Tennessee,\"876,772\",\"855,072\",\"865,381\",1.2%,-1.3%\n   53  Texas,\"3,346,851\",\"3,900,408\",\"3,962,503\",1.6%,18.4%\n\n/Users/a/Sites/f35/package-lock.json:\n  195        \"version\": \"7.12.10\",\n  196        \"resolved\": \"https://registry.npmjs.org/@babel/helper-optimise-call-expression/-/helper-optimise-call-expression-7.12.10.tgz\",\n  197:       \"integrity\": \"sha512-4tpbU0SrSTjjt65UMWSrUOPZTsgvPgGG4S8QSTNHacKzpS51IVWGDj0yCwyeZND/i+LSN2g/O63jEXEWm49sYQ==\",\n  198        \"dev\": true,\n  199        \"requires\": {\n  ...\n  510        \"version\": \"7.12.1\",\n  511        \"resolved\": \"https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.12.1.tgz\",\n  512:       \"integrity\": \"sha512-1yRi7yAtB0ETgxdY9ti/p2TivUxJkTdhu/ZbF9MshVGqOx1TdB3b7xCXs49Fupgg50N45KcAsRP/ZqWjs9SRjg==\",\n  513        \"dev\": true,\n  514        \"requires\": {\n  ...\n 1385        \"version\": \"1.2.1\",\n 1386        \"resolved\": \"https://registry.npmjs.org/@types/minimist/-/minimist-1.2.1.tgz\",\n 1387:       \"integrity\": \"sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==\",\n 1388        \"dev\": true\n 1389      },\n ....\n 1421        \"version\": \"1.13.9\",\n 1422        \"resolved\": \"https://registry.npmjs.org/@types/serve-static/-/serve-static-1.13.9.tgz\",\n 1423:       \"integrity\": \"sha512-ZFqF6qa48XsPdjXV5Gsz0Zqmux2PerNd3a/ktL45mHpa19cuMi/cL8tcxdAx497yRh+QtYPuofjT9oWw9P7nkA==\",\n 1424        \"dev\": true,\n 1425        \"requires\": {\n ....\n 4941        \"version\": \"4.5.0\",\n 4942        \"resolved\": \"https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-4.5.0.tgz\",\n 4943:       \"integrity\": \"sha512-Nv9m36S/vxpsI+Hc4/ZGRs0n9mXqSWGGq49zxb/cJfPAQMbUtttJAlNPS4AQzaBdw/pKskw5bMbekT/Y7W/Wlg==\",\n 4944        \"dev\": true,\n 4945        \"requires\": {\n ....\n 4997        \"version\": \"1.18.0-next.2\",\n 4998        \"resolved\": \"https://registry.npmjs.org/es-abstract/-/es-abstract-1.18.0-next.2.tgz\",\n 4999:       \"integrity\": \"sha512-Ih4ZMFHEtZupnUh6497zEL4y2+w8+1ljnCyaTa+adcoafI1GOvMwFlDjBLfWR7y9VLfrjRJe9ocuHY1PSR9jjw==\",\n 5000        \"dev\": true,\n 5001        \"requires\": {\n ....\n 5646        \"version\": \"1.1.1\",\n 5647        \"resolved\": \"https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz\",\n 5648:       \"integrity\": \"sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==\"\n 5649      },\n 5650      \"gauge\": {\n ....\n 5857        \"version\": \"2.0.1\",\n 5858        \"resolved\": \"https://registry.npmjs.org/handle-thing/-/handle-thing-2.0.1.tgz\",\n 5859:       \"integrity\": \"sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==\",\n 5860        \"dev\": true\n 5861      },\n ....\n 6161        \"version\": \"3.10.1\",\n 6162        \"resolved\": \"https://registry.npmjs.org/htmlparser2/-/htmlparser2-3.10.1.tgz\",\n 6163:       \"integrity\": \"sha512-IgieNijUMbkDovyoKObU1DUhm1iwNYE/fuifEoEHfd1oZKZDaONBSkal7Y01shxsM49R4XaMdGez3WnF9UfiCQ==\",\n 6164        \"dev\": true,\n 6165        \"requires\": {\n ....\n 6331        \"version\": \"3.3.10\",\n 6332        \"resolved\": \"https://registry.npmjs.org/ignore/-/ignore-3.3.10.tgz\",\n 6333:       \"integrity\": \"sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==\",\n 6334        \"dev\": true\n 6335      },\n ....\n 6657        \"version\": \"1.1.0\",\n 6658        \"resolved\": \"https://registry.npmjs.org/is-finite/-/is-finite-1.1.0.tgz\",\n 6659:       \"integrity\": \"sha512-cdyMtqX/BOqqNBBiKlIVkytNHm49MtMlYyn1zxzvJKWmFMlGzm+ry5BBfYyeY9YmNKbRSo/o7OX9w9ale0wg3w==\",\n 6660        \"dev\": true\n 6661      },\n ....\n 6663        \"version\": \"2.0.0\",\n 6664        \"resolved\": \"https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz\",\n 6665:       \"integrity\": \"sha1-o7MKXE8ZkYMWeqq5O+764937ZU8=\",\n 6666        \"dev\": true\n 6667      },\n ....\n 7785            \"version\": \"3.0.1\",\n 7786            \"resolved\": \"https://registry.npmjs.org/cross-spawn/-/cross-spawn-3.0.1.tgz\",\n 7787:           \"integrity\": \"sha1-ElYDfsufDF9549bvE14wdwGEuYI=\",\n 7788            \"dev\": true,\n 7789            \"requires\": {\n ....\n 8531            \"version\": \"3.3.1\",\n 8532            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8533:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8534            \"dev\": true\n 8535          },\n ....\n 8575            \"version\": \"3.3.1\",\n 8576            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8577:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8578            \"dev\": true\n 8579          },\n ....\n 8767            \"version\": \"3.3.1\",\n 8768            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8769:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\"\n 8770          },\n 8771          \"source-map\": {\n ....\n 8872            \"version\": \"3.3.1\",\n 8873            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8874:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8875            \"dev\": true\n 8876          },\n ....\n 8969            \"version\": \"3.3.1\",\n 8970            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8971:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8972            \"dev\": true\n 8973          },\n ....\n 9015            \"version\": \"3.3.1\",\n 9016            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9017:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9018            \"dev\": true\n 9019          },\n ....\n 9063            \"version\": \"3.3.1\",\n 9064            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9065:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9066            \"dev\": true\n 9067          },\n ....\n 9358            \"version\": \"3.3.1\",\n 9359            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9360:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9361            \"dev\": true\n 9362          },\n ....\n 9404            \"version\": \"3.3.1\",\n 9405            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9406:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9407            \"dev\": true\n 9408          },\n ....\n 9450            \"version\": \"3.3.1\",\n 9451            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9452:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9453            \"dev\": true\n 9454          },\n ....\n 9473        \"version\": \"4.0.2\",\n 9474        \"resolved\": \"https://registry.npmjs.org/postcss-normalize-string/-/postcss-normalize-string-4.0.2.tgz\",\n 9475:       \"integrity\": \"sha512-RrERod97Dnwqq49WNz8qo66ps0swYZDSb6rM57kN2J+aoyEAJfZ6bMx0sx/F9TIEX0xthPGCmeyiam/jXif0eA==\",\n 9476        \"dev\": true,\n 9477        \"requires\": {\n ....\n 9495            \"version\": \"3.3.1\",\n 9496            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9497:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9498            \"dev\": true\n 9499          },\n ....\n 9540            \"version\": \"3.3.1\",\n 9541            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9542:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9543            \"dev\": true\n 9544          },\n ....\n 9585            \"version\": \"3.3.1\",\n 9586            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9587:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9588            \"dev\": true\n 9589          },\n ....\n 9631            \"version\": \"3.3.1\",\n 9632            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9633:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9634            \"dev\": true\n 9635          },\n ....\n 9675            \"version\": \"3.3.1\",\n 9676            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9677:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9678            \"dev\": true\n 9679          },\n ....\n 9720            \"version\": \"3.3.1\",\n 9721            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9722:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9723            \"dev\": true\n 9724          },\n ....\n 9806            \"version\": \"3.3.1\",\n 9807            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9808:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9809            \"dev\": true\n 9810          },\n ....\n 9863            \"version\": \"3.3.1\",\n 9864            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9865:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9866            \"dev\": true\n 9867          },\n ....\n 10026        \"version\": \"3.0.0\",\n 10027        \"resolved\": \"https://registry.npmjs.org/pump/-/pump-3.0.0.tgz\",\n 10028:       \"integrity\": \"sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==\",\n 10029        \"dev\": true,\n 10030        \"requires\": {\n .....\n 10301            \"version\": \"3.3.1\",\n 10302            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 10303:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\"\n 10304          }\n 10305        }\n .....\n 11037        \"version\": \"3.0.3\",\n 11038        \"resolved\": \"https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.3.tgz\",\n 11039:       \"integrity\": \"sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==\",\n 11040        \"dev\": true\n 11041      },\n .....\n 11280        \"version\": \"3.1.1\",\n 11281        \"resolved\": \"https://registry.npmjs.org/spdx-correct/-/spdx-correct-3.1.1.tgz\",\n 11282:       \"integrity\": \"sha512-cOYcUWwhCuHCXi49RhFRCyJEK3iPj1Ziz9DpViV3tbZOwXD49QzIN3MpOLJNxh2qwq2lJJZaKMVw9qNi4jTC0w==\",\n 11283        \"dev\": true,\n 11284        \"requires\": {\n .....\n 11809        \"version\": \"1.4.5\",\n 11810        \"resolved\": \"https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.5.tgz\",\n 11811:       \"integrity\": \"sha512-04Rfe496lN8EYruwi6oPQkG0vo8C+HT49X687FZnpPF0qMAIHONI6HEXYPKDOE8e5HjXTyKfqRd/agHtH0kOtw==\",\n 11812        \"dev\": true,\n 11813        \"requires\": {\n .....\n 12264            \"version\": \"0.1.4\",\n 12265            \"resolved\": \"https://registry.npmjs.org/has-values/-/has-values-0.1.4.tgz\",\n 12266:           \"integrity\": \"sha1-bWHeldkd/Km5oCCJrThL/49it3E=\",\n 12267            \"dev\": true\n 12268          }\n .....\n 12378            \"version\": \"1.17.7\",\n 12379            \"resolved\": \"https://registry.npmjs.org/es-abstract/-/es-abstract-1.17.7.tgz\",\n 12380:           \"integrity\": \"sha512-VBl/gnfcJ7OercKA9MVaegWsBHFjV492syMudcnQZvt/Dw8ezpcOHYZXa/J96O8vx+g4x65YKhxOwDUh63aS5g==\",\n 12381            \"dev\": true,\n 12382            \"requires\": {\n .....\n 12814        \"version\": \"3.9.0\",\n 12815        \"resolved\": \"https://registry.npmjs.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-3.9.0.tgz\",\n 12816:       \"integrity\": \"sha512-Ob8amZfCm3rMB1ScjQVlbYYUEJyEjdEtQ92jqiFUYt5VkEeO2v5UMbv49P/gnmCZm3A6yaFQzCBvpZqN4MUsdA==\",\n 12817        \"dev\": true,\n 12818        \"requires\": {\n\n/Users/a/Sites/f35/src/assets/logo.png:\n    <binary>\n\n/Users/a/Sites/f35/src/components/usStates.vue:\n   30      mounted () {\n   31          console.log(this.scale);\n   32:         this.selectedState = this.usStates[49];\n   33      },\n   34      methods: {\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n   10              <div class=\"peoplewrap m-2 p-2 flex flex-wrap\">\n   11                  <template class=\"\" v-for=\"i in people\">\n   12:                     <span :class=\"[`p-2`, pC()]\">&#149;</span>\n   13                  </template>\n   14              </div>\n\n50 matches across 5 files\n",
+			"contents": "Searching 26 files for \"maybe health\"\n\n/Users/a/Sites/f35/src/App.vue:\n    6              <a href=\"#housing\">Housing</a> |\n    7              <a href=\"#student-loans\">Student Loans</a> |\n    8:             <a href=\"#hi\">Maybe Health Insurance</a> |\n    9              <router-link to=\"/about\">About</router-link>\n   10              </ul>\n\n1 match in 1 file\n\n\nSearching 35 files for \"hungry people\"\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n    1  <template>\n    2    <div class=\"people\">\n    3:     <h1 class=\"w-full text-2xl \">Hungry people (one dot = 100)</h1>\n    4      <div class=\"peoplewrap m-2 p-2 flex flex-wrap\">\n    5      <template class=\"\" v-for=\"i in people\">\n\n1 match in 1 file\n\n\nSearching 35 files for \"dataservice\"\n\n/Users/a/Sites/f35/src/components/Bar.vue:\n    1  <script>\n    2  import { Bar } from 'vue-chartjs'\n    3: import DataService from '../DataService';\n    4  \n    5  export default {\n    .\n   20          buildStates() {\n   21            var vm = this;\n   22:           DataService.data('states')\n   23            .then(function(response) {\n   24                vm.statesObj = response;\n\n/Users/a/Sites/f35/src/views/Home.vue:\n   22  // import { Bar } from 'vue-chartjs'\n   23  import BarChart from '../BarChart';\n   24: import DataService from '../DataService';\n   25  \n   26  export default {\n   ..\n   48              var vm = this;\n   49              //vm.data = {datasets: [{data: null, label: 'foobar'}]};\n   50:             DataService.data('student-loan-debt')\n   51                  .then(function(response) {\n   52                      // handle success\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n   15  </template>\n   16  <script>\n   17: import DataService from '../DataService';\n   18  \n   19  export default {\n\n8 matches across 3 files\n\n\nSearching 35 files for \"usstates\"\n\n/Users/a/Sites/f35/src/components/Navigation.vue:\n   12  </template>\n   13  <script>\n   14: import usStates from '@/components/usStates.vue'\n   15  \n   16  export default {\n   17      name: 'Nav',\n   18:     components: { usStates },\n   19      computed: {\n   20          scale() {\n\n/Users/a/Sites/f35/src/components/usStates.vue:\n    2      <span>\n    3          <select v-model=\"selectedState\" class=\"p-2 my-3\">\n    4:         <template v-for=\"s,index in usStates\">\n    5              <option v-on:click=\"select(s)\" :value=\"s\" :key=\"s.value\">{{ s.name }}</option>\n    6          </template>\n    .\n   12      name: 'Nav',\n   13      computed: {\n   14:         usStates() {\n   15:             return this.$store.getters.usStates;\n   16          },\n   17          selectedState: {\n   ..\n   30      mounted () {\n   31          console.log(this.scale);\n   32:         this.selectedState = this.usStates[49];\n   33      },\n   34      methods: {\n\n/Users/a/Sites/f35/src/store/index.js:\n    1  import Vue from 'vue'\n    2  import Vuex from 'vuex'\n    3: import { usStates } from './states.js'\n    4  \n    5  Vue.use(Vuex)\n    .\n    7  export default new Vuex.Store({\n    8      state: {\n    9:         usStates: usStates(),\n   10          selectedState: null,\n   11          scale: {\n   ..\n   37          scale: state => state.scale,\n   38          selectedScale: state => state.selectedScale,\n   39:         usStates: state => state.usStates,\n   40          selectedState: state => state.selectedState,\n   41      }\n\n/Users/a/Sites/f35/src/store/states.js:\n    1: export function usStates() {\n    2      return [\n    3      {\n\n13 matches across 4 files\n\n\nSearching 35 files for \"59\"\n\n/Users/a/Sites/f35/_source/29SNAPcurrPP-1.csv:\n    6  ,,Preliminary,Initial,,\n    7  Alabama,\"719,827\",\"751,129\",\"756,314\",0.7%,5.1%\n    8: Alaska,\"85,147\",\"88,597\",\"86,007\",-2.9%,1.0%\n    9  American Samoa,--,--,--,--,--\n   10  Arizona,\"798,130\",\"915,512\",\"860,912\",-6.0%,7.9%\n   ..\n   57  Virgin Islands,\"21,623\",\"24,957\",\"25,235\",1.1%,16.7%\n   58  Washington,\"804,663\",\"956,647\",\"951,090\",-0.6%,18.2%\n   59: West Virginia,\"307,638\",\"301,459\",\"305,262\",1.3%,-0.8%\n   60  Wisconsin,\"607,844\",\"704,821\",\"710,412\",0.8%,16.9%\n   61  Wyoming,\"24,928\",\"28,572\",\"28,072\",-1.7%,12.6%\n\n/Users/a/Sites/f35/package-lock.json:\n  131        \"version\": \"7.12.11\",\n  132        \"resolved\": \"https://registry.npmjs.org/@babel/helper-function-name/-/helper-function-name-7.12.11.tgz\",\n  133:       \"integrity\": \"sha512-AtQKjtYNolKNi6nNNVLQ27CP6D9oFR6bq/HPYSizlzbp7uC1M59XJe8L+0uXjbIaZaUJF99ruHqVGiKXU/7ybA==\",\n  134        \"dev\": true,\n  135        \"requires\": {\n  ...\n  784        \"version\": \"7.12.1\",\n  785        \"resolved\": \"https://registry.npmjs.org/@babel/plugin-transform-object-super/-/plugin-transform-object-super-7.12.1.tgz\",\n  786:       \"integrity\": \"sha512-AvypiGJH9hsquNUn+RXVcBdeE3KHPZexWRdimhuV59cSoOt5kFBmqlByorAeUlGG2CJWd0U+4ZtNKga/TB0cAw==\",\n  787        \"dev\": true,\n  788        \"requires\": {\n  ...\n 1002        \"version\": \"7.12.7\",\n 1003        \"resolved\": \"https://registry.npmjs.org/@babel/template/-/template-7.12.7.tgz\",\n 1004:       \"integrity\": \"sha512-GkDzmHS6GV7ZeXfJZ0tLRBhZcMcY0/Lnb+eEbXDBfCAcZCjrZKe6p3J4we/D24O9Y8enxWAg1cWwof59yLh2ow==\",\n 1005        \"dev\": true,\n 1006        \"requires\": {\n ....\n 1013        \"version\": \"7.12.12\",\n 1014        \"resolved\": \"https://registry.npmjs.org/@babel/traverse/-/traverse-7.12.12.tgz\",\n 1015:       \"integrity\": \"sha512-s88i0X0lPy45RrLM8b9mz8RPH5FqO9G9p7ti59cToE44xFm1Q+Pjh5Gq4SXBbtb88X7Uy7pexeqRIQDDMNkL0w==\",\n 1016        \"dev\": true,\n 1017        \"requires\": {\n ....\n 1314        \"version\": \"4.17.11\",\n 1315        \"resolved\": \"https://registry.npmjs.org/@types/express/-/express-4.17.11.tgz\",\n 1316:       \"integrity\": \"sha512-no+R6rW60JEc59977wIxreQVsIEOAYwgCqldrA/vkpCnbD7MqTefO97lmoBe4WE0F156bC4uLSP1XHDOySnChg==\",\n 1317        \"dev\": true,\n 1318        \"requires\": {\n ....\n 2076        \"version\": \"1.9.0\",\n 2077        \"resolved\": \"https://registry.npmjs.org/@webassemblyjs/ieee754/-/ieee754-1.9.0.tgz\",\n 2078:       \"integrity\": \"sha512-dcX8JuYU/gvymzIHc9DgxTzUUTLexWwt8uCTWP3otys596io0L5aW02Gb1RjYpx2+0Jus1h4ZFqjla7umFniTg==\",\n 2079        \"dev\": true,\n 2080        \"requires\": {\n ....\n 2231        \"version\": \"7.2.0\",\n 2232        \"resolved\": \"https://registry.npmjs.org/acorn-walk/-/acorn-walk-7.2.0.tgz\",\n 2233:       \"integrity\": \"sha512-OPdCF6GsMIP+Az+aWfAAOEt2/+iVDKE7oy6lJ098aoe59oAmK76qV6Gw60SbZ8jHuG2wH058GF4pLFbYamYrVA==\"\n 2234      },\n 2235      \"address\": {\n ....\n 3893            \"version\": \"7.0.0\",\n 3894            \"resolved\": \"https://registry.npmjs.org/semver/-/semver-7.0.0.tgz\",\n 3895:           \"integrity\": \"sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==\",\n 3896            \"dev\": true\n 3897          }\n ....\n 4335            \"version\": \"1.1.2\",\n 4336            \"resolved\": \"https://registry.npmjs.org/css-tree/-/css-tree-1.1.2.tgz\",\n 4337:           \"integrity\": \"sha512-wCoWush5Aeo48GLhfHPbmvZs59Z+M7k5+B1xDnXbdWNcEF423DoFdqSWE0PM5aNk5nI5cp1q7ms36zGApY/sKQ==\",\n 4338            \"dev\": true,\n 4339            \"requires\": {\n ....\n 4637                \"version\": \"2.3.0\",\n 4638                \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 4639:               \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 4640                \"dev\": true\n 4641              }\n ....\n 5260        \"version\": \"3.0.2\",\n 5261        \"resolved\": \"https://registry.npmjs.org/extend/-/extend-3.0.2.tgz\",\n 5262:       \"integrity\": \"sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==\",\n 5263        \"dev\": true\n 5264      },\n ....\n 6119            \"version\": \"3.2.0\",\n 6120            \"resolved\": \"https://registry.npmjs.org/big.js/-/big.js-3.2.0.tgz\",\n 6121:           \"integrity\": \"sha512-+hN/Zh2D08Mx65pZ/4g5bsmNiZUuChDiQfTUQ7qJr4/kuopCr88xZsAXv6mBoZEsUI4OuGHlX59qE94K2mMW8Q==\",\n 6122            \"dev\": true\n 6123          },\n ....\n 7043            \"version\": \"2.3.0\",\n 7044            \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 7045:           \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 7046            \"dev\": true\n 7047          }\n ....\n 7529        \"version\": \"2.29.1\",\n 7530        \"resolved\": \"https://registry.npmjs.org/moment/-/moment-2.29.1.tgz\",\n 7531:       \"integrity\": \"sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==\"\n 7532      },\n 7533      \"move-concurrently\": {\n ....\n 8598        \"version\": \"4.0.2\",\n 8599        \"resolved\": \"https://registry.npmjs.org/postcss-discard-comments/-/postcss-discard-comments-4.0.2.tgz\",\n 8600:       \"integrity\": \"sha512-RJutN259iuRf3IW7GZyLM5Sw4GLTOH8FmsXBnv8Ab/Tc2k4SR4qbV4DNbyyY4+Sjo362SyDmW2DQ7lBSChrpkg==\",\n 8601        \"dev\": true,\n 8602        \"requires\": {\n ....\n 8779        \"version\": \"2.0.3\",\n 8780        \"resolved\": \"https://registry.npmjs.org/postcss-js/-/postcss-js-2.0.3.tgz\",\n 8781:       \"integrity\": \"sha512-zS59pAk3deu6dVHyrGqmC3oDXBdNdajk4k1RyxeVXCrcEDBUBHoIhE4QTsmhxgzXxsaqFDAkUZfmMa5f/N/79w==\",\n 8782        \"requires\": {\n 8783          \"camelcase-css\": \"^2.0.1\",\n ....\n 10227            \"version\": \"2.3.0\",\n 10228            \"resolved\": \"https://registry.npmjs.org/pify/-/pify-2.3.0.tgz\",\n 10229:           \"integrity\": \"sha1-7RQaasBDqEnqWISY59yosVMw6Qw=\",\n 10230            \"dev\": true\n 10231          },\n .....\n 10387            \"version\": \"0.5.0\",\n 10388            \"resolved\": \"https://registry.npmjs.org/jsesc/-/jsesc-0.5.0.tgz\",\n 10389:           \"integrity\": \"sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=\",\n 10390            \"dev\": true\n 10391          }\n .....\n 10617        \"version\": \"2.2.5\",\n 10618        \"resolved\": \"https://registry.npmjs.org/sass-graph/-/sass-graph-2.2.5.tgz\",\n 10619:       \"integrity\": \"sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==\",\n 10620        \"dev\": true,\n 10621        \"requires\": {\n .....\n 11312        \"version\": \"4.0.2\",\n 11313        \"resolved\": \"https://registry.npmjs.org/spdy/-/spdy-4.0.2.tgz\",\n 11314:       \"integrity\": \"sha512-r46gZQZQV+Kl9oItvl1JZZqJKGr+oEkB08A6BzkiR7593/7IbtuncXHd2YoYeTsG4157ZssMu9KYvUHLcjcDoA==\",\n 11315        \"dev\": true,\n 11316        \"requires\": {\n .....\n 11486        \"version\": \"2.1.1\",\n 11487        \"resolved\": \"https://registry.npmjs.org/string-width/-/string-width-2.1.1.tgz\",\n 11488:       \"integrity\": \"sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw==\",\n 11489        \"dev\": true,\n 11490        \"requires\": {\n .....\n 12105        \"version\": \"1.6.18\",\n 12106        \"resolved\": \"https://registry.npmjs.org/type-is/-/type-is-1.6.18.tgz\",\n 12107:       \"integrity\": \"sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==\",\n 12108        \"dev\": true,\n 12109        \"requires\": {\n .....\n 12167        \"version\": \"1.1.0\",\n 12168        \"resolved\": \"https://registry.npmjs.org/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz\",\n 12169:       \"integrity\": \"sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==\",\n 12170        \"dev\": true\n 12171      },\n .....\n 13213        \"version\": \"2.0.0\",\n 13214        \"resolved\": \"https://registry.npmjs.org/webpack-log/-/webpack-log-2.0.0.tgz\",\n 13215:       \"integrity\": \"sha512-cX8G2vR/85UYG59FgkoMamwHUIkSSlV3bBMRsbxVXVUk2j6NleCKjQ/WE9eYg9WY4w25O9w8wKP4rzNZFmUcUg==\",\n 13216        \"dev\": true,\n 13217        \"requires\": {\n .....\n 13379        \"version\": \"3.1.1\",\n 13380        \"resolved\": \"https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz\",\n 13381:       \"integrity\": \"sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==\",\n 13382        \"dev\": true\n 13383      },\n .....\n 13400            \"version\": \"7.0.4\",\n 13401            \"resolved\": \"https://registry.npmjs.org/cliui/-/cliui-7.0.4.tgz\",\n 13402:           \"integrity\": \"sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==\",\n 13403            \"dev\": true,\n 13404            \"requires\": {\n\n29 matches across 2 files\n\n\nSearching 35 files for \"49\\\"\n\n0 matches\n\nSearching 35 files for \"49\"\n\n/Users/a/Sites/f35/_source/29SNAPcurrPP-1.csv:\n   38  New Hampshire,\"73,506\",\"69,573\",\"69,787\",0.3%,-5.1%\n   39  New Jersey,\"682,918\",\"741,832\",\"761,384\",2.6%,11.5%\n   40: New Mexico,\"450,410\",\"493,689\",\"491,512\",-0.4%,9.1%\n   41  New York,\"2,586,186\",\"2,756,187\",\"2,789,533\",1.2%,7.9%\n   42  North Carolina,\"1,262,554\",\"1,456,891\",\"1,452,360\",-0.3%,15.0%\n   ..\n   49  Rhode Island,\"147,857\",\"142,035\",\"137,892\",-2.9%,-6.7%\n   50  South Carolina,\"586,163\",\"617,334\",\"614,905\",-0.4%,4.9%\n   51: South Dakota,\"79,186\",\"78,149\",\"78,491\",0.4%,-0.9%\n   52  Tennessee,\"876,772\",\"855,072\",\"865,381\",1.2%,-1.3%\n   53  Texas,\"3,346,851\",\"3,900,408\",\"3,962,503\",1.6%,18.4%\n\n/Users/a/Sites/f35/package-lock.json:\n  195        \"version\": \"7.12.10\",\n  196        \"resolved\": \"https://registry.npmjs.org/@babel/helper-optimise-call-expression/-/helper-optimise-call-expression-7.12.10.tgz\",\n  197:       \"integrity\": \"sha512-4tpbU0SrSTjjt65UMWSrUOPZTsgvPgGG4S8QSTNHacKzpS51IVWGDj0yCwyeZND/i+LSN2g/O63jEXEWm49sYQ==\",\n  198        \"dev\": true,\n  199        \"requires\": {\n  ...\n  510        \"version\": \"7.12.1\",\n  511        \"resolved\": \"https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.12.1.tgz\",\n  512:       \"integrity\": \"sha512-1yRi7yAtB0ETgxdY9ti/p2TivUxJkTdhu/ZbF9MshVGqOx1TdB3b7xCXs49Fupgg50N45KcAsRP/ZqWjs9SRjg==\",\n  513        \"dev\": true,\n  514        \"requires\": {\n  ...\n 1385        \"version\": \"1.2.1\",\n 1386        \"resolved\": \"https://registry.npmjs.org/@types/minimist/-/minimist-1.2.1.tgz\",\n 1387:       \"integrity\": \"sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==\",\n 1388        \"dev\": true\n 1389      },\n ....\n 1421        \"version\": \"1.13.9\",\n 1422        \"resolved\": \"https://registry.npmjs.org/@types/serve-static/-/serve-static-1.13.9.tgz\",\n 1423:       \"integrity\": \"sha512-ZFqF6qa48XsPdjXV5Gsz0Zqmux2PerNd3a/ktL45mHpa19cuMi/cL8tcxdAx497yRh+QtYPuofjT9oWw9P7nkA==\",\n 1424        \"dev\": true,\n 1425        \"requires\": {\n ....\n 4941        \"version\": \"4.5.0\",\n 4942        \"resolved\": \"https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-4.5.0.tgz\",\n 4943:       \"integrity\": \"sha512-Nv9m36S/vxpsI+Hc4/ZGRs0n9mXqSWGGq49zxb/cJfPAQMbUtttJAlNPS4AQzaBdw/pKskw5bMbekT/Y7W/Wlg==\",\n 4944        \"dev\": true,\n 4945        \"requires\": {\n ....\n 4997        \"version\": \"1.18.0-next.2\",\n 4998        \"resolved\": \"https://registry.npmjs.org/es-abstract/-/es-abstract-1.18.0-next.2.tgz\",\n 4999:       \"integrity\": \"sha512-Ih4ZMFHEtZupnUh6497zEL4y2+w8+1ljnCyaTa+adcoafI1GOvMwFlDjBLfWR7y9VLfrjRJe9ocuHY1PSR9jjw==\",\n 5000        \"dev\": true,\n 5001        \"requires\": {\n ....\n 5646        \"version\": \"1.1.1\",\n 5647        \"resolved\": \"https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz\",\n 5648:       \"integrity\": \"sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==\"\n 5649      },\n 5650      \"gauge\": {\n ....\n 5857        \"version\": \"2.0.1\",\n 5858        \"resolved\": \"https://registry.npmjs.org/handle-thing/-/handle-thing-2.0.1.tgz\",\n 5859:       \"integrity\": \"sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==\",\n 5860        \"dev\": true\n 5861      },\n ....\n 6161        \"version\": \"3.10.1\",\n 6162        \"resolved\": \"https://registry.npmjs.org/htmlparser2/-/htmlparser2-3.10.1.tgz\",\n 6163:       \"integrity\": \"sha512-IgieNijUMbkDovyoKObU1DUhm1iwNYE/fuifEoEHfd1oZKZDaONBSkal7Y01shxsM49R4XaMdGez3WnF9UfiCQ==\",\n 6164        \"dev\": true,\n 6165        \"requires\": {\n ....\n 6331        \"version\": \"3.3.10\",\n 6332        \"resolved\": \"https://registry.npmjs.org/ignore/-/ignore-3.3.10.tgz\",\n 6333:       \"integrity\": \"sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==\",\n 6334        \"dev\": true\n 6335      },\n ....\n 6657        \"version\": \"1.1.0\",\n 6658        \"resolved\": \"https://registry.npmjs.org/is-finite/-/is-finite-1.1.0.tgz\",\n 6659:       \"integrity\": \"sha512-cdyMtqX/BOqqNBBiKlIVkytNHm49MtMlYyn1zxzvJKWmFMlGzm+ry5BBfYyeY9YmNKbRSo/o7OX9w9ale0wg3w==\",\n 6660        \"dev\": true\n 6661      },\n ....\n 6663        \"version\": \"2.0.0\",\n 6664        \"resolved\": \"https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-2.0.0.tgz\",\n 6665:       \"integrity\": \"sha1-o7MKXE8ZkYMWeqq5O+764937ZU8=\",\n 6666        \"dev\": true\n 6667      },\n ....\n 7785            \"version\": \"3.0.1\",\n 7786            \"resolved\": \"https://registry.npmjs.org/cross-spawn/-/cross-spawn-3.0.1.tgz\",\n 7787:           \"integrity\": \"sha1-ElYDfsufDF9549bvE14wdwGEuYI=\",\n 7788            \"dev\": true,\n 7789            \"requires\": {\n ....\n 8531            \"version\": \"3.3.1\",\n 8532            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8533:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8534            \"dev\": true\n 8535          },\n ....\n 8575            \"version\": \"3.3.1\",\n 8576            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8577:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8578            \"dev\": true\n 8579          },\n ....\n 8767            \"version\": \"3.3.1\",\n 8768            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8769:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\"\n 8770          },\n 8771          \"source-map\": {\n ....\n 8872            \"version\": \"3.3.1\",\n 8873            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8874:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8875            \"dev\": true\n 8876          },\n ....\n 8969            \"version\": \"3.3.1\",\n 8970            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 8971:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 8972            \"dev\": true\n 8973          },\n ....\n 9015            \"version\": \"3.3.1\",\n 9016            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9017:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9018            \"dev\": true\n 9019          },\n ....\n 9063            \"version\": \"3.3.1\",\n 9064            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9065:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9066            \"dev\": true\n 9067          },\n ....\n 9358            \"version\": \"3.3.1\",\n 9359            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9360:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9361            \"dev\": true\n 9362          },\n ....\n 9404            \"version\": \"3.3.1\",\n 9405            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9406:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9407            \"dev\": true\n 9408          },\n ....\n 9450            \"version\": \"3.3.1\",\n 9451            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9452:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9453            \"dev\": true\n 9454          },\n ....\n 9473        \"version\": \"4.0.2\",\n 9474        \"resolved\": \"https://registry.npmjs.org/postcss-normalize-string/-/postcss-normalize-string-4.0.2.tgz\",\n 9475:       \"integrity\": \"sha512-RrERod97Dnwqq49WNz8qo66ps0swYZDSb6rM57kN2J+aoyEAJfZ6bMx0sx/F9TIEX0xthPGCmeyiam/jXif0eA==\",\n 9476        \"dev\": true,\n 9477        \"requires\": {\n ....\n 9495            \"version\": \"3.3.1\",\n 9496            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9497:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9498            \"dev\": true\n 9499          },\n ....\n 9540            \"version\": \"3.3.1\",\n 9541            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9542:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9543            \"dev\": true\n 9544          },\n ....\n 9585            \"version\": \"3.3.1\",\n 9586            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9587:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9588            \"dev\": true\n 9589          },\n ....\n 9631            \"version\": \"3.3.1\",\n 9632            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9633:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9634            \"dev\": true\n 9635          },\n ....\n 9675            \"version\": \"3.3.1\",\n 9676            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9677:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9678            \"dev\": true\n 9679          },\n ....\n 9720            \"version\": \"3.3.1\",\n 9721            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9722:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9723            \"dev\": true\n 9724          },\n ....\n 9806            \"version\": \"3.3.1\",\n 9807            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9808:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9809            \"dev\": true\n 9810          },\n ....\n 9863            \"version\": \"3.3.1\",\n 9864            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 9865:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\",\n 9866            \"dev\": true\n 9867          },\n ....\n 10026        \"version\": \"3.0.0\",\n 10027        \"resolved\": \"https://registry.npmjs.org/pump/-/pump-3.0.0.tgz\",\n 10028:       \"integrity\": \"sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==\",\n 10029        \"dev\": true,\n 10030        \"requires\": {\n .....\n 10301            \"version\": \"3.3.1\",\n 10302            \"resolved\": \"https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz\",\n 10303:           \"integrity\": \"sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==\"\n 10304          }\n 10305        }\n .....\n 11037        \"version\": \"3.0.3\",\n 11038        \"resolved\": \"https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.3.tgz\",\n 11039:       \"integrity\": \"sha512-VUJ49FC8U1OxwZLxIbTTrDvLnf/6TDgxZcK8wxR8zs13xpx7xbG60ndBlhNrFi2EMuFRoeDoJO7wthSLq42EjA==\",\n 11040        \"dev\": true\n 11041      },\n .....\n 11280        \"version\": \"3.1.1\",\n 11281        \"resolved\": \"https://registry.npmjs.org/spdx-correct/-/spdx-correct-3.1.1.tgz\",\n 11282:       \"integrity\": \"sha512-cOYcUWwhCuHCXi49RhFRCyJEK3iPj1Ziz9DpViV3tbZOwXD49QzIN3MpOLJNxh2qwq2lJJZaKMVw9qNi4jTC0w==\",\n 11283        \"dev\": true,\n 11284        \"requires\": {\n .....\n 11809        \"version\": \"1.4.5\",\n 11810        \"resolved\": \"https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.5.tgz\",\n 11811:       \"integrity\": \"sha512-04Rfe496lN8EYruwi6oPQkG0vo8C+HT49X687FZnpPF0qMAIHONI6HEXYPKDOE8e5HjXTyKfqRd/agHtH0kOtw==\",\n 11812        \"dev\": true,\n 11813        \"requires\": {\n .....\n 12264            \"version\": \"0.1.4\",\n 12265            \"resolved\": \"https://registry.npmjs.org/has-values/-/has-values-0.1.4.tgz\",\n 12266:           \"integrity\": \"sha1-bWHeldkd/Km5oCCJrThL/49it3E=\",\n 12267            \"dev\": true\n 12268          }\n .....\n 12378            \"version\": \"1.17.7\",\n 12379            \"resolved\": \"https://registry.npmjs.org/es-abstract/-/es-abstract-1.17.7.tgz\",\n 12380:           \"integrity\": \"sha512-VBl/gnfcJ7OercKA9MVaegWsBHFjV492syMudcnQZvt/Dw8ezpcOHYZXa/J96O8vx+g4x65YKhxOwDUh63aS5g==\",\n 12381            \"dev\": true,\n 12382            \"requires\": {\n .....\n 12814        \"version\": \"3.9.0\",\n 12815        \"resolved\": \"https://registry.npmjs.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-3.9.0.tgz\",\n 12816:       \"integrity\": \"sha512-Ob8amZfCm3rMB1ScjQVlbYYUEJyEjdEtQ92jqiFUYt5VkEeO2v5UMbv49P/gnmCZm3A6yaFQzCBvpZqN4MUsdA==\",\n 12817        \"dev\": true,\n 12818        \"requires\": {\n\n/Users/a/Sites/f35/src/assets/logo.png:\n    <binary>\n\n/Users/a/Sites/f35/src/components/usStates.vue:\n   30      mounted () {\n   31          console.log(this.scale);\n   32:         this.selectedState = this.usStates[49];\n   33      },\n   34      methods: {\n\n/Users/a/Sites/f35/src/views/Snap.vue:\n   10              <div class=\"peoplewrap m-2 p-2 flex flex-wrap\">\n   11                  <template class=\"\" v-for=\"i in people\">\n   12:                     <span :class=\"[`p-2`, pC()]\">&#149;</span>\n   13                  </template>\n   14              </div>\n\n50 matches across 5 files\n\n\nSearching 35 files for \"mutate\"\n\n/Users/a/Sites/f35/src/components/FlightLog.vue:\n   38              },\n   39              set(v) {\n   40:                 this.$store.commit('mutate', {property: 'selectedScale', with: v});\n   41              }\n   42          }\n\n/Users/a/Sites/f35/src/components/Navigation.vue:\n   26              },\n   27              set(v) {\n   28:                 this.$store.commit('mutate', {property: 'selectedScale', with: v});\n   29              }\n   30          }\n\n/Users/a/Sites/f35/src/components/Scale.vue:\n   21              },\n   22              set(v) {\n   23:                 this.$store.commit('mutate', {property: 'selectedScale', with: v});\n   24              }\n   25          }\n\n/Users/a/Sites/f35/src/components/Stats.vue:\n   17              },\n   18              set(v) {\n   19:                 this.$store.commit('mutate', {property: 'selectedScale', with: v});\n   20              }\n   21          }\n\n/Users/a/Sites/f35/src/components/usStates.vue:\n   20              },\n   21              set(v) {\n   22:                 this.$store.commit('mutate', {property: 'selectedState', with: v});\n   23              }\n   24          }\n\n/Users/a/Sites/f35/src/store/index.js:\n   28      },\n   29      mutations: {\n   30:         mutate(state, payload) {\n   31              state[payload.property] = payload.with;\n   32          }\n\n/Users/a/Sites/f35/src/views/Home.vue:\n   67                  })\n   68                  .catch(function(error) {\n   69:                     // vm.$store.commit('mutate', { property: 'loading', with: false })\n   70                      console.log(`error getting data: ${error}`);\n   71                  })\n\n7 matches across 7 files\n\n\nSearching 35 files for \"sec\"\n\n/Users/a/Sites/f35/package-lock.json:\n 2061        \"dev\": true\n 2062      },\n 2063:     \"@webassemblyjs/helper-wasm-section\": {\n 2064        \"version\": \"1.9.0\",\n 2065:       \"resolved\": \"https://registry.npmjs.org/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.9.0.tgz\",\n 2066        \"integrity\": \"sha512-XnMB8l3ek4tvrKUUku+IVaXNHz2YsJyOOmz+MMkZvh8h1uSJpSen6vYnw3IoQ7WwEuAhL8Efjms1ZWjqh2agvw==\",\n 2067        \"dev\": true,\n ....\n 2106          \"@webassemblyjs/helper-buffer\": \"1.9.0\",\n 2107          \"@webassemblyjs/helper-wasm-bytecode\": \"1.9.0\",\n 2108:         \"@webassemblyjs/helper-wasm-section\": \"1.9.0\",\n 2109          \"@webassemblyjs/wasm-gen\": \"1.9.0\",\n 2110          \"@webassemblyjs/wasm-opt\": \"1.9.0\",\n\n/Users/a/Sites/f35/src/components/FlightLog.vue:\n    1  <template>\n    2:     <section class=\"flight-log p-2\">\n    3          <h1 class=\"text-2xl mb-4\">Flight log</h1>\n    4          <ul class=\"w-full flex flex-col\">\n    .\n   12              <li>Note: simulated</li>\n   13          </ul>\n   14:     </section>\n   15  </template>\n   16  <script>\n\n/Users/a/Sites/f35/src/components/Navigation.vue:\n   42              this.selectedScale = s;\n   43              this.$vueUpdate = true;\n   44:             console.log(`sec ${s.name}`);\n   45          }\n   46      }\n\n/Users/a/Sites/f35/src/components/Scale.vue:\n   37              this.selectedScale = s;\n   38              this.$vueUpdate = true;\n   39:             console.log(`sec ${s.name}`);\n   40          }\n   41      }\n\n/Users/a/Sites/f35/src/components/Stats.vue:\n    1  <template>\n    2:     <section class=\"snap-log p-2\">\n    3          Stats Panel\n    4          <router-view name=\"stats\" />\n    5:     </section>\n    6  </template>\n    7  <script>\n\n/Users/a/Sites/f35/src/components/usStates.vue:\n   36              this.selectedState = s;\n   37              this.$vueUpdate = true;\n   38:             console.log(`sec ${s.name}`);\n   39          }\n   40      }\n\n11 matches across 6 files\n\n\nSearching 37 files for \"avenir\" (regex)\n\n/Users/a/Sites/f35/src/App.vue:\n   32  <style lang=\"scss\">\n   33  #app {\n   34:     font-family: Avenir, Helvetica, Arial, sans-serif;\n   35      -webkit-font-smoothing: antialiased;\n   36      -moz-osx-font-smoothing: grayscale;\n\n1 match in 1 file\n\n\nSearching 37 files for \"scroller\" (regex)\n\n/Users/a/Sites/f35/src/router/index.js:\n   10      path: '/',\n   11      name: 'Home',\n   12:     component: () => import(/* webpackChunkName: \"scroller\" */ '../components/Scroller.vue')\n   13    },\n   14    {\n\n2 matches in 1 file\n",
 			"settings":
 			{
-				"buffer_size": 26120,
+				"buffer_size": 30389,
 				"line_ending": "Unix",
 				"name": "Find Results",
 				"scratch": true
 			}
 		},
 		{
+			"file": "src/components/Scale.vue",
+			"settings":
+			{
+				"buffer_size": 1267,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/App.vue",
 			"settings":
 			{
-				"buffer_size": 1203,
+				"buffer_size": 879,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/a/Sites/mwc/wp-content/themes/mwc/src/app.scss",
+			"settings":
+			{
+				"buffer_size": 37167,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -690,10 +707,10 @@
 			}
 		},
 		{
-			"file": "src/components/Navigation.vue",
+			"file": "src/views/Sources.vue",
 			"settings":
 			{
-				"buffer_size": 1514,
+				"buffer_size": 94,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -707,10 +724,11 @@
 			}
 		},
 		{
-			"file": "src/components/SnapLog.vue",
+			"file": "src/components/Stats.vue",
 			"settings":
 			{
-				"buffer_size": 889,
+				"buffer_size": 927,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -805,6 +823,8 @@
 		"/Users/a/Sites/f35/_source",
 		"/Users/a/Sites/f35/public",
 		"/Users/a/Sites/f35/src",
+		"/Users/a/Sites/f35/src/assets",
+		"/Users/a/Sites/f35/src/assets/sass",
 		"/Users/a/Sites/f35/src/components",
 		"/Users/a/Sites/f35/src/router",
 		"/Users/a/Sites/f35/src/store",
@@ -812,6 +832,13 @@
 	],
 	"file_history":
 	[
+		"/Users/a/Sites/f35/src/components/Navigation.vue",
+		"/Users/a/Sites/f35/src/components/FlightLog.vue",
+		"/Users/a/Sites/f35/src/components/Scroller.vue",
+		"/Volumes/www/lue/app/Console/Kernel.php",
+		"/Users/a/Sites/f35/package.json",
+		"/Users/a/Sites/mwc/wp-content/themes/mwc/mwc.sublime-project",
+		"/Users/a/Sites/f35/src/store/states.js",
 		"/Users/a/.ssh/config",
 		"/Users/a/.bash_profile",
 		"/etc/hosts",
@@ -932,14 +959,7 @@
 		"/Users/a/Sites/acdubs/resources/assets/js/components/scenes/PirateShip.vue",
 		"/Users/a/Sites/acdubs/resources/assets/js/components/Home.vue",
 		"/Users/a/Sites/acdubs/database/migrations/2017_11_20_003315_ProjectsTable.php",
-		"/Users/a/Sites/acdubs/resources/views/blog/show.blade.php",
-		"/Users/a/Sites/acdubs/resources/views/recipes/show.blade.php",
-		"/Users/a/Sites/acdubs/resources/views/recipes.blade.php",
-		"/Users/a/Sites/acdubs/database/seeds/RecipeSeeder.php",
-		"/Users/a/Sites/acdubs/database/seeds/DatabaseSeeder.php",
-		"/Users/a/Sites/acdubs/database/migrations/2017_11_19_050026_RecipeTable.php",
-		"/Users/a/Sites/acdubs/config/recaptcha.php",
-		"/Users/a/Sites/acdubs/resources/views/sitemap/recipes.blade.php"
+		"/Users/a/Sites/acdubs/resources/views/blog/show.blade.php"
 	],
 	"find":
 	{
@@ -958,6 +978,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"scroller",
+			"avenir",
+			"h1",
+			"\\(\\d*,",
+			"bloaf",
+			"\\(\\d*,",
+			"ies.hdtv",
+			"sec",
+			"mutate",
 			"49",
 			"49\\",
 			"59",
@@ -978,9 +1007,13 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"(null,",
+			"superman",
+			"(null,",
+			"ies.superman"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -991,7 +1024,7 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 18,
 			"sheets":
 			[
 				{
@@ -1000,15 +1033,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1240,
+						"buffer_size": 2006,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								864,
-								864
+								1941,
+								1941
 							]
 						],
 						"settings":
@@ -1021,8 +1054,8 @@
 								{
 									"1":
 									[
-										1005,
-										1006
+										2002,
+										2003
 									]
 								},
 								"icon":
@@ -1037,8 +1070,8 @@
 								{
 									"1":
 									[
-										843,
-										844
+										1619,
+										1620
 									]
 								},
 								"unmatched":
@@ -1047,56 +1080,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1108,58 +1141,42 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 295.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/store/states.js",
+					"file": "/Users/a/Desktop/temp.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 74,
+						"buffer_size": 16,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								72,
-								72
+								14,
+								14
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
 							"bracket_highlighter.busy": false,
 							"bracket_highlighter.locations":
 							{
 								"close":
 								{
-									"1":
-									[
-										73,
-										74
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										70,
-										71
-									]
 								},
 								"unmatched":
 								{
@@ -1223,139 +1240,18 @@
 								"bh_tag_close",
 								"bh_tag_content"
 							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"is_xml": false,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 810,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										808,
-										809
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										0,
-										1
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "vue.config.js",
 					"semi_transient": false,
 					"settings":
@@ -1456,11 +1352,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "src/assets/sass/tailwind.css",
 					"semi_transient": false,
 					"settings":
@@ -1560,24 +1456,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "src/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 276,
+						"buffer_size": 282,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								203,
-								203
+								232,
+								232
 							]
 						],
 						"settings":
@@ -1590,24 +1486,24 @@
 								{
 									"1":
 									[
-										203,
-										204
+										264,
+										265
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
-										"region.greenish"
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										192,
-										193
+										218,
+										219
 									]
 								},
 								"unmatched":
@@ -1616,56 +1512,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1678,7 +1574,109 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/views/About.vue",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 89,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1719,56 +1717,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1782,7 +1780,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1823,56 +1821,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1887,7 +1885,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1993,7 +1991,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -2002,15 +2000,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 216,
+						"buffer_size": 281,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								18,
-								18
+								200,
+								200
 							]
 						],
 						"settings":
@@ -2023,24 +2021,24 @@
 								{
 									"1":
 									[
-										214,
-										215
+										199,
+										200
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
+										"Packages/BracketHighlighter/icons/square_bracket.png",
+										"region.bluish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										17,
-										18
+										175,
+										176
 									]
 								},
 								"unmatched":
@@ -2049,26 +2047,16 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -2079,26 +2067,36 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -2113,24 +2111,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
 					"buffer": 10,
-					"file": "src/components/FlightLog.vue",
+					"file": "public/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1004,
+						"buffer_size": 683,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								75,
-								75
+								326,
+								326
 							]
 						],
 						"settings":
@@ -2154,64 +2152,65 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content"
 							],
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"tab_size": 4,
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -2227,15 +2226,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2794,
+						"buffer_size": 6487,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1645,
-								1645
+								1522,
+								1522
 							]
 						],
 						"settings":
@@ -2246,27 +2245,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										1645,
-										1646
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"region.yellowish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										1619,
-										1620
-									]
 								},
 								"unmatched":
 								{
@@ -2274,56 +2258,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -2335,10 +2319,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1126.0,
+						"translation.y": 788.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -2443,7 +2427,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
@@ -2471,27 +2455,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										167,
-										168
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
-										"region.greenish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										159,
-										160
-									]
 								},
 								"unmatched":
 								{
@@ -2562,7 +2531,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -2590,27 +2559,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										358,
-										359
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										90,
-										91
-									]
 								},
 								"unmatched":
 								{
@@ -2681,7 +2635,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -2690,15 +2644,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 705,
+						"buffer_size": 967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								128,
-								128
+								278,
+								278
 							]
 						],
 						"settings":
@@ -2711,8 +2665,8 @@
 								{
 									"1":
 									[
-										129,
-										130
+										287,
+										288
 									]
 								},
 								"icon":
@@ -2727,8 +2681,8 @@
 								{
 									"1":
 									[
-										111,
-										112
+										269,
+										270
 									]
 								},
 								"unmatched":
@@ -2737,26 +2691,16 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -2767,26 +2711,36 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -2801,7 +2755,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -2809,7 +2763,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26120,
+						"buffer_size": 30389,
 						"regions":
 						{
 							"match":
@@ -3216,6 +3170,90 @@
 									[
 										26021,
 										26023
+									],
+									[
+										26297,
+										26303
+									],
+									[
+										26527,
+										26533
+									],
+									[
+										26752,
+										26758
+									],
+									[
+										26977,
+										26983
+									],
+									[
+										27205,
+										27211
+									],
+									[
+										27384,
+										27390
+									],
+									[
+										27647,
+										27653
+									],
+									[
+										27966,
+										27969
+									],
+									[
+										28091,
+										28094
+									],
+									[
+										28113,
+										28116
+									],
+									[
+										28452,
+										28455
+									],
+									[
+										28653,
+										28656
+									],
+									[
+										28875,
+										28878
+									],
+									[
+										29088,
+										29091
+									],
+									[
+										29299,
+										29302
+									],
+									[
+										29422,
+										29425
+									],
+									[
+										29536,
+										29539
+									],
+									[
+										29747,
+										29750
+									],
+									[
+										29961,
+										29967
+									],
+									[
+										30302,
+										30310
+									],
+									[
+										30330,
+										30338
 									]
 								],
 								"scope": ""
@@ -3224,8 +3262,8 @@
 						"selection":
 						[
 							[
-								25738,
-								25738
+								30259,
+								30259
 							]
 						],
 						"settings":
@@ -3237,8 +3275,8 @@
 								{
 									"1":
 									[
-										25767,
-										25768
+										30354,
+										30355
 									]
 								},
 								"icon":
@@ -3253,8 +3291,8 @@
 								{
 									"1":
 									[
-										25659,
-										25660
+										29935,
+										29936
 									]
 								},
 								"unmatched":
@@ -3263,56 +3301,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -3322,7 +3360,7 @@
 							"color_scheme": "Packages/BetterFindBuffer/FindResults.hidden-tmTheme",
 							"detect_indentation": false,
 							"line_numbers": false,
-							"output_tag": 7,
+							"output_tag": 11,
 							"result_base_dir": "",
 							"result_file_regex": "^([^ \t].*):$",
 							"result_line_regex": "^ +([0-9]+):",
@@ -3331,27 +3369,148 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 17978.0,
+						"translation.y": 22176.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
 					"buffer": 17,
-					"file": "src/App.vue",
+					"file": "src/components/Scale.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1203,
+						"buffer_size": 1267,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								115,
+								115
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										131,
+										132
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										113,
+										114
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"is_xml": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "src/App.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								29
 							]
 						],
 						"settings":
@@ -3375,56 +3534,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -3440,11 +3599,113 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 19,
+					"file": "/Users/a/Sites/mwc/wp-content/themes/mwc/src/app.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30637,
+								30639
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 49704.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
 					"file": "src/views/Snap.vue",
 					"semi_transient": false,
 					"settings":
@@ -3496,56 +3757,56 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -3558,126 +3819,6 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 656.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "src/components/Navigation.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								49,
-								49
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										49,
-										50
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										26,
-										27
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
-							],
-							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -3685,7 +3826,36 @@
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 21,
+					"file": "src/views/Sources.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 94,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								62,
+								62
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
 					"file": "postcss.config.js",
 					"semi_transient": false,
 					"settings":
@@ -3709,27 +3879,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										189,
-										190
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										142,
-										143
-									]
 								},
 								"unmatched":
 								{
@@ -3799,24 +3954,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
-					"file": "src/components/SnapLog.vue",
+					"buffer": 23,
+					"file": "src/components/Stats.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 889,
+						"buffer_size": 927,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								65,
+								65
 							]
 						],
 						"settings":
@@ -3840,61 +3995,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
 							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
 							"tab_size": 4,
@@ -3904,7 +4059,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -3972,11 +4127,51 @@
 		[
 			[
 				"",
-				"src/components/usStates.vue"
+				"~/Sites/mwc/wp-content/themes/mwc/src/app.scss"
+			],
+			[
+				"tail",
+				"tailwind.config.js"
+			],
+			[
+				"scroller",
+				"src/components/Scroller.vue"
+			],
+			[
+				"app.",
+				"src/App.vue"
+			],
+			[
+				"nav",
+				"src/components/Navigation.vue"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"vue",
+				"src/App.vue"
+			],
+			[
+				"scale",
+				"src/components/Scale.vue"
+			],
+			[
+				"app",
+				"src/App.vue"
+			],
+			[
+				"flight",
+				"src/components/FlightLog.vue"
 			],
 			[
 				"snap",
-				"src/views/Snap.vue"
+				"src/components/SnapLog.vue"
+			],
+			[
+				"rout",
+				"src/router/index.js"
 			],
 			[
 				"states",
@@ -3995,20 +4190,8 @@
 				"src/store/index.js"
 			],
 			[
-				"nav",
-				"src/components/Navigation.vue"
-			],
-			[
 				"fli",
 				"src/components/FlightLog.vue"
-			],
-			[
-				"app",
-				"src/App.vue"
-			],
-			[
-				"pack",
-				"package.json"
 			],
 			[
 				"main",
@@ -4125,10 +4308,6 @@
 			[
 				"webpack",
 				"webpack.mix.js"
-			],
-			[
-				"rout",
-				"resources/assets/js/routes.js"
 			],
 			[
 				"video",
@@ -4295,10 +4474,6 @@
 				"app/Http/Controllers/PageController.php"
 			],
 			[
-				"app.",
-				"resources/assets/js/app.js"
-			],
-			[
 				"datas",
 				"resources/assets/js/DataService.js"
 			],
@@ -4345,10 +4520,6 @@
 			[
 				"sched",
 				"resources/assets/js/components/BasketballSchedule.vue"
-			],
-			[
-				"tail",
-				"tailwind.config.js"
 			],
 			[
 				"store.",
@@ -4465,22 +4636,6 @@
 			[
 				"store.js",
 				"resources/assets/js/components/store.js"
-			],
-			[
-				"config/app",
-				"config/app.php"
-			],
-			[
-				"the",
-				"resources/views/layouts/theatre.blade.php"
-			],
-			[
-				"stag",
-				"resources/assets/js/components/Stage.vue"
-			],
-			[
-				".babel",
-				".babelrc"
 			]
 		],
 		"width": 0.0
