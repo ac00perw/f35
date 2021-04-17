@@ -32,8 +32,8 @@ export default new Vuex.Store({
         //hours per month / 30 / 24 
         aircraftHoursPerHour: .57,
         activeSlide: 1,
-        partDelay: 1,
-        partDuration: 2,
+        partDelay: .25,
+        partDuration: .4,
         animation: {opacity: 1, y: -20},
         tl: gsap.timeline()
     },

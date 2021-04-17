@@ -1,5 +1,6 @@
 <template>
     <div class="fullscreen flex">
+        {{ text }}
         <div ref="part1" class="w-1/2 flex justify-center items-center opacity-0 part1 parts">
             <div class="graphic font-bold text-4xl">The F35 is the most expensive fighter jet in history</div>
         </div>
@@ -26,6 +27,7 @@
 
 export default {
     name: 'Stats',
+    props: ['text'],
     computed: {
         partDelay(){
             return this.$store.getters.partDelay;
@@ -50,7 +52,7 @@ export default {
     mounted () {
         let fadeColor="#aaaaaa";
         let anim = {...this.$store.getters.animation, ...{Duration: this.partDuration, delay: this.partDelay}};
-        this.tl.to('.part1', anim);
+        this.tl.to('.part1', anim, "part1");
         this.tl.to('.part2', anim, "part2");
         this.tl.to('.part3', anim, "part3");
         this.tl.to('.part4', anim, "part4");

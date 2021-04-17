@@ -46,7 +46,7 @@ export default {
     },
     mounted () {
         let fadeColor="#aaaaaa";
-        this.tl.to('.part1', {opacity: 1, duration: this.partDuration });
+        this.tl.to('.part1', {opacity: 1, duration: this.partDuration }, "part1");
         this.tl.to('.part2', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part2");
         this.tl.to('.part3', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part3");
         this.tl.to('.part4', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part4");
