@@ -18,7 +18,7 @@
                 >
                 <component :is="componentsList[currentComponent].name" v-bind="componentsList[currentComponent].props" :key="currentComponent" />
             </transition>
-                <backgrounds />
+            <backgrounds />
         </div>
     </div>
 </template>
@@ -117,7 +117,7 @@ export default {
         var vm = this;
         // vm.tl.play(0);
         // GSDevTools.create({minimal: true, globalSync: true});
-        
+        vm.currentComponent = 1;
         document.addEventListener('keydown', vm.key);
 
         this.tl.eventCallback("onComplete", function() {
@@ -203,7 +203,6 @@ export default {
     }
 }
 </script>
-<style src="vue-scrollama/dist/vue-scrollama.css"></style>
 <style lang="scss">
 .completion-bar {
     width: 100%;
@@ -231,7 +230,14 @@ export default {
 
 </style>
 <style scoped>
-
+.fade-transition {
+  opacity: 1;
+  transition: all 1s ease;
+}
+  
+.fade-enter, .fade-leave{
+  opacity: 0;
+}
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {

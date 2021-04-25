@@ -1,9 +1,8 @@
 <template>
     <div class="fullscreen flex">
-        <div ref="part1" class="w-1/2 flex justify-center items-center opacity-0 part1 parts">
-            <div class="graphic font-bold text-4xl">In Vermont there are twenty F35s</div>
-        </div>
-        <div class="w-1/2 flex flex-col justify-center items-center text-2xl">
+        <div ref="part1" class="w-1/2 flex flex-col justify-center items-center opacity-0 part1 parts">
+            <div class="graphic font-bold text-4xl mb-8">In Vermont there are twenty F35s</div>
+            <div class="text-2xl">
             <div class="part2 parts w-full mb-4">
                 <p>Six aircraft</p>
             </div>
@@ -16,11 +15,36 @@
             <div class="part5 parts mb-4">
                 <p>Eighteen days per month</p>
             </div>
+            </div>
+        </div>
+        <div class="w-1/2 grid grid-cols-2 justify-center items-center pr-12">
+            <div class="flex flex-wrap p-4 aircraft justify-between">
+                    <img class="plane" src="/img/f35.svg" width="100"/>
+                    <img class="plane" src="/img/f35.svg" width="100"/>
+                    <img class="plane" src="/img/f35.svg" width="100"/>
+                    <img class="plane" src="/img/f35.svg" width="100"/>
+                    <img class="plane" src="/img/f35.svg" width="100"/>
+                    <img class="plane" src="/img/f35.svg" width="100"/>
+            </div>
+            <div class="clock opacity-0">CLOCK
+                <div class="hand">------------</div>
+            </div>
+            <div class="calendar col-span-2 flex flex-wrap justify-between text-6xl pr-12">
+                <div class="day">S</div>
+                <div class="day">M</div>
+                <div class="day">T</div>
+                <div class="day">W</div>
+                <div class="day">T</div>
+                <div class="day">F</div>
+                <div class="day">S</div>
+            </div>
+
         </div>
     </div>
 </template>
 <script>
 import { mapState, mapMutations } from 'vuex'
+import { gsap } from 'gsap/all'
 
 export default {
     name: 'Stats',
@@ -59,17 +83,42 @@ export default {
         this.tlOut.to('.parts', this.animationOut);
     },
     methods: {
+        moveHands() {
+            var vm = this;
+            gsap.to('.hand', {rotation: "+=150", duration: .5, ease: "linear", onComplete:function(){vm.moveHands()}});
+        },
         inAnimation() {
             var vm = this;
             this.tl.clear();
             this.tlOut.pause();
-            this.tl.to('.part1', vm.animation, "part1");
-            this.tl.to('.part2', vm.animation, "part2");
-            this.tl.to('.part3', vm.animation, "part3");
-            this.tl.to('.part4', vm.animation, "part4");
-            this.tl.to('.part5', vm.animation, "part5");
+            this.tl.set('.plane', {rotation: 90, x: -100, scale: 1.2});
+            this.tl.to('.part1', vm.animation, "twenty");
+            this.tl.to('.part2', vm.animation, "sixplanes");
+            this.tl.to('.part3', vm.animation, "clock");
+            this.tl.to('.clock', {opacity: 1}, "clock");
+            this.tl.add(vm.moveHands());
+            this.tl.to('.part4', vm.animation, "twotimes");
+            this.tl.to('.part5', vm.animation, "eighteen");
+            // this.tl.to('.aircraft', {opacity: 1, duration: 1, delay: 2, onComplete: vm.planes}, "sixplanes");
+            this.tl.to('.plane', {delay: 1, opacity: 1, scale: 1, x:0, duration: .5, ease: "back.out(1.7)", stagger: {each: .08, repeat: 0}}, 'sixplanes');
+            // this.tl.set('.hand', {opacity: 1}, "clock");
+            
+            this.tl.to('.day', {opacity: 1, y: 0, scale: 1, duration: 1, ease: "back.out(1.7)", stagger: {each: .05, repeat: 0}}, "eighteen");
             this.tl.play(0);
         }
     }
 }
 </script>
+<style>
+body {
+    background-color: yellow;
+}
+.plane {
+    opacity: 0;
+    transform: scale(.5);
+}
+.day {
+    opacity: 0;
+    transform: translateY(-100) scale(.9);
+}
+</style>

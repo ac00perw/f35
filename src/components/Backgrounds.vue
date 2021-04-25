@@ -35,7 +35,7 @@ import { gsap } from 'gsap/all'
     z-index: -1;
 }
  .bg.cur-1 {
-    background-image: url('https://acdubs.com/images/headers/20.jpg');
+    //background-image: url('https://acdubs.com/images/headers/20.jpg');
     background-size: cover;
 
 }
