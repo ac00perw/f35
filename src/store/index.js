@@ -31,11 +31,12 @@ export default new Vuex.Store({
         aircraftHoursPerMonth: 413,
         //hours per month / 30 / 24 
         aircraftHoursPerHour: .57,
-        activeSlide: 1,
-        partDelay: .25,
-        partDuration: .4,
-        animation: {opacity: 1, y: -20},
-        tl: gsap.timeline()
+        currentComponent: 0,
+        animation: {opacity: 1, y: -20, scale: 1, ease: 'back.inOut(1.8)', duration: 1, delay: 0},
+        animationOut: {stagger: {each: .05, repeat: 0}, delay: 0, opacity: 0, y: -80, ease: 'power3.inOut', duration: .4},
+        tl: gsap.timeline(),
+        tlOut: gsap.timeline(),
+        animationPlaying: false
     },
     mutations: {
         mutate(state, payload) {
@@ -54,7 +55,7 @@ export default new Vuex.Store({
             this.state.scale.hour = {...this.state.scale.hour, ...{calc: this.state.aircraftHoursPerMonth / this.state.scale.hour.value }}
         }
     },
-    modules: {},
+    // modules: {},
     getters: {
         scale: state => state.scale,
         selectedScale: state => state.selectedScale,
@@ -63,10 +64,12 @@ export default new Vuex.Store({
         aircraftHoursPerMonth: state => state.aircraftHoursPerMonth,
         aircraftHoursPerHour: state => state.aircraftHoursPerHour,
         f35CostPerHour: state => state.f35CostPerHour,
-        activeSlide: state => state.activeSlide,
         partDelay: state => state.partDelay,
-        partDuration: state => state.partDuration,
         animation: state => state.animation,
-        tl: state => state.tl
+        animationOut: state => state.animationOut,
+        tl: state => state.tl,
+        tlOut: state => state.tlOut,
+        animationPlaying: state => state.animationPlaying,
+        currentComponent: state => state.currentComponent
     }
 })

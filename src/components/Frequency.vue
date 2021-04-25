@@ -20,22 +20,30 @@
     </div>
 </template>
 <script>
+import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'Stats',
     computed: {
-        partDelay(){
-            return this.$store.getters.partDelay;
-        },
-        partDuration(){
-            return this.$store.getters.partDuration;
-        },
+        ...mapState([
+            'animationPlaying',
+            'animation',
+            'animationOut'
+        ]),
         tl: {
             get(){
                 return this.$store.getters.tl
             },
             set(v){ 
                 this.$store.commit('mutate', {property: 'tl', with: v})
+            }
+        },
+        tlOut: {
+            get() {
+                return this.$store.getters.tlOut
+            },
+            set(v) {
+                this.$store.commit('mutate', { property: 'tlOut', with: v })
             }
         }
     },
@@ -45,41 +53,23 @@ export default {
         }
     },
     mounted () {
-        let fadeColor="#aaaaaa";
-        this.tl.to('.part1', {opacity: 1, duration: this.partDuration }, "part1");
-        this.tl.to('.part2', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part2");
-        this.tl.to('.part3', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part3");
-        this.tl.to('.part4', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part4");
-        this.tl.to('.part5', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part5");
-        this.tl.to('.part2', {color: fadeColor, duration: .5 }, "part3+=1");
-        this.tl.to('.part3', {color: fadeColor, duration: .5 }, "part4+=1");
-        this.tl.to('.part4', {color: fadeColor, duration: .5 }, "part5+=1");
-        // this.tl.to('.part5', {color: fadeColor, duration: .5 }, "part6+=1");
-        this.tl.to('.parts', {color: 'black', duration: this.partDuration }, "part6");
+        var vm = this;
+        this.inAnimation();
+        this.tlOut.clear();
+        this.tlOut.to('.parts', this.animationOut);
     },
     methods: {
-        stepEnterHandler({ element, direction, index }) {
-            console.log({ element, direction, index });
-            this.currStepId = element.dataset.stepId
+        inAnimation() {
+            var vm = this;
+            this.tl.clear();
+            this.tlOut.pause();
+            this.tl.to('.part1', vm.animation, "part1");
+            this.tl.to('.part2', vm.animation, "part2");
+            this.tl.to('.part3', vm.animation, "part3");
+            this.tl.to('.part4', vm.animation, "part4");
+            this.tl.to('.part5', vm.animation, "part5");
+            this.tl.play(0);
         }
     }
 }
 </script>
-<style>
-    .step {
-        width: 80%;
-        max-width: 40rem;
-        padding: 10rem 0;
-        margin: 0 3rem 15rem;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-    }
-
-    .step.is-active {
-        background-color: beige;
-    }
-    .parts {
-        @apply opacity-0
-    }
-</style>

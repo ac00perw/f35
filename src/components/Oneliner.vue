@@ -4,23 +4,29 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 
 export default {
     name: 'Oneliner',
     props: ['text'],
     computed: {
-        partDelay(){
-            return this.$store.getters.partDelay;
-        },
-        partDuration(){
-            return this.$store.getters.partDuration;
-        },
+        ...mapState([
+            'animationPlaying', 'animation', 'animationOut'
+        ]),
         tl: {
             get(){
                 return this.$store.getters.tl
             },
             set(v){ 
                 this.$store.commit('mutate', {property: 'tl', with: v})
+            }
+        },
+        tlOut: {
+            get(){
+                return this.$store.getters.tlOut
+            },
+            set(v){ 
+                this.$store.commit('mutate', {property: 'tlOut', with: v})
             }
         }
     },
@@ -30,15 +36,27 @@ export default {
         }
     },
     mounted () {
-        let fadeColor="#aaaaaa";
-        let anim = {...this.$store.getters.animation, ...{Duration: this.partDuration, delay: this.partDelay}};
-        this.tl.to('.part1', anim, "part1");
-        this.tl.restart();
+        this.tlOut.clear();
+        this.animateIn();
+        this.tlOut.to('.parts', this.animationOut);
     },
+    // updated() {
+    //     this.tlOut.clear();
+    //     this.animateIn();
+    //     this.tlOut.to('.parts', this.animationOut);
+    //     console.log('update');
+    // },
     methods: {
         stepEnterHandler({ element, direction, index }) {
             console.log({ element, direction, index });
             this.currStepId = element.dataset.stepId
+        },
+        animateIn() {
+            var vm = this;
+            vm.tl.clear();
+            vm.tlOut.pause();
+            vm.tl.to('.part1', vm.animation);
+            vm.tl.play(0);
         }
     }
 }

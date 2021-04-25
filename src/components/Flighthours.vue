@@ -21,10 +21,17 @@
     </div>
 </template>
 <script>
+import { mapState, mapMutations } from 'vuex'
+
 
 export default {
     name: 'Flighthours',
     computed: {
+        ...mapState([
+            'animationPlaying',
+            'animation',
+            'animationOut'
+        ]),
         partDelay(){
             return this.$store.getters.partDelay;
         },
@@ -38,6 +45,14 @@ export default {
             set(v){ 
                 this.$store.commit('mutate', {property: 'tl', with: v})
             }
+        },
+        tlOut: {
+            get(){
+                return this.$store.getters.tlOut
+            },
+            set(v){ 
+                this.$store.commit('mutate', {property: 'tlOut', with: v})
+            }
         }
     },
     data() {
@@ -47,26 +62,25 @@ export default {
     },
     mounted () {
         let fadeColor="#aaaaaa";
-        this.tl.to('.part1', {opacity: 1, duration: this.partDuration }, "part1");
-        this.tl.to('.part2', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part2");
-        this.tl.to('.part3', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part3");
-        this.tl.to('.part4', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part4");
-        this.tl.to('.part5', {opacity: 1, duration: this.partDuration, delay: this.partDelay}, "part5");
-        this.tl.to('.part2', {color: fadeColor, duration: .5 }, "part3+=1");
-        this.tl.to('.part3', {color: fadeColor, duration: .5 }, "part4+=1");
-        this.tl.to('.part4', {color: fadeColor, duration: .5 }, "part5+=1");
-        // this.tl.to('.part5', {color: fadeColor, duration: .5 }, "part6+=1");
-        this.tl.to('.parts', {color: 'black', duration: this.partDuration }, "part6");
+        this.animateIn();
+        this.tlOut.clear();
+        this.tlOut.to('.parts', this.animationOut);
+
     },
     methods: {
-        stepEnterHandler({ element, direction, index }) {
-            console.log({ element, direction, index });
-            this.currStepId = element.dataset.stepId
+        animateIn() {
+            this.tl.clear();
+            this.tl.to('.part1', this.animation, "part1");
+            this.tl.to('.part2', this.animation, "part2");
+            this.tl.to('.part3', this.animation, "part3");
+            this.tl.to('.part4', this.animation, "part4");
+            this.tl.to('.part5', this.animation, "part5");
+            this.tl.play(0);
         }
     }
 }
 </script>
-<style>
+<style scoped>
     .step {
         width: 80%;
         max-width: 40rem;
@@ -81,6 +95,7 @@ export default {
         background-color: beige;
     }
     .parts {
-        @apply opacity-0
+        @apply opacity-0;
+        transform: scale(.5);
     }
 </style>

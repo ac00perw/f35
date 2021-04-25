@@ -1,15 +1,14 @@
 <template>
     <div class="fullscreen flex">
-        {{ text }}
         <div ref="part1" class="w-1/2 flex justify-center items-center opacity-0 part1 parts">
             <div class="graphic font-bold text-4xl">The F35 is the most expensive fighter jet in history</div>
         </div>
         <div class="w-1/2 flex flex-col justify-center items-center text-2xl">
-            <div class="part2 parts w-full mb-4">
-                <p>It costs $44k per hour to fly an F35</p>
+            <div class="part2 parts block mb-4">
+                <p>Each F35 costs between 110 and 135 million dollars (depending on the model)</p>
             </div>
-            <div class="part3 parts block mb-4">
-                <p>Each F35 costs between 110 and 135 million dollars depending on the model</p>
+            <div class="part3 parts w-full mb-4">
+                <p>It costs <strong>$44,000 per hour</strong> to fly an F35</p>
             </div>
             <div class="part4 parts mb-4">
                 <p>The total fleet of F35s in the United States is 2,456</p>
@@ -24,16 +23,20 @@
     </div>
 </template>
 <script>
+import { mapState, mapMutations } from 'vuex'
+import { gsap, timeline } from "gsap/all"
 
 export default {
     name: 'Stats',
     props: ['text'],
     computed: {
+        ...mapState([
+            'animationPlaying',
+            'animation',
+            'animationOut'
+        ]),
         partDelay(){
             return this.$store.getters.partDelay;
-        },
-        partDuration(){
-            return this.$store.getters.partDuration;
         },
         tl: {
             get(){
@@ -41,6 +44,14 @@ export default {
             },
             set(v){ 
                 this.$store.commit('mutate', {property: 'tl', with: v})
+            }
+        },
+        tlOut: {
+            get() {
+                return this.$store.getters.tlOut
+            },
+            set(v) {
+                this.$store.commit('mutate', { property: 'tlOut', with: v })
             }
         }
     },
@@ -50,30 +61,34 @@ export default {
         }
     },
     mounted () {
-        let fadeColor="#aaaaaa";
-        let anim = {...this.$store.getters.animation, ...{Duration: this.partDuration, delay: this.partDelay}};
-        this.tl.to('.part1', anim, "part1");
-        this.tl.to('.part2', anim, "part2");
-        this.tl.to('.part3', anim, "part3");
-        this.tl.to('.part4', anim, "part4");
-        this.tl.to('.part5', anim, "part5");
-        this.tl.to('.part6', anim, "part6");
-        this.tl.to('.part2', {color: fadeColor, duration: .5 }, "part3+=1");
-        this.tl.to('.part3', {color: fadeColor, duration: .5 }, "part4+=1");
-        this.tl.to('.part4', {color: fadeColor, duration: .5 }, "part5+=1");
-        this.tl.to('.part5', {color: fadeColor, duration: .5 }, "part6+=1");
-        this.tl.to('.parts', {color: 'black', duration: this.partDuration }, "partlast");
-        this.tl.restart();
+        var vm = this;
+        vm.animateIn();
+        this.tlOut.clear();
+        vm.tlOut.to('.parts', vm.animationOut);
+
     },
     methods: {
-        stepEnterHandler({ element, direction, index }) {
-            console.log({ element, direction, index });
-            this.currStepId = element.dataset.stepId
+        ...mapMutations([
+            'mutate'
+        ]),
+        animateIn() {
+            var vm = this;
+            vm.tl.clear();
+            this.tlOut.pause();
+            vm.tl.to('.part1', vm.animation);
+            vm.tl.to('.part2', {...vm.animation, ...{delay: 1}}, "part2");
+            vm.tl.to('.part3', vm.animation, "part3");
+            vm.tl.from('.part4', {...vm.animation, ...{opacity: 0, x: 220, scale: .4}}, "part4");
+            vm.tl.to('.part4', {...vm.animation, ...{x: 0, scale: 1}}, "part4");
+            vm.tl.to('.part5', vm.animation, "part5");
+            vm.tl.to('.part6', vm.animation, "part6");
+            vm.tl.play(0);
         }
     }
 }
 </script>
 <style>
+
     .step {
         width: 80%;
         max-width: 40rem;
@@ -88,6 +103,7 @@ export default {
         background-color: beige;
     }
     .parts {
-        @apply opacity-0
+        @apply opacity-0;
+        
     }
 </style>
