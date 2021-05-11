@@ -3,8 +3,7 @@
         <div class="completion-bar">
             <div class="progress"></div>
         </div>
-        {{ progress }}
-        <p>{{ animationPlaying }} {{ componentsList[currentComponent].name }}</p>
+        <!-- <p>{{ animationPlaying }} {{ componentsList[currentComponent].name }}</p> -->
         <div :class="`fullscreen framewrap-${currentComponent}`">
             <transition
                   @before-enter="beforeEnter"
@@ -18,7 +17,7 @@
                 >
                 <component :is="componentsList[currentComponent].name" v-bind="componentsList[currentComponent].props" :key="currentComponent" />
             </transition>
-                <backgrounds />
+            <backgrounds />
         </div>
     </div>
 </template>
@@ -30,6 +29,7 @@ import Intro from '../components/Intro.vue'
 import Frequency from '../components/Frequency.vue'
 import Flighthours from '../components/Flighthours.vue'
 import Oneliner from '../components/Oneliner.vue'
+import Hungrypeople from '../components/Hungrypeople.vue'
 import Backgrounds from '../components/Backgrounds.vue'
 import { mapState, mapMutations } from 'vuex'
 
@@ -82,6 +82,7 @@ export default {
         Frequency,
         Flighthours,
         Oneliner,
+        Hungrypeople,
         Backgrounds
     },
     data() {
@@ -93,7 +94,7 @@ export default {
                 { name: 'Flighthours', props: null },
                 // { name: 'Oneliner', props: { text: '<h1 class="font-bold text-4xl">There are 68,416 hungry people in Vermont</h1>' } },
                 { name: 'Oneliner', props: { text: '<p class="font-bold text-2xl">This averages to</p><p class="font-bold text-8xl w-full">14.1</p><p class="font-bold text-2xl">aircraft hours per day</p>' } },
-                { name: 'Oneliner', props: { text: '<h1 class="font-bold text-4xl">There are 68,416 hungry people in Vermont</h1>' } },
+                { name: 'Hungrypeople', props: { text: '<h1 class="font-bold text-4xl">There are 68,416 hungry people in Vermont</h1>' } },
                 { name: 'Oneliner', props: { text: '<8,346,752 dollars><p class="text-4xl">Of the total 423 monthly flight hours, it would take</p><p class="font-bold text-8xl">190 hours </p><p class="text-4xl"> to feed all the hungry people in Vermont</p>' } },
                 { name: 'Oneliner', props: { text: '<h1 class="font-bold text-4xl">And 119,973 hours to feed all the hungry people in the United States</h1>' } },
                 { name: 'Oneliner', props: { text: '<h1 class="font-bold text-6xl">What about homelessness in Vermont?</h1>' } },
@@ -117,7 +118,7 @@ export default {
         var vm = this;
         // vm.tl.play(0);
         // GSDevTools.create({minimal: true, globalSync: true});
-        
+        vm.currentComponent = 4;
         document.addEventListener('keydown', vm.key);
 
         this.tl.eventCallback("onComplete", function() {
@@ -203,7 +204,6 @@ export default {
     }
 }
 </script>
-<style src="vue-scrollama/dist/vue-scrollama.css"></style>
 <style lang="scss">
 .completion-bar {
     width: 100%;
@@ -211,7 +211,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    outline: 1px solid rgba(0, 0, 0, .2);
+    border: 1px solid rgba(0, 0, 0, .5);
 }
 
 .completion-bar .progress {
@@ -231,7 +231,14 @@ export default {
 
 </style>
 <style scoped>
-
+.fade-transition {
+  opacity: 1;
+  transition: all 1s ease;
+}
+  
+.fade-enter, .fade-leave{
+  opacity: 0;
+}
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {
