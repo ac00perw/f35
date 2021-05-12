@@ -2,7 +2,7 @@
     <div class="fullscreen flex">
         
         <div ref="part1" class="w-1/2 flex justify-center items-center opacity-0 part1 parts">
-            <div class="graphic font-bold text-4xl"><h1 class="font-bold text-4xl">In Vermont, the F35s fly x number of hours per day</h1></div>
+            <div class="graphic font-bold text-4xl"><h1 class="font-bold text-4xl">In Vermont, the F35s fly an average of 14.1 hours per day</h1></div>
         </div>
         <div class="w-1/2 flex flex-col justify-center items-center text-2xl">
             <div class="part2 parts w-full mb-4">

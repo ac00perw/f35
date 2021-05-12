@@ -26,28 +26,20 @@
                     <img class="plane" src="/img/f35.svg" width="100"/>
                     <img class="plane" src="/img/f35.svg" width="100"/>
             </div>
-            <div class="clock opacity-0">CLOCK
-                <div class="hand">------------</div>
-            </div>
-            <div class="calendar col-span-2 flex flex-wrap justify-between text-6xl pr-12">
-                <div class="day">S</div>
-                <div class="day">M</div>
-                <div class="day">T</div>
-                <div class="day">W</div>
-                <div class="day">T</div>
-                <div class="day">F</div>
-                <div class="day">S</div>
-            </div>
-
+            <clock class="clock"></clock>
+            <calendar :totalDays="totalDays" class="cal"></calendar>
         </div>
     </div>
 </template>
 <script>
 import { mapState, mapMutations } from 'vuex'
 import { gsap } from 'gsap/all'
+import Clock from './Clock'
+import Calendar from './Calendar'
 
 export default {
     name: 'Stats',
+    components: { Clock, Calendar },
     computed: {
         ...mapState([
             'animationPlaying',
@@ -73,7 +65,8 @@ export default {
     },
     data() {
         return  {
-            currStepId: 1
+            currStepId: 1,
+            totalDays: 0
         }
     },
     mounted () {
@@ -83,22 +76,22 @@ export default {
         this.tlOut.to('.parts', this.animationOut);
     },
     methods: {
-        moveHands() {
-            var vm = this;
-            gsap.to('.hand', {rotation: "+=150", duration: .5, ease: "linear", onComplete:function(){vm.moveHands()}});
-        },
         inAnimation() {
             var vm = this;
             this.tl.clear();
             this.tlOut.pause();
+            this.tl.set('.clock', {opacity: 0, y: 50, scaleY: .4});
+            this.tl.set('.cal', {opacity: 0, y: 50});
             this.tl.set('.plane', {rotation: 90, x: -100, scale: 1.2});
             this.tl.to('.part1', vm.animation, "twenty");
             this.tl.to('.part2', vm.animation, "sixplanes");
-            this.tl.to('.part3', vm.animation, "clock");
-            this.tl.to('.clock', {opacity: 1}, "clock");
-            this.tl.add(vm.moveHands());
+            this.tl.to('.part3', vm.animation, "planes2");
+            this.tl.to('.clock', {duration: .4, opacity: 1, y: 0, scaleY: 1, ease: "back.out(2.4)"}, "clock");
+            
             this.tl.to('.part4', vm.animation, "twotimes");
             this.tl.to('.part5', vm.animation, "eighteen");
+            this.tl.to('.cal', {duration: .4, opacity: 1, y: 0, scaleY: 1, ease: "back.out(2.4)"}, "cal");
+            this.tl.call(() => { vm.totalDays = 31; console.log('function')}, null, "cal")
             // this.tl.to('.aircraft', {opacity: 1, duration: 1, delay: 2, onComplete: vm.planes}, "sixplanes");
             this.tl.to('.plane', {delay: 1, opacity: 1, scale: 1, x:0, duration: .5, ease: "back.out(1.7)", stagger: {each: .08, repeat: 0}}, 'sixplanes');
             // this.tl.set('.hand', {opacity: 1}, "clock");
@@ -120,5 +113,8 @@ body {
 .day {
     opacity: 0;
     transform: translateY(-100) scale(.9);
+}
+.clock, .cal {
+    opacity: 0;
 }
 </style>
