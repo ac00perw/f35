@@ -268,9 +268,10 @@ export default {
             vm.tl.clear();
             vm.tlOut.pause();
             vm.tl.set('.person', { opacity: 1, y: `${vm.peopleSize}` });
+            vm.tl.set('.people-holder', {css: { 'filter': 'blur(2px)','-webkit-filter': 'blur(2px)'}});
             vm.tl.to('.part1', vm.animation);
             vm.tl.to('.person', { stagger: { each: .05, repeat: 0, from: 'random' }, y: 5, duration: .5, ease: "back.out(1.2)" });
-            vm.tl.to('.people-holder:nth-child(4)', {stagger: { each: .05, repeat: 0, from: 'random' }, duration: 1, css: { 'filter': 'blur(4)','-webkit-filter': 'blur(4px)'}});
+            vm.tl.to('.people-holder', {stagger: { each: .05, repeat: 0, from: 'random' }, duration: 1, css: { 'filter': 'blur(0)','-webkit-filter': 'blur(0)'}});
             vm.tl.play(0);
         },
         loadPeople() {
