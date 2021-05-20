@@ -38,7 +38,7 @@ export default new Vuex.Store({
         //hours per month / 30 / 24 
         aircraftHoursPerHour: .57,
         currentComponent: 0,
-        animation: {opacity: 1, y: -20, scale: 1, ease: 'back.inOut(1.8)', duration: 1, delay: 0},
+        animation: {opacity: 1, y: -20, scale: 1, ease: 'back.inOut(1.8)', duration: 1, delay: 1},
         animationOut: {stagger: {each: .05, repeat: 0}, delay: 0, opacity: 0, y: -80, ease: 'power3.inOut', duration: .4},
         tl: gsap.timeline(),
         tlOut: gsap.timeline(),

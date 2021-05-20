@@ -19,20 +19,22 @@ export default {
 </script>
 <style scoped>
 .calendar{
-    width: 800px;
-    height: 500px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 250px;
 }
 .box {
     width: 14.2%;
     min-width: 14.2%;
-    height: 100px;
+    height: 80px;
     position: relative;
     border: 1px solid rgba(0,0,0,.2);
 }
 .check {
     display: block;
     width: 50px;
-    height: 50px;
+    height: 30px;
+    transform: scale(.7);
 }
 
 </style>
