@@ -2,210 +2,11 @@
     <div class="fullscreen flex flex-wrap justify-center items-center">
         <div v-html="text" ref="part1" class="justify-center opacity-0 part1 parts" />
         <div class="flex flex-wrap p-6 justify-center relative">
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-18.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-19.svg" class="person-1 person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-1.svg" class="person-2 person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-2.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-3.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-4.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-5.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-6.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-7.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-8.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-9.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-10.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-2.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-3.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-4.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-11.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-12.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-13.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-14.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-15.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-16.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-17.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-18.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-19.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-20.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-21.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-22.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-23.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-24.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-25.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-26.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-27.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-28.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-29.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-30.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-1.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-2.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-3.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-4.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-5.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-6.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-7.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-8.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-14.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-15.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-16.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-9.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-10.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-11.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-12.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-13.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-14.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-15.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-16.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-17.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-18.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-19.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-20.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-21.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-22.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-23.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-24.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-25.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-26.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-27.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-28.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-29.svg" class="person" />
-            </div>
-            <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-30.svg" class="person" />
-            </div>
+            <div v-for="index in 64" class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
+                <img class="person" :ref="'person-'+index" />
+            </div>
+            <!-- <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
+                <img src="/img/Person-18.svg" class="person" / -->
         </div>
     </div>
     </div>
@@ -249,7 +50,13 @@ export default {
         this.animateIn();
         this.tlOut.to('.parts', this.animationOut, "outer");
         this.tlOut.to('.person', { stagger: { each: .05, from: 'random', repeat: 0 }, y: `${this.peopleSize}`, duration: .5, ease: "power4.out" },"outer");
-        this.loadPeople();
+        for(let n=1,c=64; n<=64; n++) {
+            console.log('n', n);
+            // this.$refs[`person-${n}`][0].src=`/img/Person-${x}.svg`;
+            this.$refs[`person-${n}`][0].src=this.getSil();
+        }
+        let m = Math.floor(Math.random() * 64);
+        this.$refs[`person-${m}`][0].src =this.getPerson();
 
     },
     // updated() {
@@ -259,6 +66,14 @@ export default {
     //     console.log('update');
     // },
     methods: {
+        getSil(i) {
+            let index = Math.floor(Math.random() * 5) +1;
+            return `/img/Silhouette ${index}.svg`
+        },
+        getPerson(){
+            let index = Math.floor(Math.random() * 32) +1;
+            return `/img/Person-${index}.svg`
+        },
         stepEnterHandler({ element, direction, index }) {
             console.log({ element, direction, index });
             this.currStepId = element.dataset.stepId
@@ -267,50 +82,25 @@ export default {
             var vm = this;
             vm.tl.clear();
             vm.tlOut.pause();
-            vm.tl.set('.person', { opacity: 1, y: `${vm.peopleSize}` });
-            vm.tl.set('.people-holder', {css: { 'filter': 'blur(2px)','-webkit-filter': 'blur(2px)'}});
-            vm.tl.to('.part1', vm.animation);
-            vm.tl.to('.person', { stagger: { each: .05, repeat: 0, from: 'random' }, y: 5, duration: .5, ease: "back.out(1.2)" });
-            vm.tl.to('.people-holder', {stagger: { each: .05, repeat: 0, from: 'random' }, duration: 1, css: { 'filter': 'blur(0)','-webkit-filter': 'blur(0)'}});
-            vm.tl.play(0);
-        },
-        loadPeople() {
-            for (let i = 1; i <= 32; i++) {
-                this.loadSVG(`/img/Person-${i}.svg`);
-            }
-        },
-        loadSVG(p) {
-            var vm = this;
-            vm.people.push(p);
-            // axios.get(p)
-            //     .then(function(d){
-            //         vm.people.push(d.data);
-            //     })
-        }
+            //stagger a function to call random people into sils??
 
+            
+            vm.$forceUpdate();
+            // vm.tl.set('.person', { opacity: 1, y: `${vm.peopleSize}` });
+            // vm.tl.set('.people-holder', {css: { 'filter': 'blur(2px)','-webkit-filter': 'blur(2px)'}});
+            // vm.tl.to('.part1', vm.animation);
+            vm.tl.to('.person', { stagger: { each: .05, repeat: 0, from: 'random' }, y: 5, duration: .5, ease: "back.out(1.2)" });
+            // vm.tl.to('.people-holder', {stagger: { each: .05, repeat: 0, from: 'random' }, duration: 1, css: { 'filter': 'blur(0)','-webkit-filter': 'blur(0)'}});
+            // vm.tl.play(0);
+        }
     }
 }
 </script>
 <style>
-.step {
-    width: 80%;
-    max-width: 40rem;
-    padding: 10rem 0;
-    margin: 0 3rem 15rem;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-}
-
-.step.is-active {
-    background-color: beige;
-}
 
 .parts {
     @apply opacity-0
 }
-
-#Layer_1 g.person {}
 
 .people-holder {
     border-radius: 50%;
@@ -328,6 +118,6 @@ export default {
     position: absolute;
     width: 100%;
     transform: translateY(-300);
-    opacity: 0;
+    opacity: 1;
 }
 </style>

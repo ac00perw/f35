@@ -121,7 +121,7 @@ export default {
         var vm = this;
         // vm.tl.play(0);
         // GSDevTools.create({minimal: true, globalSync: true});
-        vm.currentComponent = 1;
+        vm.currentComponent = 3;
         document.addEventListener('keydown', vm.key);
 
         this.tl.eventCallback("onComplete", function() {
