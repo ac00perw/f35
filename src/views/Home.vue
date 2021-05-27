@@ -30,6 +30,7 @@ import Frequency from '../components/Frequency.vue'
 import Flighthours from '../components/Flighthours.vue'
 import Oneliner from '../components/Oneliner.vue'
 import Hungrypeople from '../components/Hungrypeople.vue'
+import Homeless from '../components/Homeless.vue'
 import Backgrounds from '../components/Backgrounds.vue'
 import { mapState, mapMutations } from 'vuex'
 
@@ -81,6 +82,7 @@ export default {
         Intro,
         Frequency,
         Flighthours,
+        Homeless,
         Oneliner,
         Hungrypeople,
         Backgrounds
@@ -91,16 +93,16 @@ export default {
                 { name: 'Intro', props: null },
                 { name: 'Frequency', props: null },
                 { name: 'Oneliner', props: { text: '<p class="font-bold text-2xl">This averages to</p><p class="font-bold text-8xl w-full">14.1</p><p class="font-bold text-2xl">aircraft hours per day</p>' } },
-                { name: 'Hungrypeople', props: { text: '<h1 class="font-bold text-4xl">There are 68,416 hungry people in Vermont</h1>' } },
+                { name: 'Hungrypeople' },
                 // { name: 'Oneliner', props: { text: '<div class="p1"><h1 class="font-bold text-9xl w-full">$18,295,200</h1></div><h3 class="p2 text-6xl">per month</h3>' } },
                 // { name: 'Flighthours', props: null },
 
-                { name: 'Oneliner', props: { text: '<8,346,752 dollars><p class="text-4xl">Of the total 423 monthly flight hours, it would take</p><p class="font-bold text-8xl">190 hours </p><p class="text-4xl"> to feed all the hungry people in Vermont</p>' } },
+                // { name: 'Oneliner', props: { text: '<8,346,752 dollars><p class="text-4xl">Of the total 423 monthly flight hours, it would take</p><p class="font-bold text-8xl">190 hours </p><p class="text-4xl"> to feed all the hungry people in Vermont</p>' } },
                 // { name: 'Oneliner', props: { text: '<h1 class="font-bold text-4xl">And 119,973 hours to feed all the hungry people in the United States</h1>' } },
 
                 //homelessness
-                { name: 'Oneliner', props: { text: '<h1 class="font-bold text-4xl">There are 1,089 homeless people in Vermont</h1>' } },
-                { name: 'Oneliner', props: { text: '<h1 class="font-bold text-4xl">It costs $542 per month to provide affordable housing for a homeless person</h1>' } },
+                { name: 'Homeless' },
+                // { name: 'Oneliner', props: { text: '' } },
                 { name: 'Oneliner', props: { text: '<h1 class="font-bold text-4xl">In order to house all homeless people in Vermont it would cost $590,238</h1>' } },
                 { name: 'Oneliner', props: { text: '<h1 class="font-bold text-4xl">or<br><div class="text-8xl w-full">13.4</div> F35 flight hours per month</h1>' } },
                 { name: 'Oneliner', props: { text: '<h1 class="font-bold text-6xl">or 32 flight hours</h1><h1 class="font-bold text-4xl">to provide housing and transitional services to all of them</h1>' } },
@@ -121,7 +123,7 @@ export default {
         var vm = this;
         // vm.tl.play(0);
         // GSDevTools.create({minimal: true, globalSync: true});
-        vm.currentComponent = 3;
+        vm.currentComponent = 4;
         document.addEventListener('keydown', vm.key);
 
         this.tl.eventCallback("onComplete", function() {
