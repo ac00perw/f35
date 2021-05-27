@@ -30,7 +30,7 @@ import { gsap } from 'gsap/all'
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(255,255,205,.6);
+    background-color: rgba(255,255,235,.6);
     transition: all 2s ease-in-out;
     z-index: -1;
 }
