@@ -1,28 +1,29 @@
 <template>
-    <div class="fullscreen flex flex-wrap justify-center items-stretch">
+    <div class="fullscreen flex flex-wrap justify-center items-center font-bold">
         <div :class="[panelClass, 'part1']">
-            <h1 :class="[mediumText, 'self-start text-center']">There are 1,089 homeless people in Vermont</h1>
-            <img class="inline-block self-center" src="/img/homeless-bench.svg" width="70%"/>
+            <h1 :class="mediumText">In order to house all homeless people in Vermont it would cost <p :class="largeText">$590,238</p> per month</h1>
         </div>
         <div :class="[panelClass, 'part2']">
-            <div :class="[mediumText, 'self-start']">It costs $542 per month to provide affordable housing for a homeless person</div>
-            <img class="inline-block self-center" src="/img/homeless-house.svg" width="70%" />
+            <p :class="mediumText">Which equates to</p>
+            <h1 :class="mediumText"><div :class="largeText">13.4</div>F35 flight hours per month</h1>
         </div>
         <div :class="[panelClass, 'part3']">
-            <h1 :class="mediumText">It costs $1,250 per month to provide affordable housing with transitional support</h1>
-            <img class="inline-block self-center" src="/img/homeless-trans.svg" width="70%" />
+            <p :class="mediumText">or to provide housing and transitional services</p>
+            <h1 :class="largeText">32</h1><h1 :class="mediumText">F35 flight hours per month </h1>
         </div>
+
+
     </div>
 </template>
 <script>
 import { mapState } from 'vuex'
 
 export default {
-    name: 'Homeless',
+    name: 'Homeless2',
     props: ['text'],
     computed: {
         ...mapState([
-            'animationPlaying', 'animation', 'animationOut', 'mediumText', 'largeText'
+            'animationPlaying', 'animation', 'animationOut', "mediumText", "largeText"
         ]),
         tl: {
             get(){
@@ -44,7 +45,7 @@ export default {
     data() {
         return  {
             currStepId: 1,
-            panelClass: "w-full md:w-1/3 parts flex flex-col justify-center items-center p-4"
+            panelClass: "w-full md:w-1/3 parts flex flex-col justify-center p-4 mt-8"
         }
     },
     mounted () {
@@ -93,9 +94,6 @@ export default {
         border-right: 4px solid rgba(0,0,0,.1);
         &:last-child {
             border-right: none;
-        }
-        img {
-            max-width: 250px;
         }
     }
 </style>

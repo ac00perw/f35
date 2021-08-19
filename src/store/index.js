@@ -6,6 +6,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+        mediumText: 'font-bold md:text-4xl text-lg',
+        largeText: 'md:text-6xl text-3xl',
+        screenHeight: screen.height,
+        screenWidth: document.body.clientWidth,
         usStates: null,
         selectedState: null,
         scale: {
@@ -57,6 +61,8 @@ export default new Vuex.Store({
     },
     // modules: {},
     getters: {
+        screenHeight: state => state.screenHeight,
+        screenWidth: state => state.screenWidth,
         scale: state => state.scale,
         selectedScale: state => state.selectedScale,
         usStates: state => state.usStates,
@@ -71,6 +77,8 @@ export default new Vuex.Store({
         tlOut: state => state.tlOut,
         animationPlaying: state => state.animationPlaying,
         currentComponent: state => state.currentComponent,
-        people: state => state.people
+        people: state => state.people,
+        mediumText: state => state.mediumText,
+        largeText: state => state.largeText
     }
 })

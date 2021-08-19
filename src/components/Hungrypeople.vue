@@ -1,22 +1,19 @@
 <template>
-    <div class="fullscreen flex flex-wrap flex-col justify-center items-center">
+    <div class="fullscreen flex flex-col justify-end items-center">
         <div class="justify-center part1 parts">
-            <h1 class="font-bold text-4xl">There are 68,416 hungry people in Vermont</h1>
+            <h1 class="font-bold md:text-4xl text-base">There are 68,416 hungry people in Vermont</h1>
         </div>
         <div class="justify-center part2 parts">
-            <h1 class="font-bold text-2xl">The cost of 3 flight hours would feed 1,000 people for a month</h1>
+            <h1 class="font-bold md:text-2xl text-sm">The cost of 3 flight hours would feed 1,000 people for a month</h1>
         </div>
         <div class="justify-center part3 parts">
-            <h1 class="font-bold text-2xl">In 13 days all 68,416 hungry people could be fed for a month</h1>
+            <h1 class="font-bold md:text-2xl text-sm">In 13 days worth of flights all 68,416 hungry people could be fed for a month</h1>
         </div>
-        <div class="flex flex-wrap p-6 justify-center relative px-20">
+        <div class="flex flex-wrap p-6 justify-center relative md:px-20">
             <div v-for="index in 64" class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
                 <img class="person" :ref="'person-'+index" />
             </div>
-            <!-- <div class="people-holder" :style="`width:${peopleSize};height:${peopleSize}`">
-                <img src="/img/Person-18.svg" class="person" / -->
         </div>
-    </div>
     </div>
 </template>
 <script>
@@ -54,10 +51,18 @@ export default {
         }
     },
     mounted() {
+        if(this.$store.getters.screenHeight < 750){
+            this.peopleSize = '45px';
+        }
+        if(this.$store.getters.screenHeight < 500){
+            this.peopleSize = '25px';
+        }
+
         this.tlOut.clear();
         this.animateIn();
         this.tlOut.to('.parts', this.animationOut, "outer");
         this.tlOut.to('.person', { stagger: { each: .02, from: 'random', repeat: 0 }, y: `${this.peopleSize}`, duration: .2, ease: "power4.out" },"outer");
+
         
         // let m = Math.floor(Math.random() * 64);
         
@@ -124,10 +129,10 @@ export default {
 .people-holder {
     border-radius: 50%;
     background-color: #f6ece6;
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .3);
     overflow: hidden;
     position: relative;
-    margin: 6px;
+    margin: 2px;
 }
 
 .person {

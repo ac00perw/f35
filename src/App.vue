@@ -14,7 +14,7 @@
 import HomeScroller from '@/views/Home.vue'
 
 export default {
-    components: {HomeScroller},
+    components: { HomeScroller },
     createwd() {
         this.$store.dispatch('addCalcs');
     }
@@ -25,18 +25,6 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-}
-
-.stats-wrap {
-    height: 100vh;
-    .stats {
-        height: 50vh;
-        width: 100%;
-        background-color: #fff;
-        border: 1px solid rgba(0,0,0,.2);
-        margin: 4px;
-        z-index: 200;
-    }
 }
 
 </style>

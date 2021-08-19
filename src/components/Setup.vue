@@ -1,25 +1,6 @@
 <template>
     <div class="fullscreen flex">
-        <div ref="part1" class="w-1/2 flex justify-center items-center opacity-0 part1 parts">
-            <div class="graphic font-bold text-4xl">The F35 is the most expensive fighter jet in history</div>
-        </div>
-        <div class="w-1/2 flex flex-col justify-center items-center text-2xl">
-            <div class="part2 parts block mb-4">
-                <p>Each F35 costs between 110 and 135 million dollars (depending on the model)</p>
-            </div>
-            <div class="part3 parts w-full mb-4">
-                <p>It costs <strong>$44,000 per hour</strong> to fly an F35</p>
-            </div>
-            <div class="part4 parts mb-4">
-                <p>The total fleet of F35s in the United States is 2,456</p>
-            </div>
-            <div class="part5 parts mb-4">
-                <p>Lifetime cost of the program is 1.727 trillion dollars</p>
-            </div>
-            <div class="part6 parts mb-4">
-                <p>1,727,000,000,000 dollars</p>
-            </div>
-        </div>
+        Setup
     </div>
 </template>
 <script>
@@ -27,7 +8,7 @@ import { mapState, mapMutations } from 'vuex'
 import { gsap, timeline } from "gsap/all"
 
 export default {
-    name: 'Stats',
+    name: 'Setup',
     props: ['text'],
     computed: {
         ...mapState([
@@ -78,10 +59,10 @@ export default {
             vm.tl.to('.part1', vm.animation);
             vm.tl.to('.part2', {...vm.animation, ...{delay: 1}}, "part2");
             vm.tl.to('.part3', vm.animation, "part3");
-            // vm.tl.from('.part4', {...vm.animation, ...{opacity: 0, x: 0, scale: 1}}, "part4");
+            vm.tl.from('.part4', {...vm.animation, ...{opacity: 0, x: 220, scale: .4}}, "part4");
             vm.tl.to('.part4', {...vm.animation, ...{x: 0, scale: 1}}, "part4");
             vm.tl.to('.part5', vm.animation, "part5");
-            vm.tl.to('.part6', {...vm.animation, ...{delay: 2}}, "part6");
+            vm.tl.to('.part6', vm.animation, "part6");
             vm.tl.play(0);
         }
     }

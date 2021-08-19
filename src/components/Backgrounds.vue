@@ -1,5 +1,5 @@
 <template>
-    <div :class="`bg cur-${currentComponent}`">
+    <div class="bg">
     </div>    
 </template>
 
@@ -30,22 +30,7 @@ import { gsap } from 'gsap/all'
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(255,255,235,.6);
-    transition: all 2s ease-in-out;
+    background-image: linear-gradient(to bottom, rgb(225,225,225), rgba(180,185,185,1));
     z-index: -1;
-}
- .bg.cur-1 {
-    //background-image: url('https://acdubs.com/images/headers/20.jpg');
-    background-size: cover;
-
-}
-.bg.cur-2 {
-    background-color: #efefef;
-}
-.bg.cur-3 {
-    background-color: #eeffee;
-}
-.framewrap-3 {
-    // color: white;
 }
 </style>
