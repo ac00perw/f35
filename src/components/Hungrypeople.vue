@@ -91,11 +91,12 @@ export default {
             var vm = this;
             console.log('cp')
             for(let i=1, c=64; i<= 64; i++){
-                vm.tl.to(vm.$refs[`person-${i}`][0], { duration: 0, attr: { src: vm.getPerson() } });
+                vm.tl.to(vm.$refs[`person-${i}`][0], {attr: { src: vm.getPerson()}, stagger: { each: .02, from: 'random', repeat: 0 }, y: 0, duration: .1, ease: "power4.out" });
+                // vm.tl.fromTo(vm.$refs[`person-${i}`][0], {y: 10}, { y:0, duration: .02, attr: { src: vm.getPerson() }, ease: "back.out(2.2)" });
                 // vm.$refs[`person-${i}`][0].src =vm.getPerson();
             }
         },
-        allSils() {
+        iterateThruSilhouettes() {
             for(let n=1,c=64; n<=64; n++) {
                 console.log('n', n);
                 // this.$refs[`person-${n}`][0].src=`/img/Person-${x}.svg`;
@@ -111,14 +112,15 @@ export default {
             
             vm.$forceUpdate();
             // vm.tl.set('.person', { opacity: 1, y: `${vm.peopleSize}` });
-            // vm.tl.set('.people-holder', {css: { 'filter': 'blur(2px)','-webkit-filter': 'blur(2px)'}});
+            // vm.tl.set('.people-holder', {css: { 'filter': 'grayscale(1)'}});
             vm.tl.to('.part1', vm.animation);
-            vm.tl.call(vm.allSils());
+            vm.tl.call(vm.iterateThruSilhouettes(), null, ">");
             vm.tl.to('.part2', vm.animation);
-            vm.tl.call(function() { vm.$refs['person-1'][0].src =vm.getPerson() } );
-            vm.tl.to('.part3', {...vm.animation, ...{delay: 3}}, "three");
+            vm.tl.call(function() { vm.$refs['person-1'][0].src = vm.getPerson(); } );
+            vm.tl.to('.part3', {...vm.animation, ...{delay: 2}}, "three");
+
             vm.tl.call(vm.colorPeople(), null, "three");
-            // vm.tl.to('.person', { stagger: { each: .05, repeat: 0, from: 'random' }, y: 5, duration: .5, ease: "back.out(1.2)" });
+            // vm.tl.fromTo('.person', {y: 5}, { stagger: { each: .05, repeat: 0, from: 'random' }, y: 0, duration: .5, ease: "back.out(1.2)" });
             // vm.tl.to('.people-holder', {stagger: { each: .05, repeat: 0, from: 'random' }, duration: 1, css: { 'filter': 'blur(0)','-webkit-filter': 'blur(0)'}});
             // vm.tl.play(0);
         }

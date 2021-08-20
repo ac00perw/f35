@@ -56,13 +56,8 @@ export default {
             var vm = this;
             vm.tl.clear();
             this.tlOut.pause();
-            vm.tl.to('.part1', vm.animation);
-            vm.tl.to('.part2', {...vm.animation, ...{delay: 1}}, "part2");
-            vm.tl.to('.part3', vm.animation, "part3");
-            vm.tl.from('.part4', {...vm.animation, ...{opacity: 0, x: 220, scale: .4}}, "part4");
-            vm.tl.to('.part4', {...vm.animation, ...{x: 0, scale: 1}}, "part4");
-            vm.tl.to('.part5', vm.animation, "part5");
-            vm.tl.to('.part6', vm.animation, "part6");
+            vm.tl.to('.part1', {...vm.animation, ...{duration: .2}});
+            vm.tl.to('.part2', vm.animation, "part2");
             vm.tl.play(0);
         }
     }

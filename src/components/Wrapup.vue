@@ -48,7 +48,9 @@ export default {
         this.animateIn();
         this.tlOut.to('.parts', this.animationOut);
     },
-
+    destroyed () {
+        this.tl.pause();
+    },
     methods: {
         randomStyle() {
             let xy = {x: window.innerWidth, y: window.innerHeight};

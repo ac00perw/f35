@@ -35,11 +35,12 @@ export default new Vuex.Store({
         aircraftHoursPerMonth: 413,
         //hours per month / 30 / 24 
         aircraftHoursPerHour: .57,
-        currentComponent: 0,
+        currentComponent: 4,
         animation: {opacity: 1, y: -20, scale: 1, ease: 'back.inOut(1.8)', duration: 1, delay: 1},
         animationOut: {stagger: {each: .05, repeat: 0}, delay: 0, opacity: 0, y: -80, ease: 'power3.inOut', duration: .4},
         tl: gsap.timeline(),
         tlOut: gsap.timeline(),
+        animationProgress: null,
         animationPlaying: false
     },
     mutations: {
@@ -79,6 +80,7 @@ export default new Vuex.Store({
         currentComponent: state => state.currentComponent,
         people: state => state.people,
         mediumText: state => state.mediumText,
-        largeText: state => state.largeText
+        largeText: state => state.largeText,
+        animationProgress: state => state.animationProgress
     }
 })

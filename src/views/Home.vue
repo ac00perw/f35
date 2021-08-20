@@ -5,8 +5,11 @@
         </div>
         <div class="arrows absolute top-0 left-0 w-full">
         <div class="flex flex-wrap justify-between" v-if="!animationPlaying">
-            <div class="self-start text-8xl pl-2 cursor-pointer" @click="currentComponent = currentComponent > 0 ?  -1 : 0"><</div>
-            <div class="self-end text-8xl pr-2 cursor-pointer" @click="currentComponent +=1 ">></div>
+            <div class="self-start text-8xl pl-2 cursor-pointer" @click="rewindComponent"><</div>
+            <!-- p:{{ animationProgress }} isplay:{{ animationPlaying }}
+            cc: {{ currentComponent }} cw: {{ screenWidth/componentsList.length }}
+            tp:{{ totalProgress }} -->
+            <div class="self-end text-8xl pr-2 cursor-pointer" @click="advanceComponent">></div>
 
         </div>
         
@@ -47,14 +50,27 @@ import { mapState, mapMutations } from 'vuex'
 
 export default {
     computed: {
-        animationPlaying() {
-            return this.$store.getters.animationPlaying
+        ...mapState([
+            'animation', 'animationOut', "mediumText", "largeText", "screenWidth"
+        ]),
+        animationProgress: {
+            get() {
+                return this.$store.getters.animationProgress
+            },
+            set(n) {
+                this.$store.commit('mutate', {property: 'animationProgress', with: n})
+            }
+        },
+        animationPlaying: {
+            get() {
+                return this.$store.getters.animationPlaying
+            },
+            set(n) {
+                this.$store.commit('mutate', {property: 'animationPlaying', with: n})
+            }
         },
         partDelay() {
             return this.$store.getters.partDelay;
-        },
-        animation() {
-            return this.$store.getters.animation;
         },
         partDuration() {
             return this.$store.getters.partDuration;
@@ -84,12 +100,6 @@ export default {
             }
         }
     },
-    watch: {
-        currentComponent(n, o) {
-            console.log('update profress');
-            gsap.to('.progress', { ease: "expo.out", duration: 2, width: `${100 * (this.currentComponent / (this.componentsList.length-1))}%` });
-        }
-    },
     components: {
         Setup,
         Intro,
@@ -105,6 +115,7 @@ export default {
     },
     data() {
         return {
+            totalProgress: null,
             componentsList: [
                 { name: 'Setup' },
                 { name: 'Intro', props: null },
@@ -115,22 +126,29 @@ export default {
                 { name: 'Homeless2' },
                 { name: 'Wrapup' },
                 { name: 'Sources' },
-            ],
-            progress: 0
+            ]
         }
     },
     mounted() {
         var vm = this;
-        vm.currentComponent = 1;
         document.addEventListener('keydown', vm.key);
+
+        this.tl.eventCallback("onStart", function() {
+            console.log('done tl')
+            vm.animationPlaying = true;
+        });
 
         this.tl.eventCallback("onComplete", function() {
             console.log('done tl')
-            vm.mutate({ property: 'animationPlaying', with: false });
+            vm.animationPlaying = false;
         });
 
         this.tl.eventCallback("onUpdate", function() {
-            vm.progress = vm.tl.progress();
+            
+            vm.animationProgress= 0+(this.progress() * 100/100) * (vm.screenWidth/vm.componentsList.length);
+            vm.totalProgress = 0 + (vm.screenWidth/vm.componentsList.length * vm.currentComponent) + vm.animationProgress;
+            vm.animationPlaying = this.progress() < .9 ? true : false;
+            gsap.to('.progress', { ease: "expo.out", duration: .2, width: `${vm.totalProgress}px` });
         });
         
     },
@@ -175,6 +193,15 @@ export default {
             console.log('reset');
             this.tl.play(0, true);
             this.tlOut.pause(0);
+            this.animationProgress = 0;
+        },
+        advanceComponent() {
+            var vm = this;
+            vm.currentComponent = (vm.currentComponent >= vm.componentsList.length ? vm.componentsList.length : vm.currentComponent += 1);
+        },
+        rewindComponent() {
+            var vm = this;
+            vm.currentComponent = (vm.currentComponent <= 0 ? vm.currentComponent = 0 : vm.currentComponent -= 1);
         },
         key(e) {
             // console.log(e.key);
@@ -187,7 +214,7 @@ export default {
                     // let duration = vm.tl.totalDuration();
                     // vm.tl.totalDuration(.4);
                     // vm.tl.reverse(null, false);
-                    vm.currentComponent = (vm.currentComponent >= vm.componentsList.length ? vm.componentsList.length : vm.currentComponent += 1);
+                    vm.advanceComponent();
                     // vm.tlOut.play();
                     // vm.tl.clear();
                     // vm.tlOut.eventCallback('onComplete', function() { 
@@ -200,7 +227,7 @@ export default {
                 case 'ArrowLeft':
                 //animation runs in reverse.
                 // vm.tl.reverse(null, false);
-                vm.currentComponent = (vm.currentComponent <= 0 ? vm.currentComponent = 0 : vm.currentComponent -= 1);
+                    vm.rewindComponent();
                     break;
             }
         }

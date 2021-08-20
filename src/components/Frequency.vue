@@ -71,9 +71,13 @@ export default {
     },
     mounted () {
         var vm = this;
+        
         this.inAnimation();
         this.tlOut.clear();
         this.tlOut.to('.parts', this.animationOut);
+    },
+    destroyed() {
+        vm.tl.pause();
     },
     methods: {
         inAnimation() {

@@ -1,6 +1,6 @@
 <template>
     <div class="container mx-auto flex flex-col mt-32 p-4">
-        <h1 class="text-4xl mb-8">Sources</h1>
+        <h1 class="text-4xl mb-8 sources">Sources</h1>
         <ul class="text-left">
             <li>SNAP benefits
                 <ul class="pl-6">
@@ -16,3 +16,37 @@
         </ul>
     </div>
 </template>
+<script>
+import { mapState, mapMutations } from 'vuex'
+
+export default {
+    computed: {
+        ...mapState([
+            'animationPlaying',
+            'animation',
+            'animationOut'
+        ]),
+        tl: {
+            get(){
+                return this.$store.getters.tl
+            },
+            set(v){ 
+                this.$store.commit('mutate', {property: 'tl', with: v})
+            }
+        },
+        tlOut: {
+            get() {
+                return this.$store.getters.tlOut
+            },
+            set(v) {
+                this.$store.commit('mutate', { property: 'tlOut', with: v })
+            }
+        }
+    },
+    mounted() {
+        this.tlOut.clear();
+        this.tl.to('.sources', this.animation)
+        this.tlOut.to('.parts', this.animationOut);
+    }
+}
+</script>
