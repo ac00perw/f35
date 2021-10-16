@@ -1,6 +1,5 @@
-//Calendar
 <template>
-   <div class="flex flex-wrap calendar">
+   <div class="mx-auto flex flex-wrap calendar justify-start w-full">
        <template v-for="index in totalDays">
              <div class="box flex justify-center items-center "><div class="p-1 text-xs absolute top-0 right-0" >{{ index }}</div>
             <checkbox v-if="index < 19" :class="`text-center check ${index}`"></checkbox>

@@ -5,11 +5,11 @@
         </div>
         <div class="arrows absolute top-0 left-0 w-full">
         <div class="flex flex-wrap justify-between" v-if="!animationPlaying">
-            <div class="self-start text-8xl pl-2 cursor-pointer" @click="rewindComponent"><</div>
+            <div :class="{'self-start text-8xl pl-2 cursor-pointer': true, 'opacity-0': currentComponent == 0}" @click="rewindComponent" ><<div class="text-sm" v-if="currentComponent > 0 && currentComponent < 2">left arrow on keyboard</div></div>
             <!-- p:{{ animationProgress }} isplay:{{ animationPlaying }}
             cc: {{ currentComponent }} cw: {{ screenWidth/componentsList.length }}
             tp:{{ totalProgress }} -->
-            <div class="self-end text-8xl pr-2 cursor-pointer" @click="advanceComponent">></div>
+            <div class="self-end text-8xl pr-2 cursor-pointer" @click="advanceComponent">><div class="text-sm" v-if="currentComponent == 0">right arrow on keyboard</div></div>
 
         </div>
         

@@ -91,7 +91,7 @@ export default {
             var vm = this;
             console.log('cp')
             for(let i=1, c=64; i<= 64; i++){
-                vm.tl.to(vm.$refs[`person-${i}`][0], {attr: { src: vm.getPerson()}, stagger: { each: .02, from: 'random', repeat: 0 }, y: 0, duration: .1, ease: "power4.out" });
+                vm.tl.to(vm.$refs[`person-${i}`][0], {attr: { src: vm.getPerson()}, y: 0, duration: 0 });
                 // vm.tl.fromTo(vm.$refs[`person-${i}`][0], {y: 10}, { y:0, duration: .02, attr: { src: vm.getPerson() }, ease: "back.out(2.2)" });
                 // vm.$refs[`person-${i}`][0].src =vm.getPerson();
             }

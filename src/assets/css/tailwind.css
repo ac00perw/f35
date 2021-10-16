@@ -4,6 +4,10 @@
 
 @layer base {
     a {
-        @apply text-red-500;
+        @apply text-teal;
     }
+}
+
+body {
+    overflow: hidden;
 }

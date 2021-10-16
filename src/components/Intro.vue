@@ -11,13 +11,15 @@
                 <p>It costs <strong>$44,000 per hour</strong> to fly an F35</p>
             </div>
             <div class="part4 parts mb-4">
-                <p>The total fleet of F35s in the United States is 2,456</p>
+                <p>There are 2,456 F35s in the United States</p>
             </div>
             <div class="part5 parts mb-4">
                 <p>Lifetime cost of the program is 1.727 trillion dollars</p>
             </div>
-            <div class="part6 parts mb-4">
-                <p>1,727,000,000,000 dollars</p>
+            <div class="part6parts mb-4 numParts">
+                    <span v-for="(p, index) in numberParts" :class="`pn-${index}`" :key="`${index}-${p}`" v-bind:data-index="index">
+                        {{ p }}
+                    </span>
             </div>
         </div>
     </div>
@@ -57,7 +59,9 @@ export default {
     },
     data() {
         return  {
-            currStepId: 1
+            currStepId: 1,
+            fullNumber: '',
+            numberParts: "1,727,000,000,000"
         }
     },
     mounted () {
@@ -65,7 +69,6 @@ export default {
         vm.animateIn();
         this.tlOut.clear();
         vm.tlOut.to('.parts', vm.animationOut);
-
     },
     methods: {
         ...mapMutations([
@@ -81,7 +84,11 @@ export default {
             // vm.tl.from('.part4', {...vm.animation, ...{opacity: 0, x: 0, scale: 1}}, "part4");
             vm.tl.to('.part4', {...vm.animation, ...{x: 0, scale: 1}}, "part4");
             vm.tl.to('.part5', vm.animation, "part5");
-            vm.tl.to('.part6', {...vm.animation, ...{delay: 2}}, "part6");
+            vm.tl.to('.part6', {...vm.animation, ...{delay: 0}}, "part6");
+            for(let i = 0, c = vm.numberParts.length; i < c; i++) {
+                let delay = (vm.numberParts[i] == ',' ? 0 : .2);
+                vm.tl.fromTo(`.pn-${i}`, {y: -10, fontSize: 5}, {fontSize: 40, duration: .2, opacity: 1, y: 0, delay: delay })
+            };
             vm.tl.play(0);
         }
     }
@@ -102,8 +109,9 @@ export default {
     .step.is-active {
         background-color: beige;
     }
-    .parts {
+    .parts, .numParts span {
         @apply opacity-0;
         
     }
+
 </style>
